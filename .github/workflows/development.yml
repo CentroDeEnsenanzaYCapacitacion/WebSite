@@ -20,6 +20,9 @@ jobs:
         server-dir: ${{ secrets.web_ftp_dev_path }}
         exclude: |
           **/public/**
+    
+    - name: 📂 List local files
+      run: ls -la public/assets/
 
     - name: 📁 Update assets
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
