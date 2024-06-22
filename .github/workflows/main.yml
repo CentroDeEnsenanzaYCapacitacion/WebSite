@@ -1,0 +1,31 @@
+on:
+  push:
+    branches:
+      - main
+name: 🚀 Deploy production
+jobs:
+  web-deploy:
+    name: 🎉 Deploy production
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3
+
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.ftp_url }}
+        username: ${{ secrets.ftp_username }}
+        password: ${{ secrets.ftp_password }}
+        server-dir: ${{ secrets.web_ftp_prod_path }}
+        exclude: |
+          **/public/**
+
+    - name: 📁 Update assets
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.ftp_url }}
+        username: ${{ secrets.ftp_username }}
+        password: ${{ secrets.ftp_password }}
+        server-dir: ${{ secrets.web_ftp_prod_assets_path }}
+        local-dir: ${{ secrets.local_dir }}
