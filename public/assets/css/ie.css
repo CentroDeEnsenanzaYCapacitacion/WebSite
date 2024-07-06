@@ -1,0 +1,4 @@
+.button, .sf-menu li ,.img, #slider{behavior:url(js/PIE.htc);position:relative;}
+.sf-menu ul{behavior:url(js/PIE.htc);}
+.pag .button{background: url('../img/button_slider.png') no-repeat !important;}
+.pag .button:hover{background: url('../img/button_slider.png') 0px -30px no-repeat !important;}
