@@ -87,7 +87,7 @@
 							   </ul>
 						   </li>
 						   <li><a href="{{ route('crews') }}">Planteles</a></li>
-						   <li><a href="noticec.php">Noticec</a></li>
+						   <li><a href="{{ route('cecnews') }}">Noticec</a></li>
 						   <li class="current"><a href="#">contacto</a></li>
 					   </ul>
 					 </nav>

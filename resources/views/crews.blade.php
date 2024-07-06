@@ -46,7 +46,7 @@
 					<img width="275px" src="{{ asset('assets/img/dr.png') }}">
 					<nav>
 					   <ul class="sf-menu">
-						   <li><a href="index.php">Inicio</a></li>
+						   <li><a href="{{ route('home') }}">Inicio</a></li>
 						   <li class="sf-with-ul"><a href="#">Oferta educativa</a>
 							   <ul>
 								   <li><a href="#">Secundaria</a></li>
@@ -85,8 +85,8 @@
 							   </ul>
 						   </li>
 						   <li class="current"><a href="#">Planteles</a></li>
-						   <li><a href="noticec.php">Noticec</a></li>
-						   <li><a href="contacto.php">contacto</a></li>
+						   <li><a href="{{ route('cecnews') }}">Noticec</a></li>
+						   <li><a href="{{ route('contact') }}">contacto</a></li>
 					   </ul>
 					 </nav>
 					<div class="clear"></div>

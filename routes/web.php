@@ -25,3 +25,7 @@ Route::get('/contact', function () {
 Route::get('/crews', function () {
     return view('crews');
 })->name('crews');
+
+Route::get('/noticec', function () {
+    return view('cecnews');
+})->name('cecnews');
