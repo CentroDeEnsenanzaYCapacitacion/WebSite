@@ -1,0 +1,18 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class WebCarousel extends Model
+{
+    use HasFactory;
+
+    protected $table = 'web_carousels';
+
+    protected $fillable = [
+        'title',
+        'description',
+    ];
+}

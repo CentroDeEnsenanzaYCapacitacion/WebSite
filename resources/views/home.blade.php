@@ -117,10 +117,10 @@
 				<div id="slider">
 					 <div class="slider">
 						  <ul class="items">
-								{{-- <li><img src="<?php if($_ENV['ENVIRONMENT']=='DEVELOPMENT'):?>https://capacitacioncec.edu.mx/capcec_dev/intranet/assets/img/carrousel/1.jpg<?php elseif($_ENV['ENVIRONMENT']=='PRODUCTION'):?>https://capacitacioncec.edu.mx/intranet/assets/img/carrousel/1.jpg<?php endif ?>" alt="" /></li>
-								<li><img src="<?php if($_ENV['ENVIRONMENT']=='DEVELOPMENT'):?>https://capacitacioncec.edu.mx/capcec_dev/intranet/assets/img/carrousel/2.jpg<?php elseif($_ENV['ENVIRONMENT']=='PRODUCTION'):?>https://capacitacioncec.edu.mx/intranet/assets/img/carrousel/2.jpg<?php endif ?>" alt="" /></li>
-								<li><img src="<?php if($_ENV['ENVIRONMENT']=='DEVELOPMENT'):?>https://capacitacioncec.edu.mx/capcec_dev/intranet/assets/img/carrousel/3.jpg<?php elseif($_ENV['ENVIRONMENT']=='PRODUCTION'):?>https://capacitacioncec.edu.mx/intranet/assets/img/carrousel/3.jpg<?php endif ?>" alt="" /></li>
-								<li><img src="<?php if($_ENV['ENVIRONMENT']=='DEVELOPMENT'):?>https://capacitacioncec.edu.mx/capcec_dev/intranet/assets/img/carrousel/4.jpg<?php elseif($_ENV['ENVIRONMENT']=='PRODUCTION'):?>https://capacitacioncec.edu.mx/intranet/assets/img/carrousel/4.jpg<?php endif ?>" alt="" /></li> --}}
+								<li><img src="{{ $carousel_url }}/1.jpg" alt="" /></li>
+                                <li><img src="{{ $carousel_url }}/2.jpg" alt="" /></li>
+                                <li><img src="{{ $carousel_url }}/3.jpg" alt="" /></li>
+                                <li><img src="{{ $carousel_url }}/4.jpg" alt="" /></li>
 						  </ul>
 					 </div>
 					 <div class="pag">
@@ -130,8 +130,8 @@
 								<div></div>
 								<a href="#">
 									<span class="text_block">
-										{{-- <?php echo $gallery_data[0]->title?> --}}
-										<span class="spand">{{--<?php echo $gallery_data[0]->description?>--}}</span>
+										{{ $carousel_texts[0]->title }}
+										<span class="spand">{{ $carousel_texts[0]->description }}</span>
 									</span>
 								</a>
 								<!-- <span class="but_wrap"><a href="#" class="button">more</a></span> -->
@@ -140,8 +140,8 @@
 								<div></div>
 								<a href="#">
 									 <span class="text_block">
-										{{-- <?php echo $gallery_data[1]->title?> --}}
-										<span class="spand">{{-- <?php echo $gallery_data[1]->description?>--}}</span>
+										{{ $carousel_texts[1]->title }}
+										<span class="spand">{{ $carousel_texts[1]->description }}</span>
 									</span>
 								</a>
 								<!-- <span class="but_wrap"><a href="#" class="button">more</a></span> -->
@@ -150,8 +150,8 @@
 								<div></div>
 								<a href="#">
 									 <span class="text_block">
-										{{-- <?php echo $gallery_data[2]->title?> --}}
-										<span class="spand">{{--<?php echo $gallery_data[2]->description?>--}}</span>
+										{{ $carousel_texts[2]->title }}
+										<span class="spand">{{ $carousel_texts[2]->description }}</span>
 									</span>
 								</a>
 								<!-- <span class="but_wrap"><a href="#" class="button">more</a></span> -->
@@ -160,8 +160,8 @@
 								<div></div>
 								<a href="#">
 									 <span class="text_block">
-										{{-- <?php echo $gallery_data[3]->title?> --}}
-										<span class="spand">{{-- <?php echo $gallery_data[3]->description?>--}}</span>
+										{{ $carousel_texts[3]->title }}
+										<span class="spand">{{ $carousel_texts[3]->description }}</span>
 									</span>
 								</a>
 								<!-- <span class="but_wrap"><a href="#" class="button">more</a></span> -->
@@ -180,40 +180,40 @@
 			<div class="card_container" style="margin-right: 30px;margin-left: 15px;">
 				<div class="card_card card_front">
 					<img  width="180px" src="{{ asset('assets/img/dc.png') }}">
-					<h2 style="vertical-align: top !important;font-size: 15px;" class="marked-text">Nosotros</h2>
+					<h2 style="vertical-align: top !important;font-size: 15px;" class="marked-text">{{ $mvv_data[0]->name }}</h2>
 				</div>
 				<div class="card_card card_back">
-					<p class="marked-text">{{-- <?php echo $mvv_data[0]->description;?>--}}</p>
+					<p class="marked-text">{{ $mvv_data[0]->description }}</p>
 					<!-- <a href="" class="card_btn">BOTÓN</a> -->
 				</div>
 			</div>
 			<div class="card_container" style="margin-right: 30px;margin-left: 30px;">
 				<div class="card_card card_front">
 					<img  width="180px" src="{{ asset('assets/img/mision.png') }}">
-					<h2 style="vertical-align: top !important;font-size: 15px;" class="marked-text">Misión</h2>
+					<h2 style="vertical-align: top !important;font-size: 15px;" class="marked-text">{{ $mvv_data[1]->name }}</h2>
 				</div>
 				<div class="card_card card_back">
-					<p class="marked-text">{{--  <?php echo $mvv_data[1]->description;?>--}}</p>
+					<p class="marked-text">{{ $mvv_data[1]->description }}</p>
 					<!-- <a href="" class="card_btn">BOTÓN</a> -->
 				</div>
 			</div>
 			<div class="card_container" style="margin-right: 30px;margin-left: 30px;">
 				<div class="card_card card_front">
 					<img  width="180px" src="{{ asset('assets/img/vision.png') }}">
-					<h2 style="vertical-align: top !important;font-size: 15px;" class="marked-text">Visión</h2>
+					<h2 style="vertical-align: top !important;font-size: 15px;" class="marked-text">{{ $mvv_data[2]->name }}</h2>
 				</div>
 				<div class="card_card card_back">
-					<p class="marked-text">{{-- <?php echo $mvv_data[2]->description;?>--}}</p>
+					<p class="marked-text">{{ $mvv_data[2]->description }}</p>
 					<!-- <a href="" class="card_btn">BOTÓN</a> -->
 				</div>
 			</div>
 			<div class="card_container" style="margin-right: 30px;margin-left: 30px;">
 				<div class="card_card card_front">
 					<img  width="180px" src="{{ asset('assets/img/valores.png') }}">
-					<h2 style="vertical-align: top !important;font-size: 15px;" class="marked-text">Valores</h2>
+					<h2 style="vertical-align: top !important;font-size: 15px;" class="marked-text">{{ $mvv_data[3]->name }}</h2>
 				</div>
 				<div class="card_card card_back">
-					<p class="marked-text">{{-- <?php echo $mvv_data[3]->description;?>--}}</p>
+					<p class="marked-text">{{ $mvv_data[3]->description }}</p>
 					<!-- <a href="" class="card_btn">BOTÓN</a> -->
 				</div>
 			</div>
