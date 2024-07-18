@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,14 +17,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class,'home'])->name('home');
 
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
+Route::get('/contact', [ContactController::class,'contact'])->name('contact');
+
+Route::post('/contact',[ContactController::class,'contactPost'])->name('contact.post');
 
 Route::get('/crews', function () {
     return view('crews');
 })->name('crews');
 
-Route::get('/noticec', function () {
-    return view('cecnews');
-})->name('cecnews');
+// Route::get('/noticec', function () {
+//     return view('cecnews');
+// })->name('cecnews');

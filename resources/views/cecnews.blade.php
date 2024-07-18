@@ -74,7 +74,7 @@
 							   </ul>
 						   </li>
 						   <li><a href="{{ route('crews') }}">Planteles</a></li>
-						   <li  class="current"><a href="#">Noticec</a></li>
+						   {{-- <li  class="current"><a href="#">Noticec</a></li> --}}
 						   <li><a href="{{ route('contact') }}">contacto</a></li>
 					   </ul>
 					 </nav>

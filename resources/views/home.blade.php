@@ -108,7 +108,7 @@
 								</ul>
 							</li>
 							<li><a href="{{ route('crews') }}">Planteles</a></li>
-							<li><a href="{{ route('cecnews') }}">Noticec</a></li>
+							{{-- <li><a href="{{ route('cecnews') }}">Noticec</a></li> --}}
 							<li><a href="{{ route('contact') }}">contacto</a></li>
 						</ul>
 					  </nav>
