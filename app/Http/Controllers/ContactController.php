@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\WebContact;
 use App\Models\Course;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -26,8 +27,11 @@ class ContactController extends Controller
             'msg' => $request->input('msg')
         ];
 
-        Mail::to('web@capacitacioncec.edu.mx')->send(new WebContact($details));
-
-        return back()->with('success', '¡Correo enviado correctamente!');
+        try {
+            Mail::to('ajrobseyer@gmail.com')->send(new WebContact($details));
+            return back()->with('success', '¡Correo enviado correctamente!');
+        } catch (Exception $e) {
+            return back()->with('error', 'Hubo un problema al enviar el correo: ' . $e->getMessage());
+        }
     }
 }

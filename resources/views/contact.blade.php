@@ -101,6 +101,17 @@
         <h2>Formulario de contacto</h2>
         <p></p>
         <br>
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        @if (session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
         <form action="{{ route('contact.post') }}" method="POST">
             @csrf
             <div class="form-group">
