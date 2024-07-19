@@ -201,7 +201,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> 
 	 <!-- <div class="content2 cont_pad2"> -->
 		  <!-- <div class="container_12">
 				<div class="wrapper">
