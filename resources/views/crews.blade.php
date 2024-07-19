@@ -104,7 +104,7 @@
                         <div class="col-md-6">
                             <h3>Chimalhuacán</h3>
                             <p>AV. NEZAHUALCOYOTL #5 CABECERA MUNICIPAL CHIMALHUACAN</p>
-                            <p>Tel: 51138136</p>
+                            <p>Tel: 5551138136</p>
                             <p>chimalhuacan@bachilleratocec.com</p>
                         </div>
                         <div class="col-md-6 text-right">
@@ -118,8 +118,8 @@
                     <div class="row">
                         <div class="col-md-6">
                             <h3>Ixtapaluca</h3>
-                            <p>AV CUAUHTEMOC #20 IXTAPALUCA</p>
-                            <p>Tel: 59723763</p>
+                            <p>AV CUAUHTEMOC #1 IXTAPALUCA</p>
+                            <p>Tel: 5559723763</p>
                             <p>ixtapaluca@bachilleratocec.com</p>
                         </div>
                         <div class="col-md-6 text-right">
@@ -134,7 +134,7 @@
                         <div class="col-md-6">
                             <h3>Texcoco</h3>
                             <p>AV. JUAREZ SUR #307 ESQ. ALDAMA CENTRO TEXCOCO</p>
-                            <p>Tel: (01 595) 9555607</p>
+                            <p>Tel: 5959555607</p>
                             <p>texcoco@bachilleratocec.com</p>
                         </div>
                         <div class="col-md-6 text-right">
