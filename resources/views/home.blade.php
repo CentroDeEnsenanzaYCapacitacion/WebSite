@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="{{ asset('assets/img/iii.ico') }}" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('assets/css/styles.css') }}">
     <link rel="stylesheet" type="text/css" media="screen" href="{{asset('assets/css/tms.css')}}">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('assets/css/home.css') }}">
     <script type="text/javascript" src="{{ asset('assets/js/jquery-1.7.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/superfish.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/jquery.easing.1.3.js') }}"></script>
@@ -158,21 +159,17 @@
 				</div>
 		  </div>
 	 </div>
-
 <!--==============================content================================-->
- <section id="content">
+ <div id="content">
 	<div class="container_12">
+        <div class="custom-text" style="margin-top: 250px">
+            <h1 style="text-align: center">Nosotros</h1><br>
+            <p>Bienvenidos al Centro de Enseñanza y Capacitación, una institución con una sólida trayectoria y compromiso con la educación de calidad. Fundada en el año 2004, contamos con más de 10 años de experiencia dedicados a formar y capacitar a estudiantes con altos estándares académicos y profesionales.</p>
+            <p>A lo largo de nuestra historia, hemos tenido el privilegio de graduar a más de 4,000 alumnos, quienes ahora se desempeñan exitosamente en diversos ámbitos laborales, aplicando los conocimientos y habilidades adquiridas durante su formación con nosotros.</p>
+            <p>Nuestro enfoque educativo se basa en principios de excelencia, innovación y responsabilidad, asegurando que cada estudiante reciba una formación integral que les permita enfrentar los retos del mundo moderno con confianza y competencia.</p>
+            <p>En el Centro de Enseñanza y Capacitación, creemos en el potencial de cada individuo y trabajamos incansablemente para proporcionarles las herramientas necesarias para alcanzar sus metas. ¡Únete a nosotros y sé parte de una comunidad comprometida con el crecimiento y el éxito!</p>
+        </div>
 		<div class="wrapper">
-			<div class="card_container" style="margin-right: 30px;margin-left: 15px;">
-				<div class="card_card card_front">
-					<img  width="180px" src="{{ asset('assets/img/dc.png') }}">
-					<h2 style="vertical-align: top !important;font-size: 15px;" class="marked-text">{{ $mvv_data[0]->name }}</h2>
-				</div>
-				<div class="card_card card_back">
-					<p class="marked-text">{{ $mvv_data[0]->description }}</p>
-					<!-- <a href="" class="card_btn">BOTÓN</a> -->
-				</div>
-			</div>
 			<div class="card_container" style="margin-right: 30px;margin-left: 30px;">
 				<div class="card_card card_front">
 					<img  width="180px" src="{{ asset('assets/img/mision.png') }}">
@@ -229,7 +226,7 @@
 				</div>
 		  </div>
 	 </div> -->
- </section>
+    </div>
  <!-- <aside class="list_box">
 	 <div class="container_12">
 		  <div class="wrapper">

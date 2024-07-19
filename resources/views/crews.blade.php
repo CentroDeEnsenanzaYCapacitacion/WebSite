@@ -104,7 +104,7 @@
                         <div class="col-md-6">
                             <h3>Chimalhuacán</h3>
                             <p>AV. NEZAHUALCOYOTL #5 CABECERA MUNICIPAL CHIMALHUACAN</p>
-                            <p>Tel: 5551138136</p>
+                            <p>Tel: 55 5113 8136</p>
                             <p>chimalhuacan@capacitacioncec.edu.mx</p>
                         </div>
                         <div class="col-md-6 text-right">
@@ -119,7 +119,7 @@
                         <div class="col-md-6">
                             <h3>Ixtapaluca</h3>
                             <p>AV CUAUHTEMOC #1 IXTAPALUCA</p>
-                            <p>Tel: 5559723763</p>
+                            <p>Tel: 55 5972 3763</p>
                             <p>ixtapaluca@capacitacioncec.edu.mx</p>
                         </div>
                         <div class="col-md-6 text-right">
@@ -134,7 +134,7 @@
                         <div class="col-md-6">
                             <h3>Texcoco</h3>
                             <p>AV. JUAREZ SUR #307 ESQ. ALDAMA CENTRO TEXCOCO</p>
-                            <p>Tel: 5959555607</p>
+                            <p>Tel: 59 5955 5607</p>
                             <p>texcoco@capacitacioncec.edu.mx</p>
                         </div>
                         <div class="col-md-6 text-right">
