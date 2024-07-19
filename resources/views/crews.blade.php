@@ -105,7 +105,7 @@
                             <h3>Chimalhuacán</h3>
                             <p>AV. NEZAHUALCOYOTL #5 CABECERA MUNICIPAL CHIMALHUACAN</p>
                             <p>Tel: 5551138136</p>
-                            <p>chimalhuacan@bachilleratocec.com</p>
+                            <p>chimalhuacan@capacitacioncec.edu.mx</p>
                         </div>
                         <div class="col-md-6 text-right">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7525.815427049256!2d-98.945559!3d19.416393!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa9515f2a1dd59cf0!2sCEC+CHIMALHUACAN!5e0!3m2!1ses!2s!4v1496867686194" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen=""></iframe>
@@ -120,7 +120,7 @@
                             <h3>Ixtapaluca</h3>
                             <p>AV CUAUHTEMOC #1 IXTAPALUCA</p>
                             <p>Tel: 5559723763</p>
-                            <p>ixtapaluca@bachilleratocec.com</p>
+                            <p>ixtapaluca@capacitacioncec.edu.mx</p>
                         </div>
                         <div class="col-md-6 text-right">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.284209125238!2d-98.89346248585674!3d19.313469786952073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce1e50689ad4d5%3A0x8205d00c3433106!2sCEC%20IXTAPALUCA!5e0!3m2!1ses!2smx!4v1620280203713!5m2!1ses!2smx" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -135,7 +135,7 @@
                             <h3>Texcoco</h3>
                             <p>AV. JUAREZ SUR #307 ESQ. ALDAMA CENTRO TEXCOCO</p>
                             <p>Tel: 5959555607</p>
-                            <p>texcoco@bachilleratocec.com</p>
+                            <p>texcoco@capacitacioncec.edu.mx</p>
                         </div>
                         <div class="col-md-6 text-right">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1880.3616948427118!2d-98.882643!3d19.510533!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x978606a6615dfa71!2sCEC+TEXCOCO!5e0!3m2!1ses!2sus!4v1496867831365" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen=""></iframe>
