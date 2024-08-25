@@ -10,8 +10,8 @@
     <p><strong>Nombre:</strong> {{ $details['name'] }}</p>
     <p><strong>Teléfono:</strong> {{ $details['cel'] }}</p>
     <p><strong>Correo electrónico:</strong> {{ $details['mail'] }}</p>
-    <p><strong>Plantel:</strong> {{ $details['plantel'] }}</p>
-    <p><strong>Curso:</strong> {{ $details['curso'] }}</p>
+    <p><strong>Plantel:</strong> {{ $details['crew'] }}</p>
+    <p><strong>Curso:</strong> {{ $details['course'] }}</p>
     <p><strong>Mensaje:</strong> {{ $details['msg'] }}</p>
 </body>
 </html>
