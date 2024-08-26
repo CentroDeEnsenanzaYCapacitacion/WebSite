@@ -46,7 +46,7 @@ a:hover{ color:#41a864; text-decoration:none;}
 
 /*********************************header*************************************/
 
-header {margin: 0 10px 47px 7px; padding: 60px 0 0 0;}
+header {margin: 0 10px 47px 7px; padding: 60px 0 0 0;position: relative;z-index: 1000;}
 header h1{width:232px;float:left;}
 header h1 a {display:block;width:232px;height:100px;background:url(../img/dr.png) 0 0 no-repeat; text-decoration:none; text-indent:-9999px;}
 
@@ -606,6 +606,16 @@ p{
     filter: sepia(80%) grayscale(1) contrast(1) opacity(0.8);
     mix-blend-mode: multiply;
     width: 100%;
+}
+
+.sf-menu li ul {
+    position: absolute;
+    z-index: 2000;
+}
+
+.block.bg-img1.overlay1 {
+    position: relative;
+    z-index: 10;
 }
 /*________________________________________________________________________________________________________________________________*/
 /*MEDIAQUERIES*/
