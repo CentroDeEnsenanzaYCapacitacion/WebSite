@@ -28,10 +28,10 @@ class ContactController extends Controller
             'msg' => $request->input('msg')
         ];
 
-        $crew_mail = Crew::where('name', $request->input('crew'))->get();
+        $crew_mail = Crew::where('name', $request->input('crew'))->first();
 
         try {
-            Mail::to($crew_mail)->send(new WebContact($details));
+            Mail::to($crew_mail->mail)->send(new WebContact($details));
             return back()->with('success', '¡Correo enviado correctamente!, nos pondremos en contacto con usted en la mayor brevedad posible.');
         } catch (Exception $e) {
             return back()->with('error', 'Hubo un problema al enviar el correo: ' . $e->getMessage());
