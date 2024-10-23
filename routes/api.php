@@ -18,7 +18,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/cards', function () {
+Route::get('/friends', function () {
     return response()->json([
         [
             "id" => "1",
