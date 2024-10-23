@@ -22,21 +22,23 @@ Route::get('/friends', function () {
     return response()->json([
         [
             "id" => "1",
-            "image_url" => "https://www.adslzone.net/app/uploads-adslzone.net/2019/04/borrar-fondo-imagen-1-930x523.jpg",
-            "title" => "Card 1",
-            "description" => "Descripción de la tarjeta 1"
+            "image_url" => "https://www.rico.guide/wp-content/uploads/2024/02/05-pedro-colab-1.jpg",
+            "name" => "Pedro Reyes"
         ],
         [
             "id" => "2",
-            "image_url" => "https://definicion.com/wp-content/uploads/2022/09/imagen.jpg",
-            "title" => "Card 2",
-            "description" => "Descripción de la tarjeta 2"
+            "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/07-mariana-colab-1.jpg",
+            "name" => "Mariana Camacho"
         ],
         [
             "id" => "3",
-            "image_url" => "https://www.educaciontrespuntocero.com/wp-content/uploads/2020/04/mejores-bancos-de-imagenes-gratis-860x492.jpg.webp",
-            "title" => "Card 3",
-            "description" => "Descripción de la tarjeta 3"
+            "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/01-abena-colab-3.jpg",
+            "name" => "Abena Anim-Somuah"
+        ],
+        [
+            "id" => "4",
+            "image_url" => "https://www.rico.guide/wp-content/uploads/2024/04/02-lilly-colab-1.jpg",
+            "name" => "liliana López"
         ]
     ]);
 });
