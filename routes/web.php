@@ -4,6 +4,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CrewsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OfferController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +27,8 @@ Route::post('/contact', [ContactController::class,'contactPost'])->name('contact
 Route::get('/course', [CourseController::class,'showCourse'])->name('course');
 
 Route::get('/crews', [CrewsController::class,'show'])->name('crews');
+
+Route::get('/secondary', [OfferController::class,'showOffer'])->name('secondary');
 
 // Route::get('/noticec', function () {
 //     return view('cecnews');

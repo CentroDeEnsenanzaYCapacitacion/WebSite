@@ -17,7 +17,7 @@
                     <li><a href="{{ route('home') }}">Inicio</a></li>
                     <li class="sf-with-ul"><a href="#">Oferta educativa</a>
                         <ul>
-                            <li><a href="#">Secundaria</a></li>
+                            <li><a href="{{ route('secondary') }}">Secundaria</a></li>
                             <ul>
                                 <li><a href="#">En 6 meses (presencial)</a></li>
                                 <li class="last_it"><a href="#">Con curso de inglés o informática</a></li>
