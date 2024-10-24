@@ -42,3 +42,86 @@ Route::get('/friends', function () {
         ]
     ]);
 });
+
+Route::get('/categories', function () {
+    return response()->json([
+        [
+            "id" => "1",
+            "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/01-zonas-roma2.jpg",
+            "name" => "Roma",
+            "restaurants" => 39
+        ],
+        [
+            "id" => "2",
+            "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/01-zonas-san-miguel-chapultepec.jpg",
+            "name" => "Chapultepec",
+            "restaurants" => 3
+        ],
+        [
+            "id" => "3",
+            "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/01-zonas-condesa.jpg",
+            "name" => "Condesa",
+            "restaurants" => 15
+        ],
+        [
+            "id" => "4",
+            "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/01-zonas-centro.jpg",
+            "name" => "Centro",
+            "restaurants" => 10
+        ],
+        [
+            "id" => "5",
+            "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/01-zona-coyoacan.jpg",
+            "name" => "Coyoacán",
+            "restaurants" => 1
+        ],
+        [
+            "id" => "6",
+            "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/01-zona-Cuauhtemoc.jpg",
+            "name" => "Centro",
+            "restaurants" => 5
+        ],
+        [
+            "id" => "7",
+            "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/01-zona-napoles.jpg",
+            "name" => "Narvarte / Del Valle",
+            "restaurants" => 4
+        ],
+        [
+            "id" => "8",
+            "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/01-zona-san-angel.jpg",
+            "name" => "San Ángel",
+            "restaurants" => 1
+        ],
+        [
+            "id" => "9",
+            "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/01-zonas-juarez.jpg",
+            "name" => "Juárez",
+            "restaurants" => 11
+        ],
+        [
+            "id" => "10",
+            "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/01-zonas-polanco.jpg",
+            "name" => "Polanco",
+            "restaurants" => 10
+        ],
+        [
+            "id" => "11",
+            "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/01-zonas-santa-maria.jpg",
+            "name" => "Santa María La Ribera",
+            "restaurants" => 1
+        ],
+        [
+            "id" => "12",
+            "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/01-zonas-pedregal.jpg",
+            "name" => "Pedregal",
+            "restaurants" => 2
+        ],
+        [
+            "id" => "13",
+            "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/01-zonas-doctores.jpg",
+            "name" => "Doctores",
+            "restaurants" => 1
+        ]
+    ]);
+});
