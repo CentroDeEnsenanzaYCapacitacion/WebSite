@@ -140,7 +140,7 @@ Route::get('/lists', function () {
         [
             "id" => "2",
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-pastas.jpg",
-            "name" => "Buenas pastas",
+            "title" => "Buenas pastas",
             "description" => "Estos restaurantes son para curarse el antojo de pasta. Lugares que han creado recetas apegadas a la tradición italiana o innovadoras por sus ingredientes atípicos que, sin embargo, le van tan bien a un bocado cremoso.",
             "is_feature" => "false",
             "title2" => "Buenas pastas",
