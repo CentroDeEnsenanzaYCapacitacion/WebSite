@@ -126,7 +126,7 @@ Route::get('/areas', function () {
     ]);
 });
 
-Route::get('/categories', function () {
+Route::get('/lists', function () {
     return response()->json([
         [
             "id" => "1",
