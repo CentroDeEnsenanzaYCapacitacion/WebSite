@@ -133,7 +133,7 @@ Route::get('/lists', function () {
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
             "title" => "Para cenar en domingo",
             "description" => "El domingo puede ser un día complicado para encontrar negocios abiertos en algunas zonas de la ciudad, sobre todo en la noche. Pero eso no significa que tengas que quedarte con hambre.",
-            "is_feature" => "true",
+            "is_feature" => true,
             "title2" => "Para cenar en domingo",
             "date" => ""
         ],
@@ -142,7 +142,7 @@ Route::get('/lists', function () {
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-pastas.jpg",
             "title" => "Buenas pastas",
             "description" => "Estos restaurantes son para curarse el antojo de pasta. Lugares que han creado recetas apegadas a la tradición italiana o innovadoras por sus ingredientes atípicos que, sin embargo, le van tan bien a un bocado cremoso.",
-            "is_feature" => "false",
+            "is_feature" => false,
             "title2" => "Buenas pastas",
             "date" => ""
         ],
@@ -151,7 +151,7 @@ Route::get('/lists', function () {
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-negocios.jpg",
             "title" => "Comida de negocios",
             "description" => "Para una comida de negocios, pensamos en lugares tranquilos, de servicio eficaz y comida decente. Algunos con un poco más de ruido que otros, pero sabemos que hay tratos de negocios donde un par de tragos y el buen ambiente siempre facilitan las cosas.",
-            "is_feature" => "false",
+            "is_feature" => false,
             "title2" => "Comida de negocios",
             "date" => ""
         ],
@@ -160,7 +160,7 @@ Route::get('/lists', function () {
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-healthy.jpg",
             "title" => "Con opciones saludables",
             "description" => "Encontrar lugares saludables no es fácil. Por suerte, estos restaurantes ofrecen una variedad de platillos elaborados con menos grasa y con opciones para personas vegetarianas y veganas.",
-            "is_feature" => "true",
+            "is_feature" => true,
             "title2" => "Para mantener la vida healthy",
             "date" => ""
         ],
@@ -169,7 +169,7 @@ Route::get('/lists', function () {
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-arquitectura-y-diseno.jpg",
             "title" => "Con propuesta de arquitectura y diseño",
             "description" => "Además de su propuesta gastronómica, estos restaurantes son espacios en donde el diseño y la arquitectura son protagonistas.",
-            "is_feature" => "false",
+            "is_feature" => false,
             "title2" => "Con propuesta de arquitectura y diseño",
             "date" => ""
         ],
@@ -178,7 +178,7 @@ Route::get('/lists', function () {
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-desayuno-post-run.jpg",
             "title" => "Desayunito post-run",
             "description" => "No existe nada mejor que terminar una buena corrida en un restaurante que tiene buen café, un menú delicioso y el espacio perfecto para echar sobremesa con tu running club.",
-            "is_feature" => "false",
+            "is_feature" => false,
             "title2" => "Desayunito post-run",
             "date" => ""
         ],
@@ -187,7 +187,7 @@ Route::get('/lists', function () {
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-en-familia.jpg",
             "title" => "En plan familiar",
             "description" => "Estos restaurantes te harán disfrutar dos placeres de la vida al mismo tiempo: pasar tiempo con tu familia y disfrutar de los mejores platillos en la ciudad.",
-            "is_feature" => "false",
+            "is_feature" => false,
             "title2" => "Para armar un plan familiar",
             "date" => ""
         ],
@@ -196,7 +196,7 @@ Route::get('/lists', function () {
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-sobremesa.jpg",
             "title" => "Eterna sobremesa",
             "description" => "A estos restaurantes uno llega sin prisa. A empezar la comida con una cerveza, que se transformará en un vinito, luego en un carajillo y si la plática lo permite… hasta en una cuba. Estos lugares son para hacer lo que más nos gusta a los mexicanos: sobremesa.",
-            "is_feature" => "false",
+            "is_feature" => false,
             "title2" => "Eterna sobremesa",
             "date" => ""
         ],
@@ -205,7 +205,7 @@ Route::get('/lists', function () {
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-milanesa.jpg",
             "title" => "Las mejores milanesas",
             "description" => "Desde las clásicas empanizadas acompañadas por papas fritas hasta en taco o torta, no te puedes perder estas milanesas en la ciudad.",
-            "is_feature" => "false",
+            "is_feature" => false,
             "title2" => "Las mejores milanesas",
             "date" => ""
         ],
@@ -214,7 +214,7 @@ Route::get('/lists', function () {
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cruda.jpg",
             "title" => "Lugares para curar la cruda",
             "description" => "Para esos días que te estás muriendo y crees que no sobrevivirás… seleccionamos los mejores lugares para revivir, curar la cruda (y chance conectarla) en la ciudad.",
-            "is_feature" => "false",
+            "is_feature" => false,
             "title2" => "Lugares para curar la cruda",
             "date" => ""
         ],
@@ -223,7 +223,7 @@ Route::get('/lists', function () {
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/00-principal-darosafi.png",
             "title" => "Para ir a una date",
             "description" => "Porque son lugares íntimos, con platos para compartir (entre dos o más), con buena música y buen ambiente, seleccionamos estos restaurantes en los que siempre es cómodo ir a una primera cita. ",
-            "is_feature" => "true",
+            "is_feature" => false,
             "title2" => "Para ir a una date",
             "date" => ""
         ],
@@ -232,7 +232,7 @@ Route::get('/lists', function () {
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/00-principal-tavernafi.png",
             "title" => "Para ir con amigos",
             "description" => "Restaurantes donde las mesas grandes no son un problema, el servicio es eficiente y los platillos vastos.",
-            "is_feature" => "false",
+            "is_feature" => false,
             "title2" => "Para ir con amigos",
             "date" => "24 mayo 2024"
         ],
@@ -241,7 +241,7 @@ Route::get('/lists', function () {
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-pizza.jpg",
             "title" => "Pizza, pizza, pizza",
             "description" => "Una masa de buena calidad, salsa fresca con mucho sabor a tomate… y los toppings que al comensal se le antoje.",
-            "is_feature" => "false",
+            "is_feature" => false,
             "title2" => "Pizza, pizza, pizza",
             "date" => ""
         ],
@@ -250,7 +250,7 @@ Route::get('/lists', function () {
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-cantinas.jpg",
             "title" => "Recorrido de cantinas",
             "description" => "Ninguna guía por la CDMX estaría completa sin un lista de sus mejores cantinas. Estos sitios clásicos han forjado la historia cultural y gastronómica de la ciudad y también hay algunas opciones modernas que no tienen desperdicio.",
-            "is_feature" => "false",
+            "is_feature" => false,
             "title2" => "Recorrido de cantinas",
             "date" => ""
         ],
@@ -259,7 +259,7 @@ Route::get('/lists', function () {
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-lugares-turisticos.jpg",
             "title" => "Restaurantes cerca delugares turísticos",
             "description" => "Terminar un día de turisteo en estos restaurantes te hará querer recorrer la ciudad todos los fines de semana.",
-            "is_feature" => "false",
+            "is_feature" => true,
             "title2" => "Restaurantes cerca delugares turísticos",
             "date" => ""
         ],
@@ -268,7 +268,7 @@ Route::get('/lists', function () {
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/00-principal-masala-y-maizfi.png",
             "title" => "Restaurantes con buenas cartas de vino",
             "description" => "En la Ciudad de México cada vez nos gusta más tomar vino. Pero más allá de eso, nos gusta que nos sorprendan: con etiquetas poco conocidas, con pequeños productores, con joyas de precio-calidad. Estos restaurantes hacen un esfuerzo genuino por curar una buena selección en cuanto a vinos se refiere, y por eso merecen una mención especial. ",
-            "is_feature" => "true",
+            "is_feature" => false,
             "title2" => "Restaurantes con buenas cartas de vino",
             "date" => "24 mayo 2024"
         ],
@@ -277,7 +277,7 @@ Route::get('/lists', function () {
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-amigos-foraneos.jpg",
             "title" => "Sugerencias para amigos foráneos",
             "description" => "Cuando los amigos o familiares de fuera vienen de visita a la ciudad, dan ganas de llevarlos a una mezcla de lugares: los nuevos, los clásicos, los divertidos y por no dejar… a un par de restaurantes de comida mexicana.",
-            "is_feature" => "false",
+            "is_feature" => false,
             "title2" => "Sugerencias para amigos foráneos",
             "date" => ""
         ],
@@ -286,7 +286,7 @@ Route::get('/lists', function () {
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-post-fiesta2.jpg",
             "title" => "Un antojo después de la fiesta",
             "description" => "Nada como atascarse en el munchies después de la fiesta, aunque luego no es tan fácil dar con algo abierto. Por eso seleccionamos varios restaurantes que están abiertos hasta altas horas de la noche, que ni siquiera cierran o que incluso abren muy temprano.",
-            "is_feature" => "false",
+            "is_feature" => false,
             "title2" => "Para después de la fiesta",
             "date" => ""
         ],
@@ -295,7 +295,7 @@ Route::get('/lists', function () {
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-musica.jpg",
             "title" => "Ven por la comida, quédate por la música",
             "description" => "En estos lugares la música impone la atmósfera y es casi tan importante como el menú mismo. Seguramente llegarás a comer, pero terminarás quedándote por su playlist, cuidadosamente curada para que la pases bien en una larga sobremesa.",
-            "is_feature" => "false",
+            "is_feature" => false,
             "title2" => "Ven por la comida, quédate por la música",
             "date" => ""
         ],
@@ -304,7 +304,7 @@ Route::get('/lists', function () {
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-nigiris.jpg",
             "title" => "Nigiris frescos y bien hechos",
             "description" => "Entre menos ingredientes tiene un platillo… mejor tiene que ser su calidad. Así que para que un nigiri te vuele la cabeza, tiene que tener un extraordinario pescado y un arroz perfectamente bien preparado. En estos restaurantes lo logran.",
-            "is_feature" => "false",
+            "is_feature" => false,
             "title2" => "Nigiris frescos y bien hechos",
             "date" => ""
         ]
