@@ -390,7 +390,8 @@ Route::get('/restaurants', function () {
             "name" => "Al Andalus",
             "description" => "Comida libanesa tradicional",
             "address" => "Calle de Mesones 171, Centro Histórico de la Cdad. de México, Centro, Cuauhtémoc, Ciudad de México",
-            "area"=>"Roma"
+            "area"=>"Roma",
+            "coords"=>"19.428735184680622, -99.12912366932098"
         ],
         [
             "id" => "2",
@@ -398,7 +399,8 @@ Route::get('/restaurants', function () {
             "name" => "Alelí",
             "description" => "Cocina de brasa del chef Oswaldo Oliva",
             "address" => "Sinaloa 141, Roma Nte., Cuauhtémoc, Ciudad de México, México",
-            "area"=>"Centro"
+            "area"=>"Centro",
+            "coords"=>"19.420461627491115, -99.17010367116512"
         ],
         [
             "id" => "3",
@@ -406,7 +408,8 @@ Route::get('/restaurants', function () {
             "name" => "Alfredo di Roma",
             "description" => "Una de las mejores pastas en la ciudad",
             "address" => "Campos Elíseos 218, Polanco, Polanco IV Secc, Miguel Hidalgo",
-            "area"=>"Condesa"
+            "area"=>"Condesa",
+            "coords"=>"19.42803827286433, -99.19370423067905"
         ],
         [
             "id" => "4",
@@ -414,7 +417,8 @@ Route::get('/restaurants', function () {
             "name" => "Ardente",
             "description" => "Auténtica pizzería napolitana",
             "address" => "C. Laredo 13, Hipódromo, Cuauhtémoc",
-            "area"=>"Polanco"
+            "area"=>"Polanco",
+            "coords"=>"19.41376509474552, -99.17100953067903"
         ],
         [
             "id" => "5",
@@ -422,7 +426,8 @@ Route::get('/restaurants', function () {
             "name" => "Au Pied de Cochon",
             "description" => "Comida francesa 24/7",
             "address" => "Campos Elíseos 218, Polanco, Miguel Hidalgo, Ciudad de México",
-            "area"=>"Roma"
+            "area"=>"Roma",
+            "coords"=>"19.42772359009942, -99.19341404233022"
         ],
         [
             "id" => "6",
@@ -430,7 +435,8 @@ Route::get('/restaurants', function () {
             "name" => "Azul Histórico",
             "description" => "Cocina mexicana de Ricardo Muñoz Zurita",
             "address" => "Isabel La Católica 30, Centro Histórico de la Cdad. de México, Centro, Cuauhtémoc, Ciudad de México",
-            "area"=>"Condesa"
+            "area"=>"Condesa",
+            "coords"=>"19.4330817113784, -99.13620741349538"
         ],
     ]);
 });
