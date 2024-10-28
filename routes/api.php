@@ -25,91 +25,91 @@ Route::get('/friends', function () {
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/02/05-pedro-colab-1.jpg",
             "name" => "Pedro Reyes",
             "reviews" => 28,
-            "lists"=> 0
+            "lists" => 0
         ],
         [
             "id" => "2",
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/07-mariana-colab-1.jpg",
             "name" => "Mariana Camacho",
             "reviews" => 43,
-            "lists"=> 0
+            "lists" => 0
         ],
         [
             "id" => "3",
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/01-abena-colab-3.jpg",
             "name" => "Abena Anim-Somuah",
             "reviews" => 20,
-            "lists"=> 0
+            "lists" => 0
         ],
         [
             "id" => "4",
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/04/02-lilly-colab-1.jpg",
             "name" => "Liliana López",
             "reviews" => 70,
-            "lists"=> 0
+            "lists" => 0
         ],
         [
             "id" => "5",
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/04-mary-gaby-colab-2.jpg",
             "name" => "Mary Gaby Hubard",
             "reviews" => 67,
-            "lists"=> 5
+            "lists" => 5
         ],
         [
             "id" => "6",
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/066-gus-colab.jpg",
             "name" => "Gustavo Guzmán",
             "reviews" => 34,
-            "lists"=> 0
+            "lists" => 0
         ],
         [
             "id" => "7",
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/03-maria-colab-2.jpg",
             "name" => "María Pellicer",
             "reviews" => 53,
-            "lists"=> 0
+            "lists" => 0
         ],
         [
             "id" => "8",
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/12-ana-colab.jpg",
             "name" => "Ana Lorenzana",
             "reviews" => 16,
-            "lists"=> 0
+            "lists" => 0
         ],
         [
             "id" => "9",
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/11-amigo-colab.jpg",
             "name" => "Anna Condax",
             "reviews" => 27,
-            "lists"=> 0
+            "lists" => 0
         ],
         [
             "id" => "10",
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/08-amigo-colab.jpg",
             "name" => "Joséphine Dorr",
             "reviews" => 25,
-            "lists"=> 0
+            "lists" => 0
         ],
         [
             "id" => "11",
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/09-nat-colab.jpg",
             "name" => "Nathalie Baaklini",
             "reviews" => 67,
-            "lists"=> 0
+            "lists" => 0
         ],
         [
             "id" => "12",
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/10-amigo-colab.jpg",
             "name" => "Toshie Watabe",
             "reviews" => 85,
-            "lists"=> 0
+            "lists" => 0
         ],
         [
             "id" => "13",
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/08/13-cristina-colab.jpg",
             "name" => "Cristina Salmerón",
             "reviews" => 33,
-            "lists"=> 0
+            "lists" => 0
         ]
     ]);
 });
@@ -379,5 +379,58 @@ Route::get('/lists', function () {
             "title2" => "Nigiris frescos y bien hechos",
             "date" => ""
         ]
+    ]);
+});
+
+Route::get('/restaurants', function () {
+    return response()->json([
+        [
+            "id" => "1",
+            "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/00-principal-Al-Andalus-ft.png",
+            "name" => "Al Andalus",
+            "description" => "Comida libanesa tradicional",
+            "address" => "Calle de Mesones 171, Centro Histórico de la Cdad. de México, Centro, Cuauhtémoc, Ciudad de México",
+            "area"=>"Roma"
+        ],
+        [
+            "id" => "2",
+            "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/00-principal-Alelifi.png",
+            "name" => "Alelí",
+            "description" => "Cocina de brasa del chef Oswaldo Oliva",
+            "address" => "Sinaloa 141, Roma Nte., Cuauhtémoc, Ciudad de México, México",
+            "area"=>"Centro"
+        ],
+        [
+            "id" => "3",
+            "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-900x735-alfredo-di-roma.jpg",
+            "name" => "Alfredo di Roma",
+            "description" => "Una de las mejores pastas en la ciudad",
+            "address" => "Campos Elíseos 218, Polanco, Polanco IV Secc, Miguel Hidalgo",
+            "area"=>"Condesa"
+        ],
+        [
+            "id" => "4",
+            "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-1600x1600-ardente.jpg",
+            "name" => "Ardente",
+            "description" => "Auténtica pizzería napolitana",
+            "address" => "C. Laredo 13, Hipódromo, Cuauhtémoc",
+            "area"=>"Polanco"
+        ],
+        [
+            "id" => "5",
+            "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/00-principal-Au-Pied-de-Cochonf1.png",
+            "name" => "Au Pied de Cochon",
+            "description" => "Comida francesa 24/7",
+            "address" => "Campos Elíseos 218, Polanco, Miguel Hidalgo, Ciudad de México",
+            "area"=>"Roma"
+        ],
+        [
+            "id" => "6",
+            "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/00-principal-Azul-Historicofi.png",
+            "name" => "Azul Histórico",
+            "description" => "Cocina mexicana de Ricardo Muñoz Zurita",
+            "address" => "Isabel La Católica 30, Centro Histórico de la Cdad. de México, Centro, Cuauhtémoc, Ciudad de México",
+            "area"=>"Condesa"
+        ],
     ]);
 });
