@@ -11,7 +11,8 @@ use Illuminate\Queue\SerializesModels;
 
 class WebContact extends Mailable
 {
-    use Queueable, SerializesModels;
+    use Queueable;
+    use SerializesModels;
 
     public $details;
 
@@ -29,7 +30,7 @@ class WebContact extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Web Contact',
+            subject: 'Consulta desde la web CEC',
         );
     }
 
