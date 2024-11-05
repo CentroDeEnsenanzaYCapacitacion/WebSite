@@ -180,7 +180,7 @@ Route::get('/friends/id', function () {
     ]);
 });
 
-Route::get('/list/1', function () {
+Route::get('/list/id', function () {
     return response()->json([
     [
       "id" => "3",
