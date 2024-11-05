@@ -180,6 +180,54 @@ Route::get('/friends/id', function () {
     ]);
 });
 
+Route::get('/list/1', function () {
+    return response()->json([
+    [
+      "id" => "3",
+      "image_url" => "https=>//www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-negocios.jpg",
+      "title" => "Comida de negocios",
+      "description" => "Para una comida de negocios, pensamos en lugares tranquilos, de servicio eficaz y comida decente. Algunos con un poco más de ruido que otros, pero sabemos que hay tratos de negocios donde un par de tragos y el buen ambiente siempre facilitan las cosas.",
+      "is_feature" => false,
+      "title2" => "Comida de negocios",
+      "id_friend_creator" => 3,
+      "name_friend_creator" => "Pedro Gonzalez",
+      "date" => "",
+      "restautants" => [
+        [
+          "id" => "4",
+          "image_url" => "https=>//www.rico.guide/wp-content/uploads/2024/07/00-principal-1600x1600-ardente.jpg",
+          "name" => "Ardente",
+          "description" => "Auténtica pizzería napolitana",
+          "address" => "C. Laredo 13, Hipódromo, Cuauhtémoc",
+          "area" => "Polanco",
+          "id_area" => 4,
+          "coords" => "19.41376509474552, -99.17100953067903"
+        ]  ,
+        [
+          "id" => "5",
+          "image_url" => "https=>//www.rico.guide/wp-content/uploads/2024/05/00-principal-Au-Pied-de-Cochonf1.png",
+          "name" => "Au Pied de Cochon",
+          "description" => "Comida francesa 24/7",
+          "address" => "Campos Elíseos 218, Polanco, Miguel Hidalgo, Ciudad de México",
+          "area" => "Roma",
+          "id_area" => 8,
+          "coords" => "19.42772359009942, -99.19341404233022"
+        ],
+        [
+          "id" => "6",
+          "image_url" => "https=>//www.rico.guide/wp-content/uploads/2024/05/00-principal-Azul-Historicofi.png",
+          "name" => "Azul Histórico",
+          "description" => "Cocina mexicana de Ricardo Muñoz Zurita",
+          "address" => "Isabel La Católica 30, Centro Histórico de la Cdad. de México, Centro, Cuauhtémoc, Ciudad de México",
+          "area" => "Condesa",
+          "id_area" => 9,
+          "coords" => "19.4330817113784, -99.13620741349538"
+        ]
+      ]
+    ]
+    ]);
+});
+
 
 Route::get('/areas', function () {
     return response()->json([
