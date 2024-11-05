@@ -114,6 +114,73 @@ Route::get('/friends', function () {
     ]);
 });
 
+Route::get('/friends/id', function () {
+    return response()->json([
+        [
+            "id" => "1",
+            "image_url" => "https://www.rico.guide/wp-content/uploads/2024/02/05-pedro-colab-1.jpg",
+            "name" => "Pedro Reyes",
+            "reviews" => 28,
+            "lists" => 0,
+            "description" => "Un experto en tacos (con dos libros publicados sobre este tema) y comida callejera. Pedro es un antojadizo de tiempo completo, director creativo en Paladar, Academy Chair en 50 Best Bars y co-host del programa de Radio Chilango Glotones.",
+            "favorites" => [
+                [
+                    "description" => "El restaurante que más he visitado en mi vida El Parnita",
+                    "image" => "https://www.rico.guide/wp-content/uploads/2024/05/07-el-parnita.jpg"
+                ],
+                [
+                    "description" => "El trago que mejor preparo Bloody Mary",
+                    "image" => "https://www.rico.guide/wp-content/uploads/2024/05/08-Bloody-Mary.jpg"
+                ],
+                [
+                    "description" => "Soy experto cocinando Carne en su jugo",
+                    "image" => "https://www.rico.guide/wp-content/uploads/2024/05/09-Carne-en-su-jugo.jpg"
+                ],
+
+            ],
+            "reviews" => [
+                [
+                    "id" => "1",
+                    "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/00-principal-Al-Andalus-ft.png",
+                    "name" => "Al Andalus",
+                    "description" => "Comida libanesa tradicional",
+                    "address" => "Calle de Mesones 171, Centro Histórico de la Cdad. de México, Centro, Cuauhtémoc, Ciudad de México",
+                    "area" => "Roma",
+                    "coords" => "19.428735184680622, -99.12912366932098"
+                ],
+                [
+                    "id" => "2",
+                    "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/00-principal-Alelifi.png",
+                    "name" => "Alelí",
+                    "description" => "Cocina de brasa del chef Oswaldo Oliva",
+                    "address" => "Sinaloa 141, Roma Nte., Cuauhtémoc, Ciudad de México, México",
+                    "area" => "Centro",
+                    "coords" => "19.420461627491115, -99.17010367116512"
+                ],
+                [
+                    "id" => "3",
+                    "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-900x735-alfredo-di-roma.jpg",
+                    "name" => "Alfredo di Roma",
+                    "description" => "Una de las mejores pastas en la ciudad",
+                    "address" => "Campos Elíseos 218, Polanco, Polanco IV Secc, Miguel Hidalgo",
+                    "area" => "Condesa",
+                    "coords" => "19.42803827286433, -99.19370423067905"
+                ],
+                [
+                    "id" => "4",
+                    "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-1600x1600-ardente.jpg",
+                    "name" => "Ardente",
+                    "description" => "Auténtica pizzería napolitana",
+                    "address" => "C. Laredo 13, Hipódromo, Cuauhtémoc",
+                    "area" => "Polanco",
+                    "coords" => "19.41376509474552, -99.17100953067903"
+                ],
+            ]
+        ]
+    ]);
+});
+
+
 Route::get('/areas', function () {
     return response()->json([
         [
@@ -390,8 +457,8 @@ Route::get('/restaurants', function () {
             "name" => "Al Andalus",
             "description" => "Comida libanesa tradicional",
             "address" => "Calle de Mesones 171, Centro Histórico de la Cdad. de México, Centro, Cuauhtémoc, Ciudad de México",
-            "area"=>"Roma",
-            "coords"=>"19.428735184680622, -99.12912366932098"
+            "area" => "Roma",
+            "coords" => "19.428735184680622, -99.12912366932098"
         ],
         [
             "id" => "2",
@@ -399,8 +466,8 @@ Route::get('/restaurants', function () {
             "name" => "Alelí",
             "description" => "Cocina de brasa del chef Oswaldo Oliva",
             "address" => "Sinaloa 141, Roma Nte., Cuauhtémoc, Ciudad de México, México",
-            "area"=>"Centro",
-            "coords"=>"19.420461627491115, -99.17010367116512"
+            "area" => "Centro",
+            "coords" => "19.420461627491115, -99.17010367116512"
         ],
         [
             "id" => "3",
@@ -408,8 +475,8 @@ Route::get('/restaurants', function () {
             "name" => "Alfredo di Roma",
             "description" => "Una de las mejores pastas en la ciudad",
             "address" => "Campos Elíseos 218, Polanco, Polanco IV Secc, Miguel Hidalgo",
-            "area"=>"Condesa",
-            "coords"=>"19.42803827286433, -99.19370423067905"
+            "area" => "Condesa",
+            "coords" => "19.42803827286433, -99.19370423067905"
         ],
         [
             "id" => "4",
@@ -417,8 +484,8 @@ Route::get('/restaurants', function () {
             "name" => "Ardente",
             "description" => "Auténtica pizzería napolitana",
             "address" => "C. Laredo 13, Hipódromo, Cuauhtémoc",
-            "area"=>"Polanco",
-            "coords"=>"19.41376509474552, -99.17100953067903"
+            "area" => "Polanco",
+            "coords" => "19.41376509474552, -99.17100953067903"
         ],
         [
             "id" => "5",
@@ -426,8 +493,8 @@ Route::get('/restaurants', function () {
             "name" => "Au Pied de Cochon",
             "description" => "Comida francesa 24/7",
             "address" => "Campos Elíseos 218, Polanco, Miguel Hidalgo, Ciudad de México",
-            "area"=>"Roma",
-            "coords"=>"19.42772359009942, -99.19341404233022"
+            "area" => "Roma",
+            "coords" => "19.42772359009942, -99.19341404233022"
         ],
         [
             "id" => "6",
@@ -435,8 +502,8 @@ Route::get('/restaurants', function () {
             "name" => "Azul Histórico",
             "description" => "Cocina mexicana de Ricardo Muñoz Zurita",
             "address" => "Isabel La Católica 30, Centro Histórico de la Cdad. de México, Centro, Cuauhtémoc, Ciudad de México",
-            "area"=>"Condesa",
-            "coords"=>"19.4330817113784, -99.13620741349538"
+            "area" => "Condesa",
+            "coords" => "19.4330817113784, -99.13620741349538"
         ],
     ]);
 });
