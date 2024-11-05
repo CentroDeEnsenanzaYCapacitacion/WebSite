@@ -191,6 +191,7 @@ Route::get('/list/id', function () {
       "title2" => "Comida de negocios",
       "id_friend_creator" => 3,
       "name_friend_creator" => "Pedro Gonzalez",
+      "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
       "date" => "",
       "restautants" => [
         [
@@ -321,7 +322,10 @@ Route::get('/lists', function () {
             "description" => "El domingo puede ser un día complicado para encontrar negocios abiertos en algunas zonas de la ciudad, sobre todo en la noche. Pero eso no significa que tengas que quedarte con hambre.",
             "is_feature" => true,
             "title2" => "Para cenar en domingo",
-            "date" => ""
+            "date" => "",
+            "id_friend_creator"=> 3,
+            "name_friend_creator"=> "Pedro Gonzalez",
+            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "2",
@@ -330,7 +334,10 @@ Route::get('/lists', function () {
             "description" => "Estos restaurantes son para curarse el antojo de pasta. Lugares que han creado recetas apegadas a la tradición italiana o innovadoras por sus ingredientes atípicos que, sin embargo, le van tan bien a un bocado cremoso.",
             "is_feature" => false,
             "title2" => "Buenas pastas",
-            "date" => ""
+            "date" => "",
+            "id_friend_creator"=> 3,
+            "name_friend_creator"=> "Pedro Gonzalez",
+            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "3",
@@ -339,7 +346,10 @@ Route::get('/lists', function () {
             "description" => "Para una comida de negocios, pensamos en lugares tranquilos, de servicio eficaz y comida decente. Algunos con un poco más de ruido que otros, pero sabemos que hay tratos de negocios donde un par de tragos y el buen ambiente siempre facilitan las cosas.",
             "is_feature" => false,
             "title2" => "Comida de negocios",
-            "date" => ""
+            "date" => "",
+            "id_friend_creator"=> 3,
+            "name_friend_creator"=> "Pedro Gonzalez",
+            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "4",
@@ -348,7 +358,10 @@ Route::get('/lists', function () {
             "description" => "Encontrar lugares saludables no es fácil. Por suerte, estos restaurantes ofrecen una variedad de platillos elaborados con menos grasa y con opciones para personas vegetarianas y veganas.",
             "is_feature" => true,
             "title2" => "Para mantener la vida healthy",
-            "date" => ""
+            "date" => "",
+            "id_friend_creator"=> 3,
+            "name_friend_creator"=> "Pedro Gonzalez",
+            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "5",
@@ -357,7 +370,10 @@ Route::get('/lists', function () {
             "description" => "Además de su propuesta gastronómica, estos restaurantes son espacios en donde el diseño y la arquitectura son protagonistas.",
             "is_feature" => false,
             "title2" => "Con propuesta de arquitectura y diseño",
-            "date" => ""
+            "date" => "",
+            "id_friend_creator"=> 3,
+            "name_friend_creator"=> "Pedro Gonzalez",
+            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "6",
@@ -366,7 +382,10 @@ Route::get('/lists', function () {
             "description" => "No existe nada mejor que terminar una buena corrida en un restaurante que tiene buen café, un menú delicioso y el espacio perfecto para echar sobremesa con tu running club.",
             "is_feature" => false,
             "title2" => "Desayunito post-run",
-            "date" => ""
+            "date" => "",
+            "id_friend_creator"=> 3,
+            "name_friend_creator"=> "Pedro Gonzalez",
+            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "7",
@@ -375,7 +394,10 @@ Route::get('/lists', function () {
             "description" => "Estos restaurantes te harán disfrutar dos placeres de la vida al mismo tiempo: pasar tiempo con tu familia y disfrutar de los mejores platillos en la ciudad.",
             "is_feature" => false,
             "title2" => "Para armar un plan familiar",
-            "date" => ""
+            "date" => "",
+            "id_friend_creator"=> 3,
+            "name_friend_creator"=> "Pedro Gonzalez",
+            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "8",
@@ -384,7 +406,10 @@ Route::get('/lists', function () {
             "description" => "A estos restaurantes uno llega sin prisa. A empezar la comida con una cerveza, que se transformará en un vinito, luego en un carajillo y si la plática lo permite… hasta en una cuba. Estos lugares son para hacer lo que más nos gusta a los mexicanos: sobremesa.",
             "is_feature" => false,
             "title2" => "Eterna sobremesa",
-            "date" => ""
+            "date" => "",
+            "id_friend_creator"=> 3,
+            "name_friend_creator"=> "Pedro Gonzalez",
+            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "9",
@@ -393,7 +418,10 @@ Route::get('/lists', function () {
             "description" => "Desde las clásicas empanizadas acompañadas por papas fritas hasta en taco o torta, no te puedes perder estas milanesas en la ciudad.",
             "is_feature" => false,
             "title2" => "Las mejores milanesas",
-            "date" => ""
+            "date" => "",
+            "id_friend_creator"=> 3,
+            "name_friend_creator"=> "Pedro Gonzalez",
+            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "10",
@@ -402,7 +430,10 @@ Route::get('/lists', function () {
             "description" => "Para esos días que te estás muriendo y crees que no sobrevivirás… seleccionamos los mejores lugares para revivir, curar la cruda (y chance conectarla) en la ciudad.",
             "is_feature" => false,
             "title2" => "Lugares para curar la cruda",
-            "date" => ""
+            "date" => "",
+            "id_friend_creator"=> 3,
+            "name_friend_creator"=> "Pedro Gonzalez",
+            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "11",
@@ -411,7 +442,10 @@ Route::get('/lists', function () {
             "description" => "Porque son lugares íntimos, con platos para compartir (entre dos o más), con buena música y buen ambiente, seleccionamos estos restaurantes en los que siempre es cómodo ir a una primera cita. ",
             "is_feature" => false,
             "title2" => "Para ir a una date",
-            "date" => ""
+            "date" => "",
+            "id_friend_creator"=> 3,
+            "name_friend_creator"=> "Pedro Gonzalez",
+            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "12",
@@ -420,7 +454,10 @@ Route::get('/lists', function () {
             "description" => "Restaurantes donde las mesas grandes no son un problema, el servicio es eficiente y los platillos vastos.",
             "is_feature" => false,
             "title2" => "Para ir con amigos",
-            "date" => "24 mayo 2024"
+            "date" => "24 mayo 2024",
+            "id_friend_creator"=> 3,
+            "name_friend_creator"=> "Pedro Gonzalez",
+            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "13",
@@ -429,7 +466,10 @@ Route::get('/lists', function () {
             "description" => "Una masa de buena calidad, salsa fresca con mucho sabor a tomate… y los toppings que al comensal se le antoje.",
             "is_feature" => false,
             "title2" => "Pizza, pizza, pizza",
-            "date" => ""
+            "date" => "",
+            "id_friend_creator"=> 3,
+            "name_friend_creator"=> "Pedro Gonzalez",
+            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "14",
@@ -438,7 +478,10 @@ Route::get('/lists', function () {
             "description" => "Ninguna guía por la CDMX estaría completa sin un lista de sus mejores cantinas. Estos sitios clásicos han forjado la historia cultural y gastronómica de la ciudad y también hay algunas opciones modernas que no tienen desperdicio.",
             "is_feature" => false,
             "title2" => "Recorrido de cantinas",
-            "date" => ""
+            "date" => "",
+            "id_friend_creator"=> 3,
+            "name_friend_creator"=> "Pedro Gonzalez",
+            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "15",
@@ -447,7 +490,10 @@ Route::get('/lists', function () {
             "description" => "Terminar un día de turisteo en estos restaurantes te hará querer recorrer la ciudad todos los fines de semana.",
             "is_feature" => true,
             "title2" => "Restaurantes cerca delugares turísticos",
-            "date" => ""
+            "date" => "",
+            "id_friend_creator"=> 3,
+            "name_friend_creator"=> "Pedro Gonzalez",
+            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "16",
@@ -456,7 +502,10 @@ Route::get('/lists', function () {
             "description" => "En la Ciudad de México cada vez nos gusta más tomar vino. Pero más allá de eso, nos gusta que nos sorprendan: con etiquetas poco conocidas, con pequeños productores, con joyas de precio-calidad. Estos restaurantes hacen un esfuerzo genuino por curar una buena selección en cuanto a vinos se refiere, y por eso merecen una mención especial. ",
             "is_feature" => false,
             "title2" => "Restaurantes con buenas cartas de vino",
-            "date" => "24 mayo 2024"
+            "date" => "24 mayo 2024",
+            "id_friend_creator"=> 3,
+            "name_friend_creator"=> "Pedro Gonzalez",
+            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "17",
@@ -465,7 +514,10 @@ Route::get('/lists', function () {
             "description" => "Cuando los amigos o familiares de fuera vienen de visita a la ciudad, dan ganas de llevarlos a una mezcla de lugares: los nuevos, los clásicos, los divertidos y por no dejar… a un par de restaurantes de comida mexicana.",
             "is_feature" => false,
             "title2" => "Sugerencias para amigos foráneos",
-            "date" => ""
+            "date" => "",
+            "id_friend_creator"=> 3,
+            "name_friend_creator"=> "Pedro Gonzalez",
+            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "18",
@@ -474,7 +526,10 @@ Route::get('/lists', function () {
             "description" => "Nada como atascarse en el munchies después de la fiesta, aunque luego no es tan fácil dar con algo abierto. Por eso seleccionamos varios restaurantes que están abiertos hasta altas horas de la noche, que ni siquiera cierran o que incluso abren muy temprano.",
             "is_feature" => false,
             "title2" => "Para después de la fiesta",
-            "date" => ""
+            "date" => "",
+            "id_friend_creator"=> 3,
+            "name_friend_creator"=> "Pedro Gonzalez",
+            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "19",
@@ -483,7 +538,10 @@ Route::get('/lists', function () {
             "description" => "En estos lugares la música impone la atmósfera y es casi tan importante como el menú mismo. Seguramente llegarás a comer, pero terminarás quedándote por su playlist, cuidadosamente curada para que la pases bien en una larga sobremesa.",
             "is_feature" => false,
             "title2" => "Ven por la comida, quédate por la música",
-            "date" => ""
+            "date" => "",
+            "id_friend_creator"=> 3,
+            "name_friend_creator"=> "Pedro Gonzalez",
+            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "20",
@@ -492,7 +550,10 @@ Route::get('/lists', function () {
             "description" => "Entre menos ingredientes tiene un platillo… mejor tiene que ser su calidad. Así que para que un nigiri te vuele la cabeza, tiene que tener un extraordinario pescado y un arroz perfectamente bien preparado. En estos restaurantes lo logran.",
             "is_feature" => false,
             "title2" => "Nigiris frescos y bien hechos",
-            "date" => ""
+            "date" => "",
+            "id_friend_creator"=> 3,
+            "name_friend_creator"=> "Pedro Gonzalez",
+            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ]
     ]);
 });
