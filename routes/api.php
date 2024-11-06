@@ -125,15 +125,18 @@ Route::get('/friends/id', function () {
             "description" => "Un experto en tacos (con dos libros publicados sobre este tema) y comida callejera. Pedro es un antojadizo de tiempo completo, director creativo en Paladar, Academy Chair en 50 Best Bars y co-host del programa de Radio Chilango Glotones.",
             "favorites" => [
                 [
-                    "description" => "El restaurante que más he visitado en mi vida El Parnita",
+                    "question" => "El restaurante que más he visitado en mi vida",
+                    "answer" => "El Parnita",
                     "image" => "https://www.rico.guide/wp-content/uploads/2024/05/07-el-parnita.jpg"
                 ],
                 [
-                    "description" => "El trago que mejor preparo Bloody Mary",
+                    "question" => "El trago que mejor preparo",
+                    "answer" => "Bloody Mary",
                     "image" => "https://www.rico.guide/wp-content/uploads/2024/05/08-Bloody-Mary.jpg"
                 ],
                 [
-                    "description" => "Soy experto cocinando Carne en su jugo",
+                    "question" => "Soy experto cocinando",
+                    "answer" => "Carne en su jugo",
                     "image" => "https://www.rico.guide/wp-content/uploads/2024/05/09-Carne-en-su-jugo.jpg"
                 ],
 
@@ -180,6 +183,56 @@ Route::get('/friends/id', function () {
     ]);
 });
 
+Route::get('/restaurants/id', function () {
+    return response()->json([
+        [
+            "id" => "1",
+            "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/00-principal-Al-Andalus-ft.png",
+            "name" => "Al Andalus",
+            "description" => "Comida libanesa tradicional",
+            "address" => "Calle de Mesones 171, Centro Histórico de la Cdad. de México, Centro, Cuauhtémoc, Ciudad de México",
+            "area" => "Roma",
+            "id_area" => "4",
+            "social_link" => "https://instagram.com/@user",
+            "google_maps_link" => "https://www.google.com/maps/place/Babero/@19.419748,-99.1683227,15z/data=!4m2!3m1!1s0x0:0x6681679d37ec0a9c?sa=X&ved=1t:2428&ictx=111",
+            "site_link" => "https://www.rico.guide/restaurantes/fonda-margarita/",
+            "quote_text" => "Ideal para llevar a algún visitante de la ciudad que aterrice en un vuelomuy temprano.",
+            "coords" => "19.428735184680622, -99.12912366932098",
+            "review" => [
+                [
+                "id" => 19,
+                "id_friend" => 43,
+                "url_friend_image" => "https://www.rico.guide/wp-content/uploads/2024/08/13-cristina-colab.jpg",
+                "name_colaborador" => "Juan Agusto",
+                "review" => "Platos oaxaqueños elaborados con mucha dedicación. Es ya un clásico de Coyoacán y se presta para ir a echar unos mezcales. Los festivales de bichos que suelen hacer son una buena oportunidad para explorar platos novedosos.",
+                ],
+                [
+                "id" => 20,
+                "id_friend" => 44,
+                "url_friend_image" => "https://www.rico.guide/wp-content/uploads/2024/08/13-jorge-colab.jpg",
+                "name_colaborador" => "Jorge Lopez",
+                "review" => "Platos oaxaqueños elaborados con mucha dedicación. Es ya un clásico de Coyoacán y se presta para ir a echar unos mezcales. Los festivales de bichos que suelen hacer son una buena oportunidad para explorar platos novedosos.",
+                ]
+            ],
+            "lists" => [
+                [
+                "id" => 22,
+                "name" => "Lista de prueba",
+                "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/00-principal-Al-Andalus-ft.png",
+                "description" => "Esta es una linea de prueba"
+                ],
+                [
+                "id" => 23,
+                "name" => "Lista de prueba 2",
+                "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/00-principal-Al-Andalus-ft.png",
+                "description" => "Esta es una linea de prueba 2"
+                ]
+            ]
+        ]
+    ]);
+});
+
+
 Route::get('/list/id', function () {
     return response()->json([
     [
@@ -191,7 +244,7 @@ Route::get('/list/id', function () {
       "title2" => "Comida de negocios",
       "id_friend_creator" => 3,
       "name_friend_creator" => "Pedro Gonzalez",
-      "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
+      "friend_image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
       "date" => "",
       "restautants" => [
         [
@@ -323,9 +376,9 @@ Route::get('/lists', function () {
             "is_feature" => true,
             "title2" => "Para cenar en domingo",
             "date" => "",
-            "id_friend_creator"=> 3,
-            "name_friend_creator"=> "Pedro Gonzalez",
-            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
+            "id_friend_creator" => 3,
+            "name_friend_creator" => "Pedro Gonzalez",
+            "friend_image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "2",
@@ -335,9 +388,9 @@ Route::get('/lists', function () {
             "is_feature" => false,
             "title2" => "Buenas pastas",
             "date" => "",
-            "id_friend_creator"=> 3,
-            "name_friend_creator"=> "Pedro Gonzalez",
-            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
+            "id_friend_creator" => 3,
+            "name_friend_creator" => "Pedro Gonzalez",
+            "friend_image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "3",
@@ -347,9 +400,9 @@ Route::get('/lists', function () {
             "is_feature" => false,
             "title2" => "Comida de negocios",
             "date" => "",
-            "id_friend_creator"=> 3,
-            "name_friend_creator"=> "Pedro Gonzalez",
-            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
+            "id_friend_creator" => 3,
+            "name_friend_creator" => "Pedro Gonzalez",
+            "friend_image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "4",
@@ -359,9 +412,9 @@ Route::get('/lists', function () {
             "is_feature" => true,
             "title2" => "Para mantener la vida healthy",
             "date" => "",
-            "id_friend_creator"=> 3,
-            "name_friend_creator"=> "Pedro Gonzalez",
-            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
+            "id_friend_creator" => 3,
+            "name_friend_creator" => "Pedro Gonzalez",
+            "friend_image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "5",
@@ -371,9 +424,9 @@ Route::get('/lists', function () {
             "is_feature" => false,
             "title2" => "Con propuesta de arquitectura y diseño",
             "date" => "",
-            "id_friend_creator"=> 3,
-            "name_friend_creator"=> "Pedro Gonzalez",
-            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
+            "id_friend_creator" => 3,
+            "name_friend_creator" => "Pedro Gonzalez",
+            "friend_image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "6",
@@ -383,9 +436,9 @@ Route::get('/lists', function () {
             "is_feature" => false,
             "title2" => "Desayunito post-run",
             "date" => "",
-            "id_friend_creator"=> 3,
-            "name_friend_creator"=> "Pedro Gonzalez",
-            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
+            "id_friend_creator" => 3,
+            "name_friend_creator" => "Pedro Gonzalez",
+            "friend_image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "7",
@@ -395,9 +448,9 @@ Route::get('/lists', function () {
             "is_feature" => false,
             "title2" => "Para armar un plan familiar",
             "date" => "",
-            "id_friend_creator"=> 3,
-            "name_friend_creator"=> "Pedro Gonzalez",
-            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
+            "id_friend_creator" => 3,
+            "name_friend_creator" => "Pedro Gonzalez",
+            "friend_image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "8",
@@ -407,9 +460,9 @@ Route::get('/lists', function () {
             "is_feature" => false,
             "title2" => "Eterna sobremesa",
             "date" => "",
-            "id_friend_creator"=> 3,
-            "name_friend_creator"=> "Pedro Gonzalez",
-            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
+            "id_friend_creator" => 3,
+            "name_friend_creator" => "Pedro Gonzalez",
+            "friend_image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "9",
@@ -419,9 +472,9 @@ Route::get('/lists', function () {
             "is_feature" => false,
             "title2" => "Las mejores milanesas",
             "date" => "",
-            "id_friend_creator"=> 3,
-            "name_friend_creator"=> "Pedro Gonzalez",
-            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
+            "id_friend_creator" => 3,
+            "name_friend_creator" => "Pedro Gonzalez",
+            "friend_image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "10",
@@ -431,9 +484,9 @@ Route::get('/lists', function () {
             "is_feature" => false,
             "title2" => "Lugares para curar la cruda",
             "date" => "",
-            "id_friend_creator"=> 3,
-            "name_friend_creator"=> "Pedro Gonzalez",
-            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
+            "id_friend_creator" => 3,
+            "name_friend_creator" => "Pedro Gonzalez",
+            "friend_image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "11",
@@ -443,9 +496,9 @@ Route::get('/lists', function () {
             "is_feature" => false,
             "title2" => "Para ir a una date",
             "date" => "",
-            "id_friend_creator"=> 3,
-            "name_friend_creator"=> "Pedro Gonzalez",
-            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
+            "id_friend_creator" => 3,
+            "name_friend_creator" => "Pedro Gonzalez",
+            "friend_image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "12",
@@ -455,9 +508,9 @@ Route::get('/lists', function () {
             "is_feature" => false,
             "title2" => "Para ir con amigos",
             "date" => "24 mayo 2024",
-            "id_friend_creator"=> 3,
-            "name_friend_creator"=> "Pedro Gonzalez",
-            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
+            "id_friend_creator" => 3,
+            "name_friend_creator" => "Pedro Gonzalez",
+            "friend_image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "13",
@@ -467,9 +520,9 @@ Route::get('/lists', function () {
             "is_feature" => false,
             "title2" => "Pizza, pizza, pizza",
             "date" => "",
-            "id_friend_creator"=> 3,
-            "name_friend_creator"=> "Pedro Gonzalez",
-            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
+            "id_friend_creator" => 3,
+            "name_friend_creator" => "Pedro Gonzalez",
+            "friend_image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "14",
@@ -479,9 +532,9 @@ Route::get('/lists', function () {
             "is_feature" => false,
             "title2" => "Recorrido de cantinas",
             "date" => "",
-            "id_friend_creator"=> 3,
-            "name_friend_creator"=> "Pedro Gonzalez",
-            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
+            "id_friend_creator" => 3,
+            "name_friend_creator" => "Pedro Gonzalez",
+            "friend_image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "15",
@@ -491,9 +544,9 @@ Route::get('/lists', function () {
             "is_feature" => true,
             "title2" => "Restaurantes cerca delugares turísticos",
             "date" => "",
-            "id_friend_creator"=> 3,
-            "name_friend_creator"=> "Pedro Gonzalez",
-            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
+            "id_friend_creator" => 3,
+            "name_friend_creator" => "Pedro Gonzalez",
+            "friend_image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "16",
@@ -503,9 +556,9 @@ Route::get('/lists', function () {
             "is_feature" => false,
             "title2" => "Restaurantes con buenas cartas de vino",
             "date" => "24 mayo 2024",
-            "id_friend_creator"=> 3,
-            "name_friend_creator"=> "Pedro Gonzalez",
-            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
+            "id_friend_creator" => 3,
+            "name_friend_creator" => "Pedro Gonzalez",
+            "friend_image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "17",
@@ -515,9 +568,9 @@ Route::get('/lists', function () {
             "is_feature" => false,
             "title2" => "Sugerencias para amigos foráneos",
             "date" => "",
-            "id_friend_creator"=> 3,
-            "name_friend_creator"=> "Pedro Gonzalez",
-            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
+            "id_friend_creator" => 3,
+            "name_friend_creator" => "Pedro Gonzalez",
+            "friend_image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "18",
@@ -527,9 +580,9 @@ Route::get('/lists', function () {
             "is_feature" => false,
             "title2" => "Para después de la fiesta",
             "date" => "",
-            "id_friend_creator"=> 3,
-            "name_friend_creator"=> "Pedro Gonzalez",
-            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
+            "id_friend_creator" => 3,
+            "name_friend_creator" => "Pedro Gonzalez",
+            "friend_image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "19",
@@ -539,9 +592,9 @@ Route::get('/lists', function () {
             "is_feature" => false,
             "title2" => "Ven por la comida, quédate por la música",
             "date" => "",
-            "id_friend_creator"=> 3,
-            "name_friend_creator"=> "Pedro Gonzalez",
-            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
+            "id_friend_creator" => 3,
+            "name_friend_creator" => "Pedro Gonzalez",
+            "friend_image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ],
         [
             "id" => "20",
@@ -551,9 +604,9 @@ Route::get('/lists', function () {
             "is_feature" => false,
             "title2" => "Nigiris frescos y bien hechos",
             "date" => "",
-            "id_friend_creator"=> 3,
-            "name_friend_creator"=> "Pedro Gonzalez",
-            "friend_image_url"=> "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
+            "id_friend_creator" => 3,
+            "name_friend_creator" => "Pedro Gonzalez",
+            "friend_image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
         ]
     ]);
 });
