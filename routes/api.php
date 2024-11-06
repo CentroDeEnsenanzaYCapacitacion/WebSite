@@ -178,7 +178,28 @@ Route::get('/friends/id', function () {
                     "area" => "Polanco",
                     "coords" => "19.41376509474552, -99.17100953067903"
                 ],
-            ]
+            ],
+            "lists" => [
+                [
+                  "id" => "1",
+                  "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-cenar-en-domingo.jpg",
+                  "title" => "Para cenar en domingo",
+                  "description" => "El domingo puede ser un día complicado para encontrar negocios abiertos en algunas zonas de la ciudad, sobre todo en la noche. Pero eso no significa que tengas que quedarte con hambre.",
+                  "is_feature" => true,
+                  "title2" => "Para cenar en domingo",
+                  "id_friend_creator" => 3,
+                  "name_friend_creator" => "Pedro Gonzalez"
+                ],
+                [
+                  "id" => "2",
+                  "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/00-principal-guia-pastas.jpg",
+                  "title" => "Buenas pastas",
+                  "description" => "Estos restaurantes son para curarse el antojo de pasta. Lugares que han creado recetas apegadas a la tradición italiana o innovadoras por sus ingredientes atípicos que, sin embargo, le van tan bien a un bocado cremoso.",
+                  "is_feature" => false,
+                  "title2" => "Buenas pastas",
+                  "date" => ""
+                ],
+              ]
         ]
     ]);
 });
