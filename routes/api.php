@@ -230,7 +230,7 @@ Route::get('/restaurants/id', function () {
                 [
                 "id" => 20,
                 "id_friend" => 44,
-                "url_friend_image" => "https://www.rico.guide/wp-content/uploads/2024/08/13-jorge-colab.jpg",
+                "url_friend_image" => "https://www.rico.guide/wp-content/uploads/2024/08/13-cristina-colab.jpg",
                 "name_colaborador" => "Jorge Lopez",
                 "review" => "Platos oaxaqueños elaborados con mucha dedicación. Es ya un clásico de Coyoacán y se presta para ir a echar unos mezcales. Los festivales de bichos que suelen hacer son una buena oportunidad para explorar platos novedosos.",
                 ]
