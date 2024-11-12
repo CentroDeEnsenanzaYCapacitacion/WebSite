@@ -339,7 +339,7 @@ Route::get('/areas', function () {
         [
             "id" => "6",
             "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/01-zona-Cuauhtemoc.jpg",
-            "name" => "Centro",
+            "name" => "Cuauhtémoc",
             "restaurants" => 5
         ],
         [
