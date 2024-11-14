@@ -690,3 +690,101 @@ Route::get('/restaurants', function () {
         ],
     ]);
 });
+
+Route::get('/alldata', function () {
+    return response()->json([
+        "friends" => [
+            [
+                "id" => "1",
+                "image_url" => "https://www.rico.guide/wp-content/uploads/2024/02/05-pedro-colab-1.jpg",
+                "name" => "Pedro Reyes",
+                "reviews" => 28,
+                "lists" => 0
+            ],
+            [
+                "id" => "2",
+                "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/07-mariana-colab-1.jpg",
+                "name" => "Mariana Camacho",
+                "reviews" => 43,
+                "lists" => 0
+            ],
+            [
+                "id" => "3",
+                "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/01-abena-colab-3.jpg",
+                "name" => "Abena Anim-Somuah",
+                "reviews" => 20,
+                "lists" => 0
+            ],
+            [
+                "id" => "4",
+                "image_url" => "https://www.rico.guide/wp-content/uploads/2024/04/02-lilly-colab-1.jpg",
+                "name" => "Liliana López",
+                "reviews" => 70,
+                "lists" => 0
+            ],
+            [
+                "id" => "5",
+                "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/04-mary-gaby-colab-2.jpg",
+                "name" => "Mary Gaby Hubard",
+                "reviews" => 67,
+                "lists" => 5
+            ],
+            [
+                "id" => "6",
+                "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/066-gus-colab.jpg",
+                "name" => "Gustavo Guzmán",
+                "reviews" => 34,
+                "lists" => 0
+            ],
+            [
+                "id" => "7",
+                "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/03-maria-colab-2.jpg",
+                "name" => "María Pellicer",
+                "reviews" => 53,
+                "lists" => 0
+            ],
+            [
+                "id" => "8",
+                "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/12-ana-colab.jpg",
+                "name" => "Ana Lorenzana",
+                "reviews" => 16,
+                "lists" => 0
+            ],
+            [
+                "id" => "9",
+                "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/11-amigo-colab.jpg",
+                "name" => "Anna Condax",
+                "reviews" => 27,
+                "lists" => 0
+            ],
+            [
+                "id" => "10",
+                "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/08-amigo-colab.jpg",
+                "name" => "Joséphine Dorr",
+                "reviews" => 25,
+                "lists" => 0
+            ],
+            [
+                "id" => "11",
+                "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/09-nat-colab.jpg",
+                "name" => "Nathalie Baaklini",
+                "reviews" => 67,
+                "lists" => 0
+            ],
+            [
+                "id" => "12",
+                "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/10-amigo-colab.jpg",
+                "name" => "Toshie Watabe",
+                "reviews" => 85,
+                "lists" => 0
+            ],
+            [
+                "id" => "13",
+                "image_url" => "https://www.rico.guide/wp-content/uploads/2024/08/13-cristina-colab.jpg",
+                "name" => "Cristina Salmerón",
+                "reviews" => 33,
+                "lists" => 0
+            ]
+        ]
+    ]);
+});
