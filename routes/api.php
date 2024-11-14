@@ -219,7 +219,7 @@ Route::get('/restaurants/id', function () {
             "site_link" => "https://www.rico.guide/restaurantes/fonda-margarita/",
             "quote_text" => "Ideal para llevar a algún visitante de la ciudad que aterrice en un vuelomuy temprano.",
             "coords" => "19.428735184680622, -99.12912366932098",
-            "review" => [
+            "reviews" => [
                 [
                 "id" => 19,
                 "id_friend" => 43,
@@ -1164,6 +1164,50 @@ Route::get('/alldata', function () {
                             "area" => "Condesa",
                             "coords" => "19.4330817113784, -99.13620741349538"
                         ]
-                    ]
+                        ],
+                        "reviews" => [
+                            [
+                                "id" => 19,
+                                "id_friend" => 1,
+                                "url_friend_image" => "https://www.rico.guide/wp-content/uploads/2024/08/13-cristina-colab.jpg",
+                                "name_colaborador" => "Juan Agusto",
+                                "review" => "Platos oaxaqueños elaborados con mucha dedicación. Es ya un clásico de Coyoacán y se presta para ir a echar unos mezcales. Los festivales de bichos que suelen hacer son una buena oportunidad para explorar platos novedosos.",
+                                ],
+                                [
+                                "id" => 20,
+                                "id_friend" => 2,
+                                "url_friend_image" => "https://www.rico.guide/wp-content/uploads/2024/08/13-cristina-colab.jpg",
+                                "name_colaborador" => "Jorge Lopez",
+                                "review" => "Platos oaxaqueños elaborados con mucha dedicación. Es ya un clásico de Coyoacán y se presta para ir a echar unos mezcales. Los festivales de bichos que suelen hacer son una buena oportunidad para explorar platos novedosos.",
+                                ],
+                                [
+                                    "id" => 21,
+                                    "id_friend" => 1,
+                                    "url_friend_image" => "https://www.rico.guide/wp-content/uploads/2024/08/13-cristina-colab.jpg",
+                                    "name_colaborador" => "Juan Agusto",
+                                    "review" => "Platos oaxaqueños elaborados con mucha dedicación. Es ya un clásico de Coyoacán y se presta para ir a echar unos mezcales. Los festivales de bichos que suelen hacer son una buena oportunidad para explorar platos novedosos.",
+                                    ],
+                                    [
+                                    "id" => 22,
+                                    "id_friend" => 3,
+                                    "url_friend_image" => "https://www.rico.guide/wp-content/uploads/2024/08/13-cristina-colab.jpg",
+                                    "name_colaborador" => "Jorge Lopez",
+                                    "review" => "Platos oaxaqueños elaborados con mucha dedicación. Es ya un clásico de Coyoacán y se presta para ir a echar unos mezcales. Los festivales de bichos que suelen hacer son una buena oportunidad para explorar platos novedosos.",
+                                    ],
+                                    [
+                                        "id" => 23,
+                                        "id_friend" => 4,
+                                        "url_friend_image" => "https://www.rico.guide/wp-content/uploads/2024/08/13-cristina-colab.jpg",
+                                        "name_colaborador" => "Juan Agusto",
+                                        "review" => "Platos oaxaqueños elaborados con mucha dedicación. Es ya un clásico de Coyoacán y se presta para ir a echar unos mezcales. Los festivales de bichos que suelen hacer son una buena oportunidad para explorar platos novedosos.",
+                                        ],
+                                        [
+                                        "id" => 24,
+                                        "id_friend" => 5,
+                                        "url_friend_image" => "https://www.rico.guide/wp-content/uploads/2024/08/13-cristina-colab.jpg",
+                                        "name_colaborador" => "Jorge Lopez",
+                                        "review" => "Platos oaxaqueños elaborados con mucha dedicación. Es ya un clásico de Coyoacán y se presta para ir a echar unos mezcales. Los festivales de bichos que suelen hacer son una buena oportunidad para explorar platos novedosos.",
+                                        ]
+                        ]
     ]);
 });
