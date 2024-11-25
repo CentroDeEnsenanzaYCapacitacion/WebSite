@@ -695,6 +695,29 @@ Route::get('/restaurants', function () {
 
 Route::get('/alldata', function () {
     return response()->json([
+        "favorites" => [
+            [
+                "id" => 1,
+                "id_friend" => 1,
+                "question" => "El restaurante que más he visitado en mi vida",
+                "answer" => "El Parnita",
+                "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/07-el-parnita.jpg"
+            ],
+            [
+                "id" => 2,
+                "id_friend" => 1,
+                "question" => "El trago que mejor preparo",
+                "answer" => "Bloody Mary",
+                "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/08-Bloody-Mary.jpg"
+            ],
+            [
+                "id" => 3,
+                "id_friend" => 1,
+                "question" => "Soy experto cocinando",
+                "answer" => "Carne en su jugo",
+                "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/09-Carne-en-su-jugo.jpg"
+            ]
+        ],
         "friends" => [
             [
                 "id" => "1",
