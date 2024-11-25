@@ -737,6 +737,7 @@ Route::get('/alldata', function () {
                 "image_url" => "https://www.rico.guide/wp-content/uploads/2024/02/05-pedro-colab-1.jpg",
                 "name" => "Pedro Reyes",
                 "reviews" => 28,
+                "description" => "Un experto en tacos (con dos libros publicados sobre este tema) y comida callejera. Pedro es un antojadizo de tiempo completo, director creativo en Paladar, Academy Chair en 50 Best Bars y co-host del programa de Radio Chilango Glotones.",
                 "lists" => 0
             ],
             [
@@ -744,6 +745,7 @@ Route::get('/alldata', function () {
                 "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/07-mariana-colab-1.jpg",
                 "name" => "Mariana Camacho",
                 "reviews" => 43,
+                "description" => "Un experto en tacos (con dos libros publicados sobre este tema) y comida callejera. Pedro es un antojadizo de tiempo completo, director creativo en Paladar, Academy Chair en 50 Best Bars y co-host del programa de Radio Chilango Glotones.",
                 "lists" => 0
             ],
             [
@@ -751,6 +753,7 @@ Route::get('/alldata', function () {
                 "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/01-abena-colab-3.jpg",
                 "name" => "Abena Anim-Somuah",
                 "reviews" => 20,
+                "description" => "Un experto en tacos (con dos libros publicados sobre este tema) y comida callejera. Pedro es un antojadizo de tiempo completo, director creativo en Paladar, Academy Chair en 50 Best Bars y co-host del programa de Radio Chilango Glotones.",
                 "lists" => 0
             ],
             [
@@ -758,6 +761,7 @@ Route::get('/alldata', function () {
                 "image_url" => "https://www.rico.guide/wp-content/uploads/2024/04/02-lilly-colab-1.jpg",
                 "name" => "Liliana López",
                 "reviews" => 70,
+                "description" => "Un experto en tacos (con dos libros publicados sobre este tema) y comida callejera. Pedro es un antojadizo de tiempo completo, director creativo en Paladar, Academy Chair en 50 Best Bars y co-host del programa de Radio Chilango Glotones.",
                 "lists" => 0
             ],
             [
@@ -765,6 +769,7 @@ Route::get('/alldata', function () {
                 "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/04-mary-gaby-colab-2.jpg",
                 "name" => "Mary Gaby Hubard",
                 "reviews" => 67,
+                "description" => "Un experto en tacos (con dos libros publicados sobre este tema) y comida callejera. Pedro es un antojadizo de tiempo completo, director creativo en Paladar, Academy Chair en 50 Best Bars y co-host del programa de Radio Chilango Glotones.",
                 "lists" => 5
             ],
             [
@@ -772,6 +777,7 @@ Route::get('/alldata', function () {
                 "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/066-gus-colab.jpg",
                 "name" => "Gustavo Guzmán",
                 "reviews" => 34,
+                "description" => "Un experto en tacos (con dos libros publicados sobre este tema) y comida callejera. Pedro es un antojadizo de tiempo completo, director creativo en Paladar, Academy Chair en 50 Best Bars y co-host del programa de Radio Chilango Glotones.",
                 "lists" => 0
             ],
             [
@@ -779,6 +785,7 @@ Route::get('/alldata', function () {
                 "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/03-maria-colab-2.jpg",
                 "name" => "María Pellicer",
                 "reviews" => 53,
+                "description" => "Un experto en tacos (con dos libros publicados sobre este tema) y comida callejera. Pedro es un antojadizo de tiempo completo, director creativo en Paladar, Academy Chair en 50 Best Bars y co-host del programa de Radio Chilango Glotones.",
                 "lists" => 0
             ],
             [
@@ -786,6 +793,7 @@ Route::get('/alldata', function () {
                 "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/12-ana-colab.jpg",
                 "name" => "Ana Lorenzana",
                 "reviews" => 16,
+                "description" => "Un experto en tacos (con dos libros publicados sobre este tema) y comida callejera. Pedro es un antojadizo de tiempo completo, director creativo en Paladar, Academy Chair en 50 Best Bars y co-host del programa de Radio Chilango Glotones.",
                 "lists" => 0
             ],
             [
@@ -793,6 +801,7 @@ Route::get('/alldata', function () {
                 "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/11-amigo-colab.jpg",
                 "name" => "Anna Condax",
                 "reviews" => 27,
+                "description" => "Un experto en tacos (con dos libros publicados sobre este tema) y comida callejera. Pedro es un antojadizo de tiempo completo, director creativo en Paladar, Academy Chair en 50 Best Bars y co-host del programa de Radio Chilango Glotones.",
                 "lists" => 0
             ],
             [
@@ -800,6 +809,7 @@ Route::get('/alldata', function () {
                 "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/08-amigo-colab.jpg",
                 "name" => "Joséphine Dorr",
                 "reviews" => 25,
+                "description" => "Un experto en tacos (con dos libros publicados sobre este tema) y comida callejera. Pedro es un antojadizo de tiempo completo, director creativo en Paladar, Academy Chair en 50 Best Bars y co-host del programa de Radio Chilango Glotones.",
                 "lists" => 0
             ],
             [
@@ -807,6 +817,7 @@ Route::get('/alldata', function () {
                 "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/09-nat-colab.jpg",
                 "name" => "Nathalie Baaklini",
                 "reviews" => 67,
+                "description" => "Un experto en tacos (con dos libros publicados sobre este tema) y comida callejera. Pedro es un antojadizo de tiempo completo, director creativo en Paladar, Academy Chair en 50 Best Bars y co-host del programa de Radio Chilango Glotones.",
                 "lists" => 0
             ],
             [
@@ -814,6 +825,7 @@ Route::get('/alldata', function () {
                 "image_url" => "https://www.rico.guide/wp-content/uploads/2024/07/10-amigo-colab.jpg",
                 "name" => "Toshie Watabe",
                 "reviews" => 85,
+                "description" => "Un experto en tacos (con dos libros publicados sobre este tema) y comida callejera. Pedro es un antojadizo de tiempo completo, director creativo en Paladar, Academy Chair en 50 Best Bars y co-host del programa de Radio Chilango Glotones.",
                 "lists" => 0
             ],
             [
@@ -821,6 +833,7 @@ Route::get('/alldata', function () {
                 "image_url" => "https://www.rico.guide/wp-content/uploads/2024/08/13-cristina-colab.jpg",
                 "name" => "Cristina Salmerón",
                 "reviews" => 33,
+                "description" => "Un experto en tacos (con dos libros publicados sobre este tema) y comida callejera. Pedro es un antojadizo de tiempo completo, director creativo en Paladar, Academy Chair en 50 Best Bars y co-host del programa de Radio Chilango Glotones.",
                 "lists" => 0
             ]
             ],
