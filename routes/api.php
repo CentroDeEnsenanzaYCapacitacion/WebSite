@@ -127,17 +127,17 @@ Route::get('/friends/id', function () {
                 [
                     "question" => "El restaurante que más he visitado en mi vida",
                     "answer" => "El Parnita",
-                    "image" => "https://www.rico.guide/wp-content/uploads/2024/05/07-el-parnita.jpg"
+                    "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/07-el-parnita.jpg"
                 ],
                 [
                     "question" => "El trago que mejor preparo",
                     "answer" => "Bloody Mary",
-                    "image" => "https://www.rico.guide/wp-content/uploads/2024/05/08-Bloody-Mary.jpg"
+                    "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/08-Bloody-Mary.jpg"
                 ],
                 [
                     "question" => "Soy experto cocinando",
                     "answer" => "Carne en su jugo",
-                    "image" => "https://www.rico.guide/wp-content/uploads/2024/05/09-Carne-en-su-jugo.jpg"
+                    "image_url" => "https://www.rico.guide/wp-content/uploads/2024/05/09-Carne-en-su-jugo.jpg"
                 ],
 
             ],
