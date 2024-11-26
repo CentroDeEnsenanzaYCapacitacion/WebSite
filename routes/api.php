@@ -1277,14 +1277,14 @@ Route::get('/alldata', function () {
                 "is_active" => true
             ]
         ],
-        "types_elements" => [
+        "typesElements" => [
             [
                 "id" => 1,
                 "type" => "friends",
                 "is_active" => true
             ]
         ],
-        "list_restaurants" => [
+        "listRestaurants" => [
             [
                 "id" => 1,
                 "list_is" => 1,
