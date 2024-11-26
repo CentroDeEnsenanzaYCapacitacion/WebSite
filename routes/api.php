@@ -1287,7 +1287,7 @@ Route::get('/alldata', function () {
         "listRestaurants" => [
             [
                 "id" => 1,
-                "list_is" => 1,
+                "list_id" => 1,
                 "restaurant_id" => 1
             ]
         ]
