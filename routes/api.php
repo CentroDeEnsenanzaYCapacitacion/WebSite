@@ -1168,6 +1168,10 @@ Route::get('/alldata', function () {
                 "description" => "Comida libanesa tradicional",
                 "address" => "Calle de Mesones 171, Centro Histórico de la Cdad. de México, Centro, Cuauhtémoc, Ciudad de México",
                 "area" => "Roma",
+                "quote_text" => "Sencillo, acogedor y familiar, donde el irresistible olor de la barbacoa te atrapa.",
+                "site_link" => "https://www.google.com",
+                "social_link" => "https://www.facebook.com",
+                "google_maps_link" => "https://www.google.com.mx/maps/place/Big+Jimmy's+Pizza+Coapa/@19.4326077,-99.133208,131188m/data=!3m1!1e3!4m6!3m5!1s0x85ce010014845499:0x820c225d9f8e56dc!8m2!3d19.3114748!4d-99.1243414!16s%2Fg%2F11w3m7y0b0?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
                 "coords" => "19.428735184680622, -99.12912366932098"
             ],
             [
@@ -1177,6 +1181,10 @@ Route::get('/alldata', function () {
                 "description" => "Cocina de brasa del chef Oswaldo Oliva",
                 "address" => "Sinaloa 141, Roma Nte., Cuauhtémoc, Ciudad de México, México",
                 "area" => "Centro",
+                "quote_text" => "Sencillo, acogedor y familiar, donde el irresistible olor de la barbacoa te atrapa.",
+                "site_link" => "https://www.google.com",
+                "social_link" => "https://www.facebook.com",
+                "google_maps_link" => "https://www.google.com.mx/maps/place/Big+Jimmy's+Pizza+Coapa/@19.4326077,-99.133208,131188m/data=!3m1!1e3!4m6!3m5!1s0x85ce010014845499:0x820c225d9f8e56dc!8m2!3d19.3114748!4d-99.1243414!16s%2Fg%2F11w3m7y0b0?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
                 "coords" => "19.420461627491115, -99.17010367116512"
             ],
             [
@@ -1186,6 +1194,10 @@ Route::get('/alldata', function () {
                 "description" => "Una de las mejores pastas en la ciudad",
                 "address" => "Campos Elíseos 218, Polanco, Polanco IV Secc, Miguel Hidalgo",
                 "area" => "Condesa",
+                "quote_text" => "Sencillo, acogedor y familiar, donde el irresistible olor de la barbacoa te atrapa.",
+                "site_link" => "https://www.google.com",
+                "social_link" => "https://www.facebook.com",
+                "google_maps_link" => "https://www.google.com.mx/maps/place/Big+Jimmy's+Pizza+Coapa/@19.4326077,-99.133208,131188m/data=!3m1!1e3!4m6!3m5!1s0x85ce010014845499:0x820c225d9f8e56dc!8m2!3d19.3114748!4d-99.1243414!16s%2Fg%2F11w3m7y0b0?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
                 "coords" => "19.42803827286433, -99.19370423067905"
             ],
             [
@@ -1195,6 +1207,10 @@ Route::get('/alldata', function () {
                 "description" => "Auténtica pizzería napolitana",
                 "address" => "C. Laredo 13, Hipódromo, Cuauhtémoc",
                 "area" => "Polanco",
+                "quote_text" => "Sencillo, acogedor y familiar, donde el irresistible olor de la barbacoa te atrapa.",
+                "site_link" => "https://www.google.com",
+                "social_link" => "https://www.facebook.com",
+                "google_maps_link" => "https://www.google.com.mx/maps/place/Big+Jimmy's+Pizza+Coapa/@19.4326077,-99.133208,131188m/data=!3m1!1e3!4m6!3m5!1s0x85ce010014845499:0x820c225d9f8e56dc!8m2!3d19.3114748!4d-99.1243414!16s%2Fg%2F11w3m7y0b0?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
                 "coords" => "19.41376509474552, -99.17100953067903"
             ],
             [
@@ -1204,6 +1220,10 @@ Route::get('/alldata', function () {
                 "description" => "Comida francesa 24/7",
                 "address" => "Campos Elíseos 218, Polanco, Miguel Hidalgo, Ciudad de México",
                 "area" => "Roma",
+                "quote_text" => "Sencillo, acogedor y familiar, donde el irresistible olor de la barbacoa te atrapa.",
+                "site_link" => "https://www.google.com",
+                "social_link" => "https://www.facebook.com",
+                "google_maps_link" => "https://www.google.com.mx/maps/place/Big+Jimmy's+Pizza+Coapa/@19.4326077,-99.133208,131188m/data=!3m1!1e3!4m6!3m5!1s0x85ce010014845499:0x820c225d9f8e56dc!8m2!3d19.3114748!4d-99.1243414!16s%2Fg%2F11w3m7y0b0?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
                 "coords" => "19.42772359009942, -99.19341404233022"
             ],
             [
@@ -1213,6 +1233,10 @@ Route::get('/alldata', function () {
                 "description" => "Cocina mexicana de Ricardo Muñoz Zurita",
                 "address" => "Isabel La Católica 30, Centro Histórico de la Cdad. de México, Centro, Cuauhtémoc, Ciudad de México",
                 "area" => "Condesa",
+                "quote_text" => "Sencillo, acogedor y familiar, donde el irresistible olor de la barbacoa te atrapa.",
+                "site_link" => "https://www.google.com",
+                "social_link" => "https://www.facebook.com",
+                "google_maps_link" => "https://www.google.com.mx/maps/place/Big+Jimmy's+Pizza+Coapa/@19.4326077,-99.133208,131188m/data=!3m1!1e3!4m6!3m5!1s0x85ce010014845499:0x820c225d9f8e56dc!8m2!3d19.3114748!4d-99.1243414!16s%2Fg%2F11w3m7y0b0?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D",
                 "coords" => "19.4330817113784, -99.13620741349538"
             ]
         ],
