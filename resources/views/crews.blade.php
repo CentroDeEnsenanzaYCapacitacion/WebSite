@@ -22,21 +22,6 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <h3>Chimalhuacán</h3>
-                            <p>AV. NEZAHUALCOYOTL #5 CABECERA MUNICIPAL CHIMALHUACAN</p>
-                            <p>Tel: 55 5113 8136</p>
-                            <p>chimalhuacan@capacitacioncec.edu.mx</p>
-                        </div>
-                        <div class="col-md-6 text-right">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7525.815427049256!2d-98.945559!3d19.416393!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa9515f2a1dd59cf0!2sCEC+CHIMALHUACAN!5e0!3m2!1ses!2s!4v1496867686194" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen=""></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card shadow my-4">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-6">
                             <h3>Ixtapaluca</h3>
                             <p>AV CUAUHTEMOC #1 IXTAPALUCA</p>
                             <p>Tel: 55 5972 3763</p>

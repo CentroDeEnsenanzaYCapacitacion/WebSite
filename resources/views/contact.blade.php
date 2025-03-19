@@ -47,7 +47,6 @@
                         <select name="crew" class="form-control" id="plantel">
                             <option>Ixtapaluca</option>
                             <option>Texcoco</option>
-                            <option>Chimalhuacán</option>
                         </select>
                     </div>
                 </div>
