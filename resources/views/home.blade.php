@@ -26,11 +26,11 @@
             duration:12000,
             easing:'easeOutQuad',
             preset:'zoomer',
-            pagination:$('.img-pags').uCarousel({show:4,shift:0,buttonClass:'btn'}),//'.pagination',true,'<ul></ul>'
+            pagination:$('.img-pags').uCarousel({show:4,shift:0,buttonClass:'btn'}),
             pagNums:false,
             slideshow:12000,
             numStatus:false,
-            banners:false,// fromLeft, fromRight, fromTop, fromBottom
+            banners:false,
             waitBannerAnimation:false,
             progressBar:false
         })
@@ -44,11 +44,8 @@
  <div id="content">
 	<div class="container_12">
         <div class="custom-text" style="margin-top: 250px">
-            <h1 style="text-align: center">Nosotros</h1><br>
-            <p>Bienvenidos al Centro de Enseñanza y Capacitación, una institución con una sólida trayectoria y compromiso con la educación de calidad. Fundada en el año 2004, contamos con más de 10 años de experiencia dedicados a formar y capacitar a estudiantes con altos estándares académicos y profesionales.</p>
-            <p>A lo largo de nuestra historia, hemos tenido el privilegio de graduar a más de 4,000 alumnos, quienes ahora se desempeñan exitosamente en diversos ámbitos laborales, aplicando los conocimientos y habilidades adquiridas durante su formación con nosotros.</p>
-            <p>Nuestro enfoque educativo se basa en principios de excelencia, innovación y responsabilidad, asegurando que cada estudiante reciba una formación integral que les permita enfrentar los retos del mundo moderno con confianza y competencia.</p>
-            <p>En el Centro de Enseñanza y Capacitación, creemos en el potencial de cada individuo y trabajamos incansablemente para proporcionarles las herramientas necesarias para alcanzar sus metas. ¡Únete a nosotros y sé parte de una comunidad comprometida con el crecimiento y el éxito!</p>
+            <h1 style="text-align: center">{{ $mvv_data[0]->name }}</h1><br>
+            {!! nl2br(e($mvv_data[0]->description)) !!}
         </div>
 		<div class="wrapper">
 			<div class="card_container" style="margin-right: 30px;margin-left: 30px;">
