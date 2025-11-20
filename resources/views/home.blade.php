@@ -153,7 +153,7 @@
 	target: '#n8n-chat',
 	mode: 'window',
 	chatInputKey: 'chatInput',
-    showinput: true,
+    showInput: true,
 	chatSessionKey: 'sessionId',
 	loadPreviousSession: true,
 	metadata: {},
@@ -172,6 +172,7 @@
 	enableStreaming: false,
 });
 </script>
+<div id="n8n-chat"></div>
 @include('includes.footer')
 </body>
 </html>
