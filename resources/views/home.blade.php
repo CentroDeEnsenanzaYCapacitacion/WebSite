@@ -145,7 +145,7 @@
 	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
 
 	createChat({
-	webhookUrl: 'http://localhost:5678/webhook/8c92e2c9-ef9a-4352-af2c-96a5158b3e03/chat',
+	webhookUrl: 'http://n8n-4fov.onrender.com/webhook/8c92e2c9-ef9a-4352-af2c-96a5158b3e03/chat',
 	webhookConfig: {
 		method: 'POST',
 		headers: {}
