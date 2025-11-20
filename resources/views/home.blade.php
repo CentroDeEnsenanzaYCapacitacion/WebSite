@@ -140,6 +140,37 @@
 	 </div>
  </aside>
 <!--==============================footer=================================-->
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<script type="module">
+	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+	createChat({
+	webhookUrl: 'http://localhost:5678/webhook/8c92e2c9-ef9a-4352-af2c-96a5158b3e03/chat',
+	webhookConfig: {
+		method: 'POST',
+		headers: {}
+	},
+	target: '#n8n-chat',
+	mode: 'window',
+	chatInputKey: 'chatInput',
+	chatSessionKey: 'sessionId',
+	loadPreviousSession: true,
+	metadata: {},
+	showWelcomeScreen: false,
+	defaultLanguage: 'es',
+	initialMessages: [],
+	i18n: {
+		es: {
+			title: '¡Hola! 👋',
+			subtitle: "Bienvenido a CEC! Soy Nubarel, en que te puedo ayudar?.",
+			footer: '',
+			getStarted: 'New Conversation',
+			inputPlaceholder: 'mensaje..',
+		},
+	},
+	enableStreaming: false,
+});
+</script>
 @include('includes.footer')
 </body>
 </html>
