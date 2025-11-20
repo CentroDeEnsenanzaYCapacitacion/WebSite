@@ -161,8 +161,8 @@
 	initialMessages: [],
 	i18n: {
 		es: {
-			title: '¡Hola! 👋',
-			subtitle: "Bienvenido a CEC! Soy Nubarel, en que te puedo ayudar?.",
+			title: '¡Hola! 👋 Soy Nubarel',
+			subtitle: "Bienvenido a CEC! en que te puedo ayudar?.",
 			footer: '',
 			getStarted: 'New Conversation',
 			inputPlaceholder: 'mensaje..',
