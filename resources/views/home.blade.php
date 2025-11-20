@@ -153,6 +153,7 @@
 	target: '#n8n-chat',
 	mode: 'window',
 	chatInputKey: 'chatInput',
+    showinput: true,
 	chatSessionKey: 'sessionId',
 	loadPreviousSession: true,
 	metadata: {},
