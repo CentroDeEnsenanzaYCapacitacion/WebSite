@@ -14,7 +14,7 @@
         <div class="container_12">
             <div class="row feature design justify-content-center">
                 <div class="col-md-8 text-center">
-                    <div class="title">Visita cualquiera de nuestros 3 planteles</div>
+                    <div class="title">Visita cualquiera de nuestros planteles</div>
                     <p>En CEC queremos estar cerca de ti. Por ese motivo continuamos expandiéndonos por donde tú más necesitas, para poner a tu alcance la excelencia educativa y que de este modo logres todas tus metas.</p>
                 </div>
             </div>
