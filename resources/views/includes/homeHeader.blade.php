@@ -1,7 +1,7 @@
 <div class="block1">
     <div class="main extra_wrapper">
           <ul class="tools">
-               <li>bachillerato</li>
+               <li>bachilleratopp</li>
                <li>licenciatura</li>
                <!-- <li><a href="#" class="links">quick links</a></li> -->
                {{-- <li><a href="#">área de alumno</a></li> --}}
