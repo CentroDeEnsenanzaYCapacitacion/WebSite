@@ -1,0 +1,372 @@
+version: 2.1
+
+jobs:
+  build-development:
+    docker:
+      - image: cimg/php:8.2
+
+    steps:
+      - checkout
+
+      - run:
+          name: Detect dependency changes (DEV)
+          command: |
+            if git rev-parse HEAD^ >/dev/null 2>&1; then
+              CHANGED_FILES="$(git diff --name-only HEAD^ HEAD)"
+              echo "Modified files:"
+              echo "$CHANGED_FILES"
+              if echo "$CHANGED_FILES" | grep -E '(^|/)composer\.json$|(^|/)composer\.lock$' >/dev/null; then
+                echo "Dependency changes detected."
+                echo 'COMPOSER_CHANGED=yes' >> "$BASH_ENV"
+              else
+                echo "No changes in composer.json / composer.lock."
+                echo 'COMPOSER_CHANGED=no' >> "$BASH_ENV"
+              fi
+            else
+              echo "No previous commit (first build); assuming dependency changes."
+              echo 'COMPOSER_CHANGED=yes' >> "$BASH_ENV"
+            fi
+
+      - run:
+          name: Install PHP dependencies (composer, DEV)
+          command: |
+            echo "Running composer install (DEV)"
+            composer install \
+              --no-interaction \
+              --prefer-dist \
+              --optimize-autoloader
+            source "$BASH_ENV"
+            echo "$COMPOSER_CHANGED" > .composer_changed
+
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+  build-staging:
+    docker:
+      - image: cimg/php:8.2
+
+    steps:
+      - checkout
+
+      - run:
+          name: Detect dependency changes (STAGING)
+          command: |
+            if git rev-parse HEAD^ >/dev/null 2>&1; then
+              CHANGED_FILES="$(git diff --name-only HEAD^ HEAD)"
+              echo "Modified files:"
+              echo "$CHANGED_FILES"
+              if echo "$CHANGED_FILES" | grep -E '(^|/)composer\.json$|(^|/)composer\.lock$' >/dev/null; then
+                echo "Dependency changes detected."
+                echo 'COMPOSER_CHANGED=yes' >> "$BASH_ENV"
+              else
+                echo "No changes in composer.json / composer.lock."
+                echo 'COMPOSER_CHANGED=no' >> "$BASH_ENV"
+              fi
+            else
+              echo "No previous commit (first build); assuming dependency changes."
+              echo 'COMPOSER_CHANGED=yes' >> "$BASH_ENV"
+            fi
+
+      - run:
+          name: Install PHP dependencies (composer, STAGING)
+          command: |
+            echo "Running composer install (STAGING)"
+            composer install \
+              --no-interaction \
+              --prefer-dist \
+              --optimize-autoloader
+            source "$BASH_ENV"
+            echo "$COMPOSER_CHANGED" > .composer_changed
+
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+
+  deploy-development:
+    docker:
+      - image: cimg/php:8.2
+
+    steps:
+      - attach_workspace:
+          at: .
+
+      - run:
+          name: Restore COMPOSER_CHANGED flag (DEV)
+          command: |
+            if [ -f .composer_changed ]; then
+              export COMPOSER_CHANGED="$(cat .composer_changed)"
+              echo "COMPOSER_CHANGED from workspace: $COMPOSER_CHANGED"
+            else
+              echo ".composer_changed not found, assuming yes"
+              export COMPOSER_CHANGED=yes
+            fi
+            echo "COMPOSER_CHANGED=$COMPOSER_CHANGED" >> "$BASH_ENV"
+
+      - run:
+          name: Run migrations (DEV)
+          command: |
+            echo "Running migrations against DEV DB"
+            export DB_HOST="$DB_HOST_DEV"
+            export DB_PORT="$DB_PORT_DEV"
+            export DB_DATABASE="$DB_DATABASE_DEV"
+            export DB_USERNAME="$DB_USERNAME_DEV"
+            export DB_PASSWORD="$DB_PASSWORD_DEV"
+
+            php artisan migrate --force --no-interaction
+
+      - run:
+          name: List root directory
+          command: ls -la
+
+      - run:
+          name: List public directory
+          command: |
+            ls -la public || echo "public directory does not exist"
+
+      - run:
+          name: List public/assets directory
+          command: |
+            ls -la public/assets || echo "public/assets directory does not exist"
+
+      - run:
+          name: Install lftp
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y lftp
+
+      - run:
+          name: Sync files (DEV, excluding public/, vendor and others)
+          command: |
+            lftp -u "$ftp_username","$ftp_password" "$ftp_url" -e "set ssl:verify-certificate no; mirror -R . $intra_ftp_dev_path \
+              --verbose \
+              --exclude-glob public/** \
+              --exclude-glob vendor/** \
+              --exclude-glob .git/** \
+              --exclude-glob .circleci/** \
+              --exclude-glob clear_cache_dev.php \
+              --exclude-glob clear_cache_prod.php \
+              --exclude-glob .env \
+              --exclude-glob .env.prod \
+              --exclude-glob .env.dev \
+              --exclude-glob .env.example \
+              --exclude-glob composer.lock \
+              --exclude-glob storage/logs/** \
+              --exclude-glob config/local.php; \
+              quit"
+
+      - run:
+          name: Sync vendor (DEV)
+          command: |
+            source "$BASH_ENV"
+            if [ "$COMPOSER_CHANGED" = "yes" ]; then
+              echo "COMPOSER_CHANGED=yes - syncing vendor/ (DEV)"
+              lftp -u "$ftp_username","$ftp_password" "$ftp_url" -e "set ssl:verify-certificate no; mirror -R vendor $intra_ftp_dev_path/vendor \
+                --verbose; \
+                quit"
+            else
+              echo "COMPOSER_CHANGED=no - vendor/ not synced (DEV)"
+            fi
+
+      - run:
+          name: Update assets (DEV)
+          command: |
+            lftp -u "$ftp_username","$ftp_password" "$ftp_url" -e "set ssl:verify-certificate no; mirror -R $local_dir $intra_ftp_dev_assets_path \
+              --verbose \
+              --exclude-glob img/carousel/**; \
+              quit"
+
+      - run:
+          name: Clear Laravel cache (DEV)
+          command: |
+            if [ -n "$CLEAR_CACHE_DEV_URL" ] && [ -n "$CLEAR_CACHE_TOKEN_DEV" ]; then
+              echo "Calling DEV cache clear endpoint..."
+              curl -sS "${CLEAR_CACHE_DEV_URL}?token=${CLEAR_CACHE_TOKEN_DEV}" || echo "Failed to clear DEV cache"
+            else
+              echo "CLEAR_CACHE_DEV_URL or CLEAR_CACHE_TOKEN_DEV not set, skipping cache clear (DEV)"
+            fi
+
+
+  build-production:
+    docker:
+      - image: cimg/php:8.2
+
+    steps:
+      - checkout
+
+      - run:
+          name: Detect dependency changes (PROD)
+          command: |
+            if git rev-parse HEAD^ >/dev/null 2>&1; then
+              CHANGED_FILES="$(git diff --name-only HEAD^ HEAD)"
+              echo "Modified files:"
+              echo "$CHANGED_FILES"
+              if echo "$CHANGED_FILES" | grep -E '(^|/)composer\.json$|(^|/)composer\.lock$' >/dev/null; then
+                echo "Dependency changes detected."
+                echo 'COMPOSER_CHANGED=yes' >> "$BASH_ENV"
+              else
+                echo "No changes in composer.json / composer.lock."
+                echo 'COMPOSER_CHANGED=no' >> "$BASH_ENV"
+              fi
+            else
+              echo "No previous commit (first build); assuming dependency changes."
+              echo 'COMPOSER_CHANGED=yes' >> "$BASH_ENV"
+            fi
+
+      - run:
+          name: Install PHP dependencies (composer, PROD)
+          command: |
+            echo "Running composer install (PROD)"
+            composer install \
+              --no-dev \
+              --no-interaction \
+              --prefer-dist \
+              --optimize-autoloader
+            source "$BASH_ENV"
+            echo "$COMPOSER_CHANGED" > .composer_changed
+
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+
+  deploy-production:
+    docker:
+      - image: cimg/php:8.2
+
+    steps:
+      - attach_workspace:
+          at: .
+
+      - run:
+          name: Restore COMPOSER_CHANGED flag (PROD)
+          command: |
+            if [ -f .composer_changed ]; then
+              export COMPOSER_CHANGED="$(cat .composer_changed)"
+              echo "COMPOSER_CHANGED from workspace: $COMPOSER_CHANGED"
+            else
+              echo ".composer_changed not found, assuming yes"
+              export COMPOSER_CHANGED=yes
+            fi
+            echo "COMPOSER_CHANGED=$COMPOSER_CHANGED" >> "$BASH_ENV"
+
+      - run:
+          name: Run migrations (PROD)
+          command: |
+            echo "Running migrations against PROD DB"
+            export DB_HOST="$DB_HOST_PROD"
+            export DB_PORT="$DB_PORT_PROD"
+            export DB_DATABASE="$DB_DATABASE_PROD"
+            export DB_USERNAME="$DB_USERNAME_PROD"
+            export DB_PASSWORD="$DB_PASSWORD_PROD"
+
+            php artisan migrate --force --no-interaction
+
+      - run:
+          name: List root directory
+          command: ls -la
+
+      - run:
+          name: List public directory
+          command: |
+            ls -la public || echo "public directory does not exist"
+
+      - run:
+          name: List public/assets directory
+          command: |
+            ls -la public/assets || echo "public/assets directory does not exist"
+
+      - run:
+          name: Install lftp
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y lftp
+
+      - run:
+          name: Sync files (PROD, excluding public/, vendor and others)
+          command: |
+            lftp -u "$ftp_username","$ftp_password" "$ftp_url" -e "set ssl:verify-certificate no; mirror -R . $intra_ftp_prod_path \
+              --verbose \
+              --exclude-glob public/** \
+              --exclude-glob vendor/** \
+              --exclude-glob .git/** \
+              --exclude-glob .circleci/** \
+              --exclude-glob clear_cache_dev.php \
+              --exclude-glob clear_cache_prod.php \
+              --exclude-glob .env \
+              --exclude-glob .env.prod \
+              --exclude-glob .env.dev \
+              --exclude-glob .env.example \
+              --exclude-glob composer.lock \
+              --exclude-glob storage/logs/** \
+              --exclude-glob config/local.php; \
+              quit"
+
+      - run:
+          name: Sync vendor (PROD)
+          command: |
+            source "$BASH_ENV"
+            if [ "$COMPOSER_CHANGED" = "yes" ]; then
+              echo "COMPOSER_CHANGED=yes - syncing vendor/ (PROD)"
+              lftp -u "$ftp_username","$ftp_password" "$ftp_url" -e "set ssl:verify-certificate no; mirror -R vendor $intra_ftp_prod_path/vendor \
+                --verbose; \
+                quit"
+            else
+              echo "COMPOSER_CHANGED=no - vendor/ not synced (PROD)"
+            fi
+
+      - run:
+          name: Update assets (PROD)
+          command: |
+            lftp -u "$ftp_username","$ftp_password" "$ftp_url" -e "set ssl:verify-certificate no; mirror -R $local_dir $intra_ftp_prod_assets_path \
+              --verbose \
+              --exclude-glob img/carousel/**; \
+              quit"
+
+      - run:
+          name: Clear Laravel cache (PROD)
+          command: |
+            if [ -n "$CLEAR_CACHE_PROD_URL" ] && [ -n "$CLEAR_CACHE_TOKEN_PROD" ]; then
+              echo "Calling PROD cache clear endpoint..."
+              curl -sS "${CLEAR_CACHE_PROD_URL}?token=${CLEAR_CACHE_PROD_TOKEN}" || echo "Failed to clear PROD cache"
+            else
+              echo "CLEAR_CACHE_PROD_URL or CLEAR_CACHE_TOKEN_PROD not set, skipping cache clear (PROD)"
+            fi
+
+
+
+workflows:
+  deploy-on-branches:
+    jobs:
+      - build-development:
+          filters:
+            branches:
+              only: development
+
+      - deploy-development:
+          requires:
+            - build-development
+          filters:
+            branches:
+              only: development
+
+      - build-staging:
+          filters:
+            branches:
+              only: staging
+
+      - build-production:
+          filters:
+            branches:
+              only: main
+
+      - deploy-production:
+          requires:
+            - build-production
+          filters:
+            branches:
+              only: main
