@@ -22,7 +22,9 @@ Route::get('/', [HomeController::class,'home'])->name('home');
 
 Route::get('/contact', [ContactController::class,'contact'])->name('contact');
 
-Route::post('/contact', [ContactController::class,'contactPost'])->name('contact.post');
+Route::post('/contact', [ContactController::class,'contactPost'])
+    ->middleware('throttle:3,10')
+    ->name('contact.post');
 
 Route::get('/course', [CourseController::class,'showCourse'])->name('course');
 

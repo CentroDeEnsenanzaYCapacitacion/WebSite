@@ -19,22 +19,35 @@ class ContactController extends Controller
 
     public function contactPost(Request $request)
     {
-        $details = [
-            'name' => $request->input('name'),
-            'cel' => $request->input('cel'),
-            'mail' => $request->input('mail'),
-            'crew' => $request->input('crew'),
-            'course' => $request->input('course'),
-            'msg' => $request->input('msg')
-        ];
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'cel' => 'required|string|max:20',
+            'mail' => 'required|email|max:255',
+            'crew' => 'required|string|exists:crews,name',
+            'course' => 'required|string|max:255',
+            'msg' => 'required|string|max:1000'
+        ]);
 
-        $crew_mail = Crew::where('name', $request->input('crew'))->first();
+        $crew_mail = Crew::where('name', $validated['crew'])->first();
+
+        if (!$crew_mail || !$crew_mail->mail) {
+            return back()->with('error', 'No se encontró el plantel seleccionado.');
+        }
+
+        $details = [
+            'name' => $validated['name'],
+            'cel' => $validated['cel'],
+            'mail' => $validated['mail'],
+            'crew' => $validated['crew'],
+            'course' => $validated['course'],
+            'msg' => $validated['msg']
+        ];
 
         try {
             Mail::to($crew_mail->mail)->send(new WebContact($details));
             return back()->with('success', '¡Correo enviado correctamente!, nos pondremos en contacto con usted en la mayor brevedad posible.');
         } catch (Exception $e) {
-            return back()->with('error', 'Hubo un problema al enviar el correo: ' . $e->getMessage());
+            return back()->with('error', 'Hubo un problema al enviar el correo. Por favor, intente nuevamente.');
         }
     }
 }
