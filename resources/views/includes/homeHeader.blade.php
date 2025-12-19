@@ -1,10 +1,10 @@
 <div class="block1">
     <div class="main extra_wrapper">
           <ul class="tools">
-               <li>bachilleratoPROBANDOOOO</li>
+               <li>bachillerato</li>
                <li>licenciatura</li>
                <!-- <li><a href="#" class="links">quick links</a></li> -->
-               {{-- <li><a href="#">área de alumno</a></li> --}}
+               <li><a href="#">área de alumno</a></li>
           </ul>
     </div>
 </div>
