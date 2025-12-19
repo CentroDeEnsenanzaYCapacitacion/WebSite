@@ -7,13 +7,36 @@ use App\Models\Course;
 use App\Models\Crew;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
     public function contact()
     {
-        $courses = Course::all();
+        $courses = Course::all()
+            ->map(function ($course) {
+                $normalized = Str::of($course->name)
+                    ->lower()
+                    ->ascii()
+                    ->trim()
+                    ->replaceMatches('/\s+/', ' ')
+                    ->value();
+
+                if (Str::contains($normalized, 'bachillerato')) {
+                    $normalized = 'bachillerato';
+                    $name = 'Bachillerato';
+                } else {
+                    $name = $course->name;
+                }
+
+                return [
+                    'name' => $name,
+                    'normalized' => $normalized,
+                ];
+            })
+            ->unique('normalized')
+            ->values();
         return view('contact', compact('courses'));
     }
 

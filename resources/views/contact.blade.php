@@ -55,7 +55,7 @@
                     <div>
                         <select name="course" class="form-control" id="curso">
                             @foreach ($courses as $course)
-                                <option>{{ $course->name }}</option>
+                                <option>{{ $course['name'] }}</option>
                             @endforeach
                         </select>
                     </div>
