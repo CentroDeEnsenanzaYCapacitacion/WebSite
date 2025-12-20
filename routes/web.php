@@ -1,10 +1,5 @@
 <?php
 
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\CourseController;
-use App\Http\Controllers\CrewsController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\OfferController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,26 +7,14 @@ use Illuminate\Support\Facades\Route;
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
+| Archivo principal de rutas web. Las rutas están modularizadas en
+| archivos separados dentro de la carpeta routes/web/ para mejor
+| organización y mantenibilidad.
 |
 */
 
-Route::get('/', [HomeController::class,'home'])->name('home');
+// Rutas públicas del sitio web
+require __DIR__.'/web/public.php';
 
-Route::get('/contact', [ContactController::class,'contact'])->name('contact');
-
-Route::post('/contact', [ContactController::class,'contactPost'])
-    ->middleware('throttle:3,10')
-    ->name('contact.post');
-
-Route::get('/course', [CourseController::class,'showCourse'])->name('course');
-
-Route::get('/crews', [CrewsController::class,'show'])->name('crews');
-
-Route::get('/secondary', [OfferController::class,'showOffer'])->name('secondary');
-
-// Route::get('/noticec', function () {
-//     return view('cecnews');
-// })->name('cecnews');
+// Rutas del área de estudiantes
+require __DIR__.'/web/student.php';
