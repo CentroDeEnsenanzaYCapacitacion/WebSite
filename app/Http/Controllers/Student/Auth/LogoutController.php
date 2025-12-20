@@ -13,7 +13,7 @@ class LogoutController extends Controller
      */
     public function logout(Request $request)
     {
-        Auth::logout();
+        Auth::guard('student')->logout();
 
         $request->session()->invalidate();
         $request->session()->regenerateToken();

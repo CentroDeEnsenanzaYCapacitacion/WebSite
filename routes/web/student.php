@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('student')->name('student.')->group(function () {
 
     // Rutas para invitados (no autenticados)
-    Route::middleware('guest')->group(function () {
+    Route::middleware('guest:student')->group(function () {
         Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
         Route::post('/login', [LoginController::class, 'login'])
             ->middleware('throttle:5,1')
@@ -26,7 +26,7 @@ Route::prefix('student')->name('student.')->group(function () {
     });
 
     // Rutas protegidas (requieren autenticación)
-    Route::middleware('auth')->group(function () {
+    Route::middleware('auth:student')->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
         Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
     });

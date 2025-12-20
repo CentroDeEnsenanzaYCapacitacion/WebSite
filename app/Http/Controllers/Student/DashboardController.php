@@ -12,6 +12,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('student.dashboard');
+        $student = auth('student')->user()->load(['course', 'crew']);
+        return view('student.dashboard', compact('student'));
     }
 }

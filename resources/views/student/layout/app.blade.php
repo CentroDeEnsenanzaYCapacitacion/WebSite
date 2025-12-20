@@ -14,14 +14,16 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: #f7fafc;
+            background: linear-gradient(135deg, #fed7aa 0%, #fdba74 50%, #fb923c 100%);
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
         /* Header / Navbar */
         .navbar {
-            background: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, #ffffff 0%, #fff7ed 100%);
+            box-shadow: 0 4px 6px rgba(249, 115, 22, 0.1);
             padding: 0;
         }
 
@@ -73,7 +75,7 @@
         }
 
         .btn-logout {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
             color: white;
             border: none;
             padding: 10px 20px;
@@ -86,7 +88,7 @@
 
         .btn-logout:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
         }
 
         /* Main Content Area */
@@ -94,23 +96,26 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 32px 24px;
+            flex: 1;
         }
 
         .content-card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            padding: 32px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(249, 115, 22, 0.15);
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
         }
 
         /* Footer */
         .footer {
-            background: white;
-            border-top: 1px solid #e2e8f0;
-            margin-top: 48px;
-            padding: 24px;
+            background: linear-gradient(135deg, #ffffff 0%, #fff7ed 100%);
+            border-top: 2px solid rgba(249, 115, 22, 0.2);
+            margin-top: auto;
+            padding: 32px 24px;
             text-align: center;
-            color: #718096;
+            color: #9a3412;
             font-size: 14px;
         }
 
@@ -146,7 +151,7 @@
             </div>
             <div class="navbar-user">
                 <div class="user-info">
-                    <div class="user-name">{{ Auth::user()->name }}</div>
+                    <div class="user-name">{{ Auth::guard('student')->user()->name }} {{ Auth::guard('student')->user()->surnames }}</div>
                     <div class="user-role">Estudiante</div>
                 </div>
                 <form action="{{ route('student.logout') }}" method="POST">

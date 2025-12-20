@@ -14,12 +14,28 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            background-image: url('{{ asset('assets/img/bg01.jpg') }}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 20px;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.8) 0%, rgba(234, 88, 12, 0.8) 100%);
+            z-index: 0;
         }
 
         .login-container {
@@ -29,6 +45,8 @@
             width: 100%;
             max-width: 440px;
             padding: 48px 40px;
+            position: relative;
+            z-index: 1;
         }
 
         .logo-section {

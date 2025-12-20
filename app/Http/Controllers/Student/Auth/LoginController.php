@@ -29,7 +29,7 @@ class LoginController extends Controller
 
         $remember = $request->boolean('remember');
 
-        if (Auth::attempt($credentials, $remember)) {
+        if (Auth::guard('student')->attempt($credentials, $remember)) {
             $request->session()->regenerate();
 
             return redirect()->intended(route('student.dashboard'));
