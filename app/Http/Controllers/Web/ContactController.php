@@ -20,6 +20,7 @@ class ContactController extends Controller
             'secundaria ingles',
             'bach inf ing',
             'sec inf ing',
+            'informatica ingles',
             'gastronomia',
             'gastronimia',
         ];
