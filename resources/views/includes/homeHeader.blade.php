@@ -4,7 +4,7 @@
                <li>bachillerato</li>
                <li>licenciatura</li>
                <!-- <li><a href="#" class="links">quick links</a></li> -->
-               {{-- <li><a href="#">área de alumno</a></li> --}}
+               <li><a href="{{ route('student.login') }}">área de alumno</a></li>
           </ul>
     </div>
 </div>
