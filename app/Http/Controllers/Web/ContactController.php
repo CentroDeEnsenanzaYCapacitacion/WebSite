@@ -16,15 +16,12 @@ class ContactController extends Controller
     public function contact()
     {
         $excludedCourses = [
-            'secundaria/informatica',
             'secundaria informatica',
-            'secundaria/ingles',
             'secundaria ingles',
-            'bach/inf/ing',
             'bach inf ing',
-            'sec/inf/inf',
-            'sec inf inf',
+            'sec inf ing',
             'gastronomia',
+            'gastronimia',
         ];
 
         $courses = Course::all()
@@ -32,8 +29,10 @@ class ContactController extends Controller
                 $normalized = Str::of($course->name)
                     ->lower()
                     ->ascii()
-                    ->trim()
+                    // Strip punctuation/separators so variants like "Sec. / Inf. / Ing." normalize the same
+                    ->replaceMatches('/[^a-z0-9]+/', ' ')
                     ->replaceMatches('/\s+/', ' ')
+                    ->trim()
                     ->value();
 
                 if (Str::contains($normalized, 'bachillerato')) {
@@ -70,7 +69,7 @@ class ContactController extends Controller
         $crew_mail = Crew::where('name', $validated['crew'])->first();
 
         if (!$crew_mail || !$crew_mail->mail) {
-            return back()->with('error', 'No se encontró el plantel seleccionado.');
+            return back()->with('error', 'No se encontr¢ el plantel seleccionado.');
         }
 
         $details = [
@@ -84,7 +83,7 @@ class ContactController extends Controller
 
         try {
             Mail::to($crew_mail->mail)->send(new WebContact($details));
-            return back()->with('success', '¡Correo enviado correctamente!, nos pondremos en contacto con usted en la mayor brevedad posible.');
+            return back()->with('success', '­Correo enviado correctamente!, nos pondremos en contacto con usted en la mayor brevedad posible.');
         } catch (Exception $e) {
             return back()->with('error', 'Hubo un problema al enviar el correo. Por favor, intente nuevamente.');
         }
