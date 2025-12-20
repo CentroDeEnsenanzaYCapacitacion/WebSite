@@ -15,6 +15,18 @@ class ContactController extends Controller
 {
     public function contact()
     {
+        $excludedCourses = [
+            'secundaria/informatica',
+            'secundaria informatica',
+            'secundaria/ingles',
+            'secundaria ingles',
+            'bach/inf/ing',
+            'bach inf ing',
+            'sec/inf/inf',
+            'sec inf inf',
+            'gastronomia',
+        ];
+
         $courses = Course::all()
             ->map(function ($course) {
                 $normalized = Str::of($course->name)
@@ -35,6 +47,9 @@ class ContactController extends Controller
                     'name' => $name,
                     'normalized' => $normalized,
                 ];
+            })
+            ->reject(function ($course) use ($excludedCourses) {
+                return in_array($course['normalized'], $excludedCourses, true);
             })
             ->unique('normalized')
             ->values();
