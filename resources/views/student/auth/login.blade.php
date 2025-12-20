@@ -14,7 +14,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -94,8 +94,8 @@
 
         .form-group input[type="email"]:focus,
         .form-group input[type="password"]:focus {
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            border-color: #f97316;
+            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
         }
 
         .remember-section {
@@ -121,7 +121,7 @@
         .btn-login {
             width: 100%;
             padding: 14px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
             color: white;
             border: none;
             border-radius: 8px;
@@ -129,12 +129,12 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
         }
 
         .btn-login:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(102, 126, 234, 0.5);
+            box-shadow: 0 6px 16px rgba(249, 115, 22, 0.5);
         }
 
         .btn-login:active {
@@ -149,7 +149,7 @@
         }
 
         .back-link a {
-            color: #667eea;
+            color: #f97316;
             text-decoration: none;
             font-size: 14px;
             font-weight: 500;
@@ -157,7 +157,7 @@
         }
 
         .back-link a:hover {
-            color: #764ba2;
+            color: #ea580c;
         }
 
         @media (max-width: 480px) {
