@@ -1,11 +1,11 @@
-/* Contenedor principal del formulario */
+
 .container_12 {
     max-width: 1140px;
     margin: 0 auto;
     padding: 0 15px;
 }
 
-/* Títulos y encabezados */
+
 h2 {
     font-size: 40px;
     margin-bottom: 1rem;
@@ -35,19 +35,19 @@ h2 {
     background-color: #ff6900 !important;
 }
 
-/* Grupo de formulario */
+
 .form-group {
     margin-bottom: 1rem;
 }
 
-/* Etiquetas del formulario */
+
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: bold;
 }
 
-/* Campos de entrada del formulario */
+
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -59,7 +59,7 @@ h2 {
     box-sizing: border-box;
 }
 
-/* Botón de enviar */
+
 .btn {
     display: inline-block;
     font-weight: 400;
@@ -81,7 +81,7 @@ h2 {
     border-color: #d39e00;
 }
 
-/* Alineación horizontal de elementos del formulario */
+
 .d-flex {
     display: flex;
     justify-content: space-between;
@@ -93,7 +93,7 @@ h2 {
     max-width: 48%;
 }
 
-/* Ajuste de márgenes y rellenos */
+
 .mt-4 {
     margin-top: 1.5rem;
 }
@@ -106,7 +106,7 @@ h2 {
     margin-top: 1rem;
 }
 
-/* Centrado de texto */
+
 .text-center {
     text-align: center;
 }

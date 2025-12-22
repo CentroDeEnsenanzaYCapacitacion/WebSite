@@ -9,17 +9,13 @@ use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
 {
-    /**
-     * Show the login form for students.
-     */
+    
     public function showLoginForm()
     {
         return view('student.auth.login');
     }
 
-    /**
-     * Handle student login attempt.
-     */
+    
     public function login(Request $request)
     {
         $credentials = $request->validate([

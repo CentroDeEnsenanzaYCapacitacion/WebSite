@@ -5,11 +5,7 @@
 @section('title', 'Planteles')
 @section('content')
 <div class="container mt-4">
-    {{-- <div class="row d-flex text-center mt-3 mb-3">
-        <div class="col">
-            <h1>Planteles</h1>
-        </div>
-    </div> --}}
+    
     <div id="content">
         <div class="container_12">
             <div class="row feature design justify-content-center">

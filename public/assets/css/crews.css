@@ -1,16 +1,14 @@
-/* body {
-    font-family: 'Capriola', sans-serif;
-} */
+
 .title {
     font-size: 45px;
-    /* font-family: 'Capriola', sans-serif; */
+    
     color:#6a5c52;
     padding-bottom: 50px;
     margin-top: 25px;
 }
 p {
     font-size: 17px;
-    /* font-family: 'Capriola', sans-serif; */
+    
     color:#6a5c52;
     padding-bottom: 25px;
 }
@@ -26,12 +24,12 @@ h3 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos para la clase shadow */
+
 .shadow {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos adicionales para mejorar el diseño */
+
 .card-body {
     padding: 20px;
 }
@@ -73,7 +71,7 @@ h3 {
     margin: 1.5rem 0;
 }
 
-/* Asegurando que el iframe tenga el ancho completo */
+
 iframe {
     width: 100%;
 }

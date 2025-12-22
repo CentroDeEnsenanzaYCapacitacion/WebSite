@@ -3,7 +3,7 @@
           <ul class="tools">
                <li>bachillerato</li>
                <li>licenciatura</li>
-               <!-- <li><a href="#" class="links">quick links</a></li> -->
+               
                <li><a href="{{ route('student.login') }}">área de alumno</a></li>
           </ul>
     </div>
@@ -53,7 +53,7 @@
                           </ul>
                       </li>
                       <li><a href="{{ route('crews') }}">Planteles</a></li>
-                      {{-- <li><a href="{{ route('cecnews') }}">Noticec</a></li> --}}
+                      
                       <li><a href="{{ route('contact') }}">contacto</a></li>
                   </ul>
                 </nav>
@@ -79,7 +79,7 @@
                                   <span class="spand">{{ $carousel_texts[0]->description }}</span>
                               </span>
                           </a>
-                          <!-- <span class="but_wrap"><a href="#" class="button">more</a></span> -->
+                          
                       </li>
                       <li>
                           <div></div>
@@ -89,7 +89,7 @@
                                   <span class="spand">{{ $carousel_texts[1]->description }}</span>
                               </span>
                           </a>
-                          <!-- <span class="but_wrap"><a href="#" class="button">more</a></span> -->
+                          
                       </li>
                       <li>
                           <div></div>
@@ -99,7 +99,7 @@
                                   <span class="spand">{{ $carousel_texts[2]->description }}</span>
                               </span>
                           </a>
-                          <!-- <span class="but_wrap"><a href="#" class="button">more</a></span> -->
+                          
                       </li>
                       <li>
                           <div></div>
@@ -109,7 +109,7 @@
                                   <span class="spand">{{ $carousel_texts[3]->description }}</span>
                               </span>
                           </a>
-                          <!-- <span class="but_wrap"><a href="#" class="button">more</a></span> -->
+                          
                       </li>
                     </ul>
                   </div>

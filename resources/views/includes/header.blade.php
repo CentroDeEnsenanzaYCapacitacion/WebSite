@@ -3,7 +3,7 @@
           <ul class="tools">
                <li>bachillerato</li>
                <li>licenciatura</li>
-               <!-- <li><a href="#" class="links">quick links</a></li> -->
+               
                <li><a href="{{ route('student.login') }}">área de alumno</a></li>
           </ul>
     </div>
@@ -53,7 +53,7 @@
                         </ul>
                     </li>
                     <li><a href="{{ route('crews') }}">Planteles</a></li>
-                    {{-- <li><a href="{{ route('cecnews') }}">Noticec</a></li> --}}
+                    
                     <li><a href="{{ route('contact') }}">contacto</a></li>
                 </ul>
             </nav>

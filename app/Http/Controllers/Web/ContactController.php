@@ -30,7 +30,7 @@ class ContactController extends Controller
                 $normalized = Str::of($course->name)
                     ->lower()
                     ->ascii()
-                    // Strip punctuation/separators so variants like "Sec. / Inf. / Ing." normalize the same
+                    
                     ->replaceMatches('/[^a-z0-9]+/', ' ')
                     ->replaceMatches('/\s+/', ' ')
                     ->trim()

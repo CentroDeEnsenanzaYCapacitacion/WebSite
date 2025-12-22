@@ -69,7 +69,7 @@
 										other:_.fu.change
 									}
 								})
-							//_.pageStep=_.pageStep||_.show
+							
 						}
 						,calc:function(n){
 							n=n<_.itms.length

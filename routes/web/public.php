@@ -7,14 +7,7 @@ use App\Http\Controllers\Web\HomeController;
 use App\Http\Controllers\Web\OfferController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Public Web Routes
-|--------------------------------------------------------------------------
-|
-| Rutas públicas del sitio web accesibles para todos los visitantes.
-|
-*/
+
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
 
@@ -29,6 +22,6 @@ Route::get('/crews', [CrewsController::class, 'show'])->name('crews');
 
 Route::get('/secondary', [OfferController::class, 'showOffer'])->name('secondary');
 
-// Route::get('/noticec', function () {
-//     return view('cecnews');
-// })->name('cecnews');
+
+
+

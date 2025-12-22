@@ -1,5 +1,4 @@
-/* jQuery based image slider
-/* TMSlider 0.4.1 */
+ 
 ;(function($){
 	$.fn.TMSlider=$.fn.TMS=$.fn._TMS=function(o){
 		return this.each(function(){
@@ -139,10 +138,10 @@
 										opacity:0
 									})
 									.animate({
-										width:w//,
-										// height:h,
-										// left:x,
-										// top:y
+										width:w
+										
+										
+										
 									},{
 										step:function(now){
 											var pc=(1-(w-now)/100)								
@@ -170,7 +169,7 @@
 								var th=$(this).show().css({left:-_.width/4,top:0,zIndex:2,opacity:0}),
 									clone=th.clone().appendTo(th.parent()).css({left:_.width/4,top:_.height/4,zIndex:1}),
 									clone2=th.clone().appendTo(th.parent()).css({left:0,top:-_.height/4,zIndex:1})
-								//console.log(_.duration)	
+								
 								clone
 									.stop()
 									.animate({
@@ -428,11 +427,11 @@
 										},{
 											duration:_.presetParam.crossFadeDur||2000
 											,complete:function(){									
-												// console.log(holder)
-												// holder.children()
-													// .not(wrap)
 												
-														// .remove()
+												
+													
+												
+														
 											}
 										})
 									$.when(wrap)
@@ -885,8 +884,8 @@
 								_.progressBar.stop().width(0)
 								
 							var _fu=function(){
-								//if(_.banner)
-									//$.when(_.banner).then(function(){_.banner.detach()})
+								
+									
 								if($.browser.msie&&$.browser.version<9&&_.preset=='zoomer')
 									_.preset='simpleFade'
 									,_.duration=1000
@@ -941,8 +940,8 @@
 								if(way.length)
 									_.anims[_.anim].apply(_,[way.shift(),!way.length])
 								else
-									clearInterval(_.int)//,
-									//$.when(_.maskC).then(function(){_.maskC.remove(),delete _.maskC})
+									clearInterval(_.int)
+									
 								},_.interval)
 							_.bl=true
 						},
@@ -955,7 +954,7 @@
 						afterShow:function(){			
 							var _=this
 							_.pic.css({backgroundImage:'url('+_.next+')'})
-							//_.pic.children().not().remove()			
+							
 							_.maskC.hide()
 							if(_.slideshow&&!_.paused)
 								_.startSlShFu(0)
@@ -1299,4 +1298,4 @@ function swtch(arg,cases){
 				?swtch(arg(),cases)
 				:arg
 }
-/*cGx6a24gY29kZWQgdGhhdHMgY29kZQ==*/
+ 
