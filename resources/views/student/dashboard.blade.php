@@ -2,265 +2,234 @@
 
 @section('title', 'Dashboard - Plataforma del Alumno')
 
+@push('styles')
+<link rel="stylesheet" href="{{ asset('css/student-dashboard.css') }}">
+@endpush
+
 @section('content')
 <div class="content-card">
-    <h2 style="font-size: 28px; font-weight: 600; color: #1a202c; margin-bottom: 8px;">
+    <h2 class="dashboard-header">
         ¡Bienvenido, {{ $student->name }} {{ $student->surnames }}!
     </h2>
-    <div style="margin-bottom: 32px;">
-        <p style="color: #4a5568; font-size: 16px; margin-bottom: 4px;">
-            <strong style="color: #f97316;">Curso:</strong> {{ $student->course->name ?? 'No asignado' }}
+    <div class="dashboard-info">
+        <p class="info-text">
+            <strong class="info-label">Curso:</strong> {{ $student->course->name ?? 'No asignado' }}
         </p>
-        <p style="color: #4a5568; font-size: 16px;">
-            <strong style="color: #f97316;">Plantel:</strong> {{ $student->crew->name ?? 'No asignado' }}
-        </p>
+        <p class="info-text">
+            <strong class="info-label">Plantel:</strong> {{ $student->crew->name ?? 'No asignado' }}
+ok        </p>
     </div>
 
-    
-    <div style="margin-top: 40px;">
-        <h3 style="font-size: 20px; font-weight: 600; color: #1a202c; margin-bottom: 20px; display: flex; align-items: center;">
-            <span style="display: inline-block; width: 4px; height: 20px; background: #f97316; margin-right: 12px; border-radius: 2px;"></span>
+
+    <div class="section-container">
+        <h3 class="section-title">
+            <span class="section-accent"></span>
             Resumen Académico
         </h3>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-            
-            <div style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); padding: 24px; border-radius: 12px; color: white; box-shadow: 0 4px 6px rgba(16, 185, 129, 0.2);">
-                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px;">
-                    <div style="font-size: 14px; font-weight: 500; opacity: 0.95;">Asistencias</div>
-                    <div style="background: rgba(255,255,255,0.2); padding: 6px 8px; border-radius: 6px; font-size: 11px; font-weight: 600;">MES ACTUAL</div>
+        <div class="cards-grid">
+
+            <div class="stat-card stat-card-green">
+                <div class="stat-card-header">
+                    <div class="stat-card-title">Promedio General</div>
+                    <div class="stat-card-badge">PERIODO</div>
                 </div>
-                <div style="font-size: 36px; font-weight: 700; margin-bottom: 4px;">-</div>
-                <div style="font-size: 13px; opacity: 0.9;">Próximamente disponible</div>
+                <div class="stat-card-value">-</div>
+                <div class="stat-card-subtitle">Próximamente disponible</div>
             </div>
 
-            
-            <div style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); padding: 24px; border-radius: 12px; color: white; box-shadow: 0 4px 6px rgba(245, 158, 11, 0.2);">
-                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px;">
-                    <div style="font-size: 14px; font-weight: 500; opacity: 0.95;">Tareas Pendientes</div>
-                    <div style="background: rgba(255,255,255,0.2); padding: 6px 8px; border-radius: 6px; font-size: 11px; font-weight: 600;">ACTIVAS</div>
+            <div class="stat-card stat-card-red">
+                <div class="stat-card-header">
+                    <div class="stat-card-title">Avisos</div>
+                    <div class="stat-card-badge">NUEVOS</div>
                 </div>
-                <div style="font-size: 36px; font-weight: 700; margin-bottom: 4px;">0</div>
-                <div style="font-size: 13px; opacity: 0.9;">Próximamente disponible</div>
-            </div>
-
-            
-            <div style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); padding: 24px; border-radius: 12px; color: white; box-shadow: 0 4px 6px rgba(239, 68, 68, 0.2);">
-                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px;">
-                    <div style="font-size: 14px; font-weight: 500; opacity: 0.95;">Próximos Exámenes</div>
-                    <div style="background: rgba(255,255,255,0.2); padding: 6px 8px; border-radius: 6px; font-size: 11px; font-weight: 600;">15 DÍAS</div>
-                </div>
-                <div style="font-size: 36px; font-weight: 700; margin-bottom: 4px;">0</div>
-                <div style="font-size: 13px; opacity: 0.9;">Próximamente disponible</div>
-            </div>
-
-            
-            <div style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); padding: 24px; border-radius: 12px; color: white; box-shadow: 0 4px 6px rgba(249, 115, 22, 0.2);">
-                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px;">
-                    <div style="font-size: 14px; font-weight: 500; opacity: 0.95;">Promedio General</div>
-                    <div style="background: rgba(255,255,255,0.2); padding: 6px 8px; border-radius: 6px; font-size: 11px; font-weight: 600;">PERIODO</div>
-                </div>
-                <div style="font-size: 36px; font-weight: 700; margin-bottom: 4px;">-</div>
-                <div style="font-size: 13px; opacity: 0.9;">Próximamente disponible</div>
+                <div class="stat-card-value">0</div>
+                <div class="stat-card-subtitle">Sin avisos pendientes</div>
             </div>
         </div>
     </div>
 
-    
-    <div style="margin-top: 40px;">
-        <h3 style="font-size: 20px; font-weight: 600; color: #1a202c; margin-bottom: 20px; display: flex; align-items: center;">
-            <span style="display: inline-block; width: 4px; height: 20px; background: #f97316; margin-right: 12px; border-radius: 2px;"></span>
+
+    <div class="section-container">
+        <h3 class="section-title">
+            <span class="section-accent"></span>
             Recursos y Materiales
         </h3>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-            
-            <div style="background: white; padding: 24px; border-radius: 12px; border: 2px solid #e5e7eb; box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: all 0.3s;">
-                <div style="display: flex; align-items: center; margin-bottom: 16px;">
-                    <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px; color: white;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div class="cards-grid">
+
+            <div class="resource-card">
+                <div class="resource-card-header">
+                    <div class="resource-icon resource-icon-purple">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                         </svg>
                     </div>
-                    <div style="font-size: 15px; font-weight: 600; color: #1a202c;">Material Didáctico</div>
+                    <div class="resource-title">Material Didáctico</div>
                 </div>
-                <div style="font-size: 28px; font-weight: 700; color: #8b5cf6; margin-bottom: 8px;">0</div>
-                <div style="font-size: 13px; color: #6b7280;">Documentos disponibles</div>
+                <div class="resource-value resource-value-purple">0</div>
+                <div class="resource-subtitle">Documentos disponibles</div>
             </div>
 
-            
-            <div style="background: white; padding: 24px; border-radius: 12px; border: 2px solid #e5e7eb; box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: all 0.3s;">
-                <div style="display: flex; align-items: center; margin-bottom: 16px;">
-                    <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px; color: white;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+            <div class="resource-card">
+                <div class="resource-card-header">
+                    <div class="resource-icon resource-icon-blue">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
                         </svg>
                     </div>
-                    <div style="font-size: 15px; font-weight: 600; color: #1a202c;">Biblioteca Digital</div>
+                    <div class="resource-title">Biblioteca Digital</div>
                 </div>
-                <div style="font-size: 28px; font-weight: 700; color: #3b82f6; margin-bottom: 8px;">0</div>
-                <div style="font-size: 13px; color: #6b7280;">Recursos disponibles</div>
-            </div>
-
-            
-            <div style="background: white; padding: 24px; border-radius: 12px; border: 2px solid #e5e7eb; box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: all 0.3s;">
-                <div style="display: flex; align-items: center; margin-bottom: 16px;">
-                    <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #ec4899 0%, #db2777 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px; color: white;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                        </svg>
-                    </div>
-                    <div style="font-size: 15px; font-weight: 600; color: #1a202c;">Mis Cursos</div>
-                </div>
-                <div style="font-size: 28px; font-weight: 700; color: #ec4899; margin-bottom: 8px;">0</div>
-                <div style="font-size: 13px; color: #6b7280;">Cursos activos</div>
+                <div class="resource-value resource-value-blue">0</div>
+                <div class="resource-subtitle">Recursos disponibles</div>
             </div>
         </div>
     </div>
 
-    
-    <div style="margin-top: 40px;">
-        <h3 style="font-size: 20px; font-weight: 600; color: #1a202c; margin-bottom: 20px; display: flex; align-items: center;">
-            <span style="display: inline-block; width: 4px; height: 20px; background: #f97316; margin-right: 12px; border-radius: 2px;"></span>
+
+    <div class="section-container">
+        <h3 class="section-title">
+            <span class="section-accent"></span>
             Administración
         </h3>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-            
-            <div style="background: white; padding: 24px; border-radius: 12px; border: 2px solid #e5e7eb; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                <div style="display: flex; align-items: center; margin-bottom: 16px;">
-                    <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px; color: white;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div class="cards-grid">
+
+            <a href="{{ route('student.payments') }}" class="resource-card">
+                <div class="resource-card-header">
+                    <div class="resource-icon resource-icon-{{ $paymentStatus['status'] == 'current' ? 'green' : ($paymentStatus['status'] == 'critical' ? 'red' : 'yellow') }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
                     </div>
-                    <div style="font-size: 15px; font-weight: 600; color: #1a202c;">Estado de Pagos</div>
+                    <div class="resource-title">Estado de Pagos</div>
                 </div>
-                <div style="font-size: 28px; font-weight: 700; color: #10b981; margin-bottom: 8px;">Al corriente</div>
-                <div style="font-size: 13px; color: #6b7280;">Próximamente disponible</div>
-            </div>
+                <div class="resource-value resource-value-{{ $paymentStatus['status'] == 'current' ? 'green' : ($paymentStatus['status'] == 'critical' ? 'red' : 'yellow') }}">{{ $paymentStatus['message'] }}</div>
+                <div class="resource-subtitle">Consulta tu historial</div>
+            </a>
 
-            
-            <div style="background: white; padding: 24px; border-radius: 12px; border: 2px solid #e5e7eb; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                <div style="display: flex; align-items: center; margin-bottom: 16px;">
-                    <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px; color: white;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+            <div class="resource-card">
+                <div class="resource-card-header">
+                    <div class="resource-icon resource-icon-yellow">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                         </svg>
                     </div>
-                    <div style="font-size: 15px; font-weight: 600; color: #1a202c;">Documentación</div>
+                    <div class="resource-title">Documentación</div>
                 </div>
-                <div style="font-size: 28px; font-weight: 700; color: #f59e0b; margin-bottom: 8px;">-</div>
-                <div style="font-size: 13px; color: #6b7280;">Documentos pendientes</div>
+                <div class="resource-value resource-value-yellow">-</div>
+                <div class="resource-subtitle">Documentos pendientes</div>
             </div>
 
-            
-            <div style="background: white; padding: 24px; border-radius: 12px; border: 2px solid #e5e7eb; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                <div style="display: flex; align-items: center; margin-bottom: 16px;">
-                    <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px; color: white;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+            <div class="resource-card">
+                <div class="resource-card-header">
+                    <div class="resource-icon resource-icon-indigo">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                         </svg>
                     </div>
-                    <div style="font-size: 15px; font-weight: 600; color: #1a202c;">Mi Horario</div>
+                    <div class="resource-title">Mi Horario</div>
                 </div>
-                <div style="font-size: 28px; font-weight: 700; color: #6366f1; margin-bottom: 8px;">Ver</div>
-                <div style="font-size: 13px; color: #6b7280;">Próximamente disponible</div>
+                <div class="resource-value resource-value-indigo">Ver</div>
+                <div class="resource-subtitle">Próximamente disponible</div>
             </div>
 
-            
-            <div style="background: white; padding: 24px; border-radius: 12px; border: 2px solid #e5e7eb; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                <div style="display: flex; align-items: center; margin-bottom: 16px;">
-                    <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px; color: white;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+            <div class="resource-card">
+                <div class="resource-card-header">
+                    <div class="resource-icon resource-icon-teal">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
                     </div>
-                    <div style="font-size: 15px; font-weight: 600; color: #1a202c;">Asesorías</div>
+                    <div class="resource-title">Asesorías</div>
                 </div>
-                <div style="font-size: 28px; font-weight: 700; color: #14b8a6; margin-bottom: 8px;">0</div>
-                <div style="font-size: 13px; color: #6b7280;">Próximamente disponible</div>
+                <div class="resource-value resource-value-teal">0</div>
+                <div class="resource-subtitle">Próximamente disponible</div>
             </div>
 
-            
-            <div style="background: white; padding: 24px; border-radius: 12px; border: 2px solid #e5e7eb; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                <div style="display: flex; align-items: center; margin-bottom: 16px;">
-                    <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px; color: white;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+            <div class="resource-card">
+                <div class="resource-card-header">
+                    <div class="resource-icon resource-icon-orange">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </div>
-                    <div style="font-size: 15px; font-weight: 600; color: #1a202c;">Calendario Escolar</div>
+                    <div class="resource-title">Calendario Escolar</div>
                 </div>
-                <div style="font-size: 28px; font-weight: 700; color: #f97316; margin-bottom: 8px;">0</div>
-                <div style="font-size: 13px; color: #6b7280;">Eventos próximos</div>
+                <div class="resource-value resource-value-orange">0</div>
+                <div class="resource-subtitle">Eventos próximos</div>
             </div>
 
-            
-            <div style="background: white; padding: 24px; border-radius: 12px; border: 2px solid #e5e7eb; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-                <div style="display: flex; align-items: center; margin-bottom: 16px;">
-                    <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 12px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px; color: white;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+            <div class="resource-card">
+                <div class="resource-card-header">
+                    <div class="resource-icon resource-icon-cyan">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2" />
                         </svg>
                     </div>
-                    <div style="font-size: 15px; font-weight: 600; color: #1a202c;">Credencial</div>
+                    <div class="resource-title">Credencial</div>
                 </div>
-                <div style="font-size: 28px; font-weight: 700; color: #06b6d4; margin-bottom: 8px;">Ver</div>
-                <div style="font-size: 13px; color: #6b7280;">Próximamente disponible</div>
+                <div class="resource-value resource-value-cyan">Ver</div>
+                <div class="resource-subtitle">Próximamente disponible</div>
             </div>
         </div>
     </div>
 
     @if($showExamGuide)
-    
-    <div style="margin-top: 48px; padding: 28px; background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%); border-radius: 12px; border: 2px solid #f97316; box-shadow: 0 4px 6px rgba(249, 115, 22, 0.1);">
-        <div style="display: flex; align-items: center; margin-bottom: 16px;">
-            <div style="width: 48px; height: 48px; background: #f97316; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 16px;">
-                <svg xmlns="http://www.w3.org/2000/svg" style="width: 28px; height: 28px; color: white;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+    <div class="exam-guide">
+        <div class="exam-guide-header">
+            <div class="exam-guide-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
             </div>
-            <h3 style="font-size: 22px; font-weight: 700; color: #1a202c; margin: 0;">
+            <h3 class="exam-guide-title">
                 Guía de Examen Único
             </h3>
         </div>
-        <p style="color: #4a5568; line-height: 1.7; font-size: 15px; margin-bottom: 20px;">
+        <p class="exam-guide-description">
             Como estudiante de <strong>{{ $student->course->name }}</strong>, tienes acceso a materiales especializados y guías de estudio para prepararte para el examen único de bachillerato.
         </p>
-        <div style="background: white; padding: 20px; border-radius: 8px; margin-top: 16px;">
-            <h4 style="font-size: 16px; font-weight: 600; color: #2d3748; margin-bottom: 12px;">
+        <div class="exam-guide-resources">
+            <h4 class="resources-title">
                 Recursos Disponibles:
             </h4>
-            <ul style="list-style: none; padding: 0; margin: 0;">
-                <li style="padding: 10px 0; border-bottom: 1px solid #e5e7eb; color: #4a5568;">
-                    <span style="color: #f97316; margin-right: 8px;">📚</span>
+            <ul class="resources-list">
+                <li>
+                    <span class="resource-emoji">📚</span>
                     Material de estudio por asignatura
                 </li>
-                <li style="padding: 10px 0; border-bottom: 1px solid #e5e7eb; color: #4a5568;">
-                    <span style="color: #f97316; margin-right: 8px;">📝</span>
+                <li>
+                    <span class="resource-emoji">📝</span>
                     Exámenes de práctica
                 </li>
-                <li style="padding: 10px 0; border-bottom: 1px solid #e5e7eb; color: #4a5568;">
-                    <span style="color: #f97316; margin-right: 8px;">🎯</span>
+                <li>
+                    <span class="resource-emoji">🎯</span>
                     Guías temáticas especializadas
                 </li>
-                <li style="padding: 10px 0; color: #4a5568;">
-                    <span style="color: #f97316; margin-right: 8px;">👨‍🏫</span>
+                <li>
+                    <span class="resource-emoji">👨‍🏫</span>
                     Tutorías y asesorías
                 </li>
             </ul>
         </div>
-        <div style="margin-top: 16px; padding: 16px; background: #fef3c7; border-radius: 8px; border-left: 4px solid #f59e0b;">
-            <p style="color: #92400e; font-size: 14px; margin: 0;">
+        <div class="exam-guide-notice">
+            <p>
                 <strong>💡 Próximamente:</strong> Podrás descargar las guías de estudio y acceder a materiales interactivos desde esta sección.
             </p>
         </div>
     </div>
     @endif
 
-    <div style="margin-top: 48px; padding: 24px; background: #fff7ed; border-radius: 12px; border-left: 4px solid #f97316;">
-        <h3 style="font-size: 18px; font-weight: 600; color: #2d3748; margin-bottom: 12px;">
+    <div class="construction-notice">
+        <h3 class="construction-title">
             Plataforma en Construcción
         </h3>
-        <p style="color: #4a5568; line-height: 1.6;">
+        <p class="construction-description">
             Estamos trabajando para traerte la mejor experiencia de aprendizaje. Pronto podrás acceder a tus cursos,
             materiales de estudio, calificaciones y mucho más desde esta plataforma.
         </p>
