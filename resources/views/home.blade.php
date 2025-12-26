@@ -42,7 +42,7 @@
                     <div class="carousel-inner rounded">
                         @foreach ($carousel_texts as $index => $item)
                             <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
-                                <img src="{{ $carousel_url }}{{ $item->id }}.jpg" class="d-block w-100" alt="{{ $item->title }}" style="height: 400px; object-fit: cover;">
+                                <img src="{{ rtrim($carousel_url, '/') }}/{{ $index + 1 }}.jpg" class="d-block w-100" alt="{{ $item->title }}" style="height: 400px; object-fit: cover;">
                                 <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-3">
                                     <h5 class="fw-bold">{{ $item->title }}</h5>
                                     <p>{{ $item->description }}</p>
