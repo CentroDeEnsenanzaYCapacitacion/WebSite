@@ -314,7 +314,11 @@ jobs:
               --exclude-glob .env.example \
               --exclude-glob composer.lock \
               --exclude-glob storage/logs/** \
-              --exclude-glob config/local.php; \
+              --exclude-glob config/local.php \
+              --exclude intranet/ \
+              --exclude intranet_dev/ \
+              --exclude website_dev/ \
+              --exclude public_html/; \
               quit"
 
       - run:
@@ -338,7 +342,9 @@ jobs:
               --verbose \
               --delete \
               --exclude-glob index*.php \
-              --exclude-glob img/carousel/**; \
+              --exclude-glob img/carousel/** \
+              --exclude intranet/ \
+              --exclude intranet_dev/; \
               quit"
 
       - run:
