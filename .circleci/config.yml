@@ -342,7 +342,9 @@ jobs:
               --verbose \
               --delete \
               --exclude-glob index*.php \
-              --exclude-glob img/carousel/**; \
+              --exclude-glob img/carousel/** \
+              --exclude intranet/ \
+              --exclude intranet_dev/; \
               quit"
 
       - run:
