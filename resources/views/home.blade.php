@@ -43,10 +43,16 @@
                         @foreach ($carousel_texts as $index => $item)
                             <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
                                 <img src="{{ rtrim($carousel_url, '/') }}/{{ $index + 1 }}.jpg" class="d-block w-100" alt="{{ $item->title }}" style="height: 400px; object-fit: cover;">
-                                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-3">
-                                    <h5 class="fw-bold">{{ $item->title }}</h5>
-                                    <p>{{ $item->description }}</p>
-                                </div>
+                                @if($item->title || $item->description)
+                                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-3">
+                                        @if($item->title)
+                                            <h5 class="fw-bold mb-{{ $item->description ? '2' : '0' }}">{{ $item->title }}</h5>
+                                        @endif
+                                        @if($item->description)
+                                            <p class="mb-0">{{ $item->description }}</p>
+                                        @endif
+                                    </div>
+                                @endif
                             </div>
                         @endforeach
                     </div>
