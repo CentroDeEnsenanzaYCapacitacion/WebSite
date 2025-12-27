@@ -315,10 +315,10 @@ jobs:
               --exclude-glob composer.lock \
               --exclude-glob storage/logs/** \
               --exclude-glob config/local.php \
-              --exclude-glob intranet/** \
-              --exclude-glob intranet_dev/** \
-              --exclude-glob website_dev/** \
-              --exclude-glob public_html/**; \
+              --exclude intranet/ \
+              --exclude intranet_dev/ \
+              --exclude website_dev/ \
+              --exclude public_html/; \
               quit"
 
       - run:
