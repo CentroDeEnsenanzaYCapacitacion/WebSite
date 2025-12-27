@@ -10,18 +10,10 @@ class Student extends Authenticatable
 {
     use HasFactory, Notifiable;
 
-    /**
-     * The table associated with the model.
-     *
-     * @var string
-     */
+    
     protected $table = 'students';
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
+    
     protected $fillable = [
         'crew_id',
         'name',
@@ -48,39 +40,37 @@ class Student extends Authenticatable
         'first_time',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
+    
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
+    
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
 
-    /**
-     * Get the course that the student is enrolled in.
-     */
+    
     public function course()
     {
         return $this->belongsTo(\App\Models\Course::class);
     }
 
-    /**
-     * Get the crew (campus) that the student belongs to.
-     */
+    
     public function crew()
     {
         return $this->belongsTo(\App\Models\Crew::class);
+    }
+
+    public function receipts()
+    {
+        return $this->hasMany(Receipt::class);
+    }
+
+    public function paymentPeriodicity()
+    {
+        return $this->belongsTo(PaymentPeriodicity::class);
     }
 }

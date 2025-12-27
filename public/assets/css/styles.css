@@ -1,13 +1,13 @@
 @import "../css/reset.css";@import "../css/grid.css";@import "../css/superfish.css";@import url(http://fonts.googleapis.com/css?family=Capriola);
 @import "../css/ui.totop.css";
 article,aside,audio,canvas,command,datalist,details,embed,figcaption,figure,footer,header,hgroup,keygen,meter,nav,output,progress,section,source,video{display:block}mark,rp,rt,ruby,summary,time{display:inline}
-/* Global properties ======================================================== */
+
 html {width:100%}
 
 body {font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:22px; color:#988f8f; min-width:960px; background:url(../img/body_bg.jpg) 50% 0 repeat #f1f1f1;}
 .main {width:960px;padding:0;margin:0 auto;}
 
-/*********************************fonts*************************************/
+
 .reg {text-transform:uppercase}
 .f_left {float:left}
 .f_right {float:right}
@@ -17,7 +17,7 @@ body {font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:22px
 .it{font-style:italic}
 .let{letter-spacing:-1px}
 
-/*********************************CLASSES**********************************/
+
 .m_bottom_zero{ margin-bottom:0 !important;}
 .m_left_zero{ margin-left:0 !important;}
 .p_bottom_zero{ padding-bottom:0 !important;}
@@ -33,41 +33,41 @@ body {font-family:Arial, Helvetica, sans-serif; font-size:13px; line-height:22px
 .extra_last{ border:none !important; background:none !important;}
 .bg_none{ background:none !important;}
 
-/*==================================== Links ======================================================== */
+
 a {color:#988f8f;outline:none; text-decoration:none; cursor:pointer;}
 a:hover{ color:#41a864; text-decoration:none;}
 
 .button{ display:inline-block; padding:7px 10px 6px; margin: 15px 0 4px; border-radius:9px; font-size: 12px; line-height: 15px; color:#fff; background:url("../img/button_b.jpg") 0 0 repeat-x #0398dc;text-transform:uppercase;text-shadow:1px 0 #0398dc;box-shadow: 0 1px 3px rgba(0,0,0,0.42);}
 .button:hover{ background:#0398dc;color:#fff;}
 
-/*********************************Displays*************************************/
+
 .block{ display:block;}
 .inline-block{ display:inline-block;}
 
-/*********************************header*************************************/
+
 
 header {margin: 0 10px 47px 7px; padding: 60px 0 0 0;position: relative;z-index: 1000;}
 header h1{width:232px;float:left;}
 header h1 a {display:block;width:232px;height:100px;background:url(../img/dr.png) 0 0 no-repeat; text-decoration:none; text-indent:-9999px;}
 
-/*********************************content*************************************/
+
 #content {padding:0px 0px 0px 0px; position:relative;z-index:1;}
 .cont_pad{padding:0 0 0 0 !important;}
 .cont_pad1{margin-top:15px; padding:175px 0 55px !important;}
 .cont_pad2{padding: 46px 0 44px !important;}
 .bord_b{border-bottom:1px solid #ffffff;}
 
-/* ============ ASIDE =====================*/
+
 .list_box{padding: 47px 0 42px;background:#ececec;border-top:1px solid #e2e2e2;border-bottom:1px solid #e3e3e3;}
 .list_box .list1 span{margin-left:4px;}
 
-/*===============================>> Paragraphs <<=============================*/
+
 
 p {margin-bottom:22px}
 .p2{ margin-bottom:10px;}
 .p3{ margin-bottom:30px;}
 
-/*================================>> LISTS <<========================================*/
+
 .list1{}
 .list1 li{line-height:15px;margin-bottom:7px;}
 .list1 a{color:#41a864;font-weight:bold;text-decoration:underline;font-size:12px;}
@@ -79,7 +79,7 @@ p {margin-bottom:22px}
 .list2 a{}
 
 
-/*================================>> H <<========================================*/
+
 h2,h3,h4{ font-weight:normal;}
 h2{font-size: 24px; line-height: 29px; color:#2a2a2a;letter-spacing:-1px;padding-bottom:16px;position:relative;}
 
@@ -89,13 +89,13 @@ h2.ind2{ margin-bottom:28px;}
 
 h3, .adress dt{font-size: 14px; line-height: 19px; color:#6a5c52; text-transform:uppercase;margin-bottom:20px;}
 h3 span{display:block;margin-top:-1px;}
-/*================================>> GOOGLE FONTS  <<========================================*/
+
 .tools, .sf-menu, h2, h3, .button, .capriola, .pag a, .adress dt{font-family: 'Capriola', sans-serif;}
 
-/*================================>> hovers <<========================================*/
+
 .sf-menu li, #slider .pag a, #slider .pag li, #slider .pag span{-webkit-transition: all 0.5s ease;-moz-transition: all 0.5s ease;-o-transition: all 0.5s ease;transition: all 0.5s ease;}
 
-/* Global Blocks*/
+
 
 .block1{background:#F57F17 url('../img/block1_o.png') 0 0 repeat; border-top:3px solid #392721;height:53px;}
 
@@ -116,7 +116,7 @@ h3 span{display:block;margin-top:-1px;}
 .content1{border-top:1px solid #c5c0be;background:url("../img/block3.jpg") 50% 0 repeat-x #ececec;padding: 72px 0 56px;border-bottom:1px solid #e2e2e2;}
 
 .content2{border-top:1px solid #fff;border-bottom:1px solid #fff;padding: 46px 0 44px;}
-/*********************************page_1*************************************/
+
 .ext_list>li, .ext_box{ overflow:hidden;}
 .ext_list>li>figure, .ext_box>figure{ float:left;}
 .ext_list>li>div, .ext_box>div{overflow:hidden;}
@@ -137,16 +137,16 @@ h3 span{display:block;margin-top:-1px;}
 .author{font-size:15px;line-height:19px;color:#504138;margin-top:-2px;}
 .author .status{font-size:11px;line-height:14px;color:#6ba668;padding-top:3px;}
 
-/*********************************page_2*************************************/
+
 .sub_box{padding: 0 25px 0 0;}
 
 .figure{float:left;margin: 4px 20px 0 0;}
-/*********************************page_3*************************************/
+
 .adm{margin-bottom:30px;}
 .adm>div{}
 .adm>figure{margin: 2px 10px 0 0;width:50px;}
 .box{padding-bottom:40px;}
-/*********************************page_4*************************************/
+
 .registr>li{margin-bottom:30px;}
 .registr>li>div{}
 .registr>li>figure{width:30px;margin: 4px 0 0 0;}
@@ -155,10 +155,10 @@ h3 span{display:block;margin-top:-1px;}
 .procedures>div{}
 .procedures>figure{width:60px;}
 
-/*********************************page_5*************************************/
 
 
-/* Contact form */
+
+
 #contact-form {padding:0px 0 0 0;}
 #contact-form .success {width:246px;padding-bottom:10px;text-align:center;}
 #contact-form textarea, #contact-form input {margin:0;font-size:13px; border:1px solid #e0e0e0; color:#988f8f; padding:7px 8px;outline:none; position:relative; font-family:Arial, Helvetica, sans-serif;background:#fff;width:282px;}
@@ -192,13 +192,13 @@ h3 span{display:block;margin-top:-1px;}
 
 .demo{color:#0398dc;font-weight:bold;text-decoration:underline;}
 .demo:hover{ text-decoration:none;}
-/****************************footer************************/
+
 footer {padding:30px 0;width:940px;overflow:hidden;margin:0 auto;font-size:11px;font-weight:bold;line-height:14px;text-transform:uppercase;}
 footer, footer a{color:#948e8e;}
 footer a:hover{color:#41a864;}
 footer .privacy{float:left;}
 footer .social{float:right;}
-/**************************** flip card ********************************/
+
 .card_container{
 	position: relative;
 	width: 300px;
@@ -228,7 +228,7 @@ footer .social{float:right;}
 }
 .card_front{
 	background: rgba(20, 48, 98, 1);
-	/*background:url(../img/nos.jpg);*/
+	
 	transform: rotateY(0deg);
 	padding: 10px;
 
@@ -236,7 +236,7 @@ footer .social{float:right;}
 }
 .card_back{
 	background: rgba(20, 48, 98, 1);
-	/*background:url(../img/nos.jpg);*/
+	
 	transform: rotateY(180deg);
 	padding: 10px;
 }
@@ -260,7 +260,7 @@ footer .social{float:right;}
 	background: white;
 	color:black
 }
-/***************************** background **********************************************/
+
 
 .overlay1 {
 	position: relative;
@@ -296,14 +296,10 @@ footer .social{float:right;}
   }
 
   .marked-text{
-    /*-webkit-text-stroke: 0.2px white;*/
+    
    color: wheat;
-   /*text-shadow:
-   /* 3px 3px 0 #000, */
-      /* -1.5px -1.5px 0 #000,
-     1.5px -1.5px 0 #000,
-      -1.5px 1.5px 0 #000,
-       1.5px 1.5px 0 #000;*/
+   
+      
 	font-size: 12px;
 	text-align: center;
 }
@@ -390,9 +386,7 @@ p{
     margin-bottom: 50px;
     transition: all .7s;
 }
-/* .collumn + .collumn {
-  border-left: 1px solid #2f2f2f;
-} */
+
 .collumn .headline{
     text-align: center;
     line-height: normal;
@@ -564,7 +558,7 @@ p{
     font-family: 'Playfair Display', serif;
     font-size: 36px;
     line-height: 44px;
-    /*font-style: italic;*/
+    
     text-align: center;
     font-weight: 400;
     display: block;
@@ -617,8 +611,8 @@ p{
     position: relative;
     z-index: 10;
 }
-/*________________________________________________________________________________________________________________________________*/
-/*MEDIAQUERIES*/
+
+
 @media only all and (max-width: 1300px) {
     .weatherforcastbox{
         display: none;

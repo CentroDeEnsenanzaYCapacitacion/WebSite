@@ -1,259 +1,422 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layout.mainLayout')
+@section('title', 'CEC - Tu futuro comienza aquí')
 
-<head>
-    <title></title>
-    <meta charset="utf-8">
-    <link rel="icon" href="{{ asset('assets/img/iii.ico') }}" type="image/x-icon">
-    <link rel="shortcut icon" href="{{ asset('assets/img/iii.ico') }}" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('assets/css/styles.css') }}">
-    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('assets/css/tms.css') }}">
-    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset('assets/css/home.css') }}">
-    <script type="text/javascript" src="{{ asset('assets/js/jquery-1.7.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/superfish.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/jquery.easing.1.3.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/tms-0.4.1.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/uCarousel.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/jquery.ui.totop.js') }}"></script>
-    <script>
-        $(window).load(function() {
-            $().UItoTop({
-                easingType: 'easeOutQuart'
-            });
-        })
-        $(function() {
-            $('.slider')._TMS({
-                prevBu: false,
-                nextBu: false,
-                playBu: false,
-                duration: 12000,
-                easing: 'easeOutQuad',
-                preset: 'zoomer',
-                pagination: $('.img-pags').uCarousel({
-                    show: 4,
-                    shift: 0,
-                    buttonClass: 'btn'
-                }),
-                pagNums: false,
-                slideshow: 12000,
-                numStatus: false,
-                banners: false,
-                waitBannerAnimation: false,
-                progressBar: false
-            })
-            $('.carousel').uCarousel({
-                show: 3,
-                buttonClass: 'car-button',
-                pageStep: 1
-            })
-        })
-    </script>
-</head>
+@push('scripts')
+<script src="{{ asset('assets/js/home.js') }}"></script>
+@endpush
 
-<body id="main_page">
-    @include('includes.homeHeader')
-    <!--==============================content================================-->
-    <div id="content">
-        <div class="container_12">
-            <div class="custom-text" style="margin-top: 250px">
-                <h1 style="text-align: center; font-size:54px">{{ $mvv_data[0]->name }}</h1><br>
-                <span style="font-size:24px">{!! nl2br(e($mvv_data[0]->description)) !!}</span>
-            </div>
-            <div class="wrapper">
-                <div class="card_container" style="margin-right: 30px;margin-left: 30px;">
-                    <div class="card_card card_front">
-                        <img width="180px" src="{{ asset('assets/img/mision.png') }}">
-                        <h2 style="vertical-align: top !important;font-size: 15px;" class="marked-text">
-                            {{ $mvv_data[1]->name }}</h2>
-                    </div>
-                    <div class="card_card card_back">
-                        <p class="marked-text">{{ $mvv_data[1]->description }}</p>
-                        <!-- <a href="" class="card_btn">BOTÓN</a> -->
-                    </div>
-                </div>
-                <div class="card_container" style="margin-right: 30px;margin-left: 30px;">
-                    <div class="card_card card_front">
-                        <img width="180px" src="{{ asset('assets/img/vision.png') }}">
-                        <h2 style="vertical-align: top !important;font-size: 15px;" class="marked-text">
-                            {{ $mvv_data[2]->name }}</h2>
-                    </div>
-                    <div class="card_card card_back">
-                        <p class="marked-text">{{ $mvv_data[2]->description }}</p>
-                        <!-- <a href="" class="card_btn">BOTÓN</a> -->
-                    </div>
-                </div>
-                <div class="card_container" style="margin-right: 30px;margin-left: 30px;">
-                    <div class="card_card card_front">
-                        <img width="180px" src="{{ asset('assets/img/valores.png') }}">
-                        <h2 style="vertical-align: top !important;font-size: 15px;" class="marked-text">
-                            {{ $mvv_data[3]->name }}</h2>
-                    </div>
-                    <div class="card_card card_back">
-                        <p class="marked-text">
-                            {!! str_replace(' ', '<br>', e($mvv_data[3]->description)) !!}
-                        </p>
-                        <!-- <a href="" class="card_btn">BOTÓN</a> -->
-                    </div>
+@section('content')
 
+<section class="hero-section text-white">
+    <div class="container position-relative">
+        <div class="row mb-5">
+            <div class="col-lg-10 mx-auto">
+                <div id="carouselFacilities" class="carousel slide shadow-lg rounded" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        @foreach ($carousel_texts as $index => $item)
+                            <button type="button" data-bs-target="#carouselFacilities" data-bs-slide-to="{{ $index }}" class="{{ $index === 0 ? 'active' : '' }}" aria-current="{{ $index === 0 ? 'true' : 'false' }}" aria-label="Slide {{ $index + 1 }}"></button>
+                        @endforeach
+                    </div>
+                    <div class="carousel-inner rounded">
+                        @foreach ($carousel_texts as $index => $item)
+                            <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                                <img src="{{ rtrim($carousel_url, '/') }}/{{ $index + 1 }}.jpg" class="d-block w-100 carousel-img" alt="{{ $item->title }}">
+                                @if($item->title || $item->description)
+                                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-3">
+                                        @if($item->title)
+                                            <h5 class="fw-bold mb-{{ $item->description ? '2' : '0' }}">{{ $item->title }}</h5>
+                                        @endif
+                                        @if($item->description)
+                                            <p class="mb-0">{{ $item->description }}</p>
+                                        @endif
+                                    </div>
+                                @endif
+                            </div>
+                        @endforeach
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselFacilities" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselFacilities" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
                 </div>
             </div>
         </div>
-        <!-- <div class="content2 cont_pad2"> -->
-        <!-- <div class="container_12">
-    <div class="wrapper">
-     <article class="grid_12">
-      <div class="title1 capriola">
-        <div class="left">Welcome to our University</div>
-        <div class="right">Committed to student success for over 30 years!</div>
-      </div>
-      <div class="ext_box welcome">
-        <figure><img src="img/1page_img4.jpg" class="img" alt="" /></figure>
-        <div>
-         <p>Lorem ipsum dolor sit amet, consectuer adipiscing elit, sed diam nonummy nibeui<br>
-          smod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis <br>nostru exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem <br>vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dol.<br>
-          ore eu feugiat nulla facilisis at vero eros et accumsan et iust.</p>
-         <div class="author">
-          Dr. John Smith
-          <div class="status">Educated Economist and Professor-turned-entrepreneur</div>
-         </div>
+
+        <div class="row align-items-center">
+            <div class="col-lg-8 mx-auto text-center fade-in-up">
+                <h1 class="display-3 fw-bold mb-4">Tu futuro comienza aquí</h1>
+                <p class="lead mb-4 fs-4">{{ $mvv_data[0]->description }}</p>
+                <div class="d-flex gap-3 justify-content-center flex-wrap">
+                    <a href="{{ route('contact') }}" class="btn btn-primary btn-lg rounded-pill px-5">
+                        Inscríbete ahora <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+                    <a href="#oferta" class="btn btn-outline-light btn-lg rounded-pill px-5">
+                        Conocer más
+                    </a>
+                </div>
+            </div>
         </div>
-      </div>
-     </article>
     </div>
-  </div>
- </div> -->
+</section>
+
+<section class="py-5 bg-white">
+    <div class="container">
+        <div class="row g-4 text-center">
+            <div class="col-md-3">
+                <div class="counter-item">
+                    <h2 class="display-4 fw-bold text-primary mb-0" data-count="{{ date('Y') - 2014 }}">0</h2>
+                    <p class="text-muted fw-semibold">Años de experiencia</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="counter-item">
+                    <h2 class="display-4 fw-bold text-primary mb-0" data-count="{{ (date('Y') - 2014) * 50 }}">0</h2>
+                    <p class="text-muted fw-semibold">Alumnos graduados</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="counter-item">
+                    <h2 class="display-4 fw-bold text-primary mb-0" data-count="2">0</h2>
+                    <p class="text-muted fw-semibold">Planteles</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="counter-item">
+                    <h2 class="display-4 fw-bold text-primary mb-0" data-count="20">0</h2>
+                    <p class="text-muted fw-semibold">Programas educativos</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- <aside class="list_box">
- <div class="container_12">
-  <div class="wrapper">
-    <div class="grid_3">
-     <ul class="list1">
-       <li><a href="#">Contact us <span></span></a></li>
-       <li><a href="#">Media relations <span></span></a></li>
-       <li><a href="#">Careers <span></span></a></li>
-     </ul>
-     </div>
-     <div class="grid_3">
-      <ul class="list1">
-        <li><a href="#">Campus locations <span></span></a></li>
-        <li><a href="#">Expand your network <span></span></a></li>
-        <li><a href="#">Academic catalog <span></span></a></li>
-      </ul>
-     </div>
-     <div class="grid_3">
-      <ul class="list1">
-        <li><a href="#">Workforce Solutions <span></span></a></li>
-        <li><a href="#">Identify new opportunities <span></span></a></li>
-        <li><a href="#">Military Division <span></span></a></li>
-      </ul>
-     </div>
-     <div class="grid_3">
-      <ul class="list1">
-        <li><a href="#">Regulatory information <span></span></a></li>
-        <li><a href="#">Consumer information <span></span></a></li>
-        <li><a href="#">Disability services <span></span></a></li>
-      </ul>
-     </div>
-  </div>
- </div>
- </aside>
-<!--==============================footer=================================-->
-    @include('includes.footer')
-</body>
+</section>
 
-</html>
+<section id="oferta" class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold text-secondary mb-3">Nuestra Identidad</h2>
+            <div class="bg-primary mx-auto title-underline"></div>
+        </div>
 
-<!-- <article class="grid_12">
-      <h2 class="ind">Top Programs</h2>
-      <div class="car_box">
-      <a href="#" class="prev car-button" data-type="prevPage"></a>
-       <a href="#" class="next car-button" data-type="nextPage"></a>
-      <div class="carousel">
-       <ul>
-         <li>
-           <h3>associate’s degree</h3>
-           Lorem ipsum dolor sit amet, consec<br>
-           tuer adipiscing elit, sed diam nonummy nibeui
-           smod tincidunt ut laoreet dolore magna aliqu<br>
-           am erat volutpat.<br>
-           <a href="#" class="button">more</a>
-           <div class="ext_box program">
-            <figure><img src="img/1page_img1.jpg" class="img" alt="" /></figure>
-         </li>
-         <li>
-          <h3>master’s degree</h3>
-           Lorem ipsum dolor sit amet, consec<br>
-           tuer adipiscing elit, sed diam nonummy nibeui
-           smod tincidunt ut laoreet dolore magna aliqu<br>
-           am erat volutpat.<br>
-           <a href="#" class="button">more</a>
-           <div class="ext_box program">
-            <figure><img src="img/1page_img3.jpg" class="img" alt="" /></figure>
-            <div>
-              <ul class="list1">
-                <li><a href="#">Secondary Teacher Education<span></span></a></li>
-                <li><a href="#">View all doctoral programs<span></span></a></li>
-                <li><a href="#">Psychology<span></span></a></li>
-              </ul>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card-flip">
+                    <div class="card-flip-inner">
+                        <div class="card-flip-front bg-white shadow text-center">
+                            <img src="{{ asset('assets/img/mision.png') }}" alt="Misión" class="mission-vision-icon mb-3">
+                            <h4 class="fw-bold">{{ $mvv_data[1]->name }}</h4>
+                        </div>
+                        <div class="card-flip-back shadow">
+                            <p class="lead">{{ $mvv_data[1]->description }}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-           </div>
-         </li>
-         <li>
-           <h3>associate’s degree</h3>
-           Lorem ipsum dolor sit amet, consec<br>
-           tuer adipiscing elit, sed diam nonummy nibeui
-           smod tincidunt ut laoreet dolore magna aliqu<br>
-           am erat volutpat.<br>
-           <a href="#" class="button">more</a>
-           <div class="ext_box program">
-            <figure><img src="img/1page_img1.jpg" class="img" alt="" /></figure>
-            <div>
-              <ul class="list1">
-                <li><a href="#">Networking <span></span></a></li>
-                <li><a href="#">Foundations of Business <span></span></a></li>
-                <li><a href="#">Criminal Justice <span></span></a></li>
-              </ul>
-            </div>
-           </div>
-         </li>
-         <li>
-          <h3>bachelor’s degree</h3>
-           Lorem ipsum dolor sit amet, consec<br>
-           tuer adipiscing elit, sed diam nonummy nibeui
-           smod tincidunt ut laoreet dolore magna aliqu<br>
-           am erat volutpat.<br>
-           <a href="#" class="button">more</a>
-           <div class="ext_box program">
-            <figure><img src="img/1page_img2.jpg" class="img" alt="" /></figure>
-            <div>
-              <ul class="list1">
-                <li><a href="#">Environmental Science<span></span></a></li>
-                <li><a href="#">Psychology<span></span></a></li>
-                <li><a href="#">Elementary Teacher Education <span></span></a></li>
-              </ul>
-            </div>
-           </div>
-         </li>
-         <li>
-          <h3>master’s degree</h3>
-           Lorem ipsum dolor sit amet, consec<br>
-           tuer adipiscing elit, sed diam nonummy nibeui
-           smod tincidunt ut laoreet dolore magna aliqu<br>
-           am erat volutpat.<br>
-           <a href="#" class="button">more</a>
-           <div class="ext_box program">
-            <figure><img src="img/1page_img3.jpg" class="img" alt="" /></figure>
-            <div>
-              <ul class="list1">
-                <li><a href="#">Secondary Teacher Education<span></span></a></li>
-                <li><a href="#">View all doctoral programs<span></span></a></li>
-                <li><a href="#">Psychology<span></span></a></li>
-              </ul>
-            </div>
-           </div>
-         </li>
 
-       </ul>
-      </div>
-      </div>
-     </article> -->
+            <div class="col-md-4">
+                <div class="card-flip">
+                    <div class="card-flip-inner">
+                        <div class="card-flip-front bg-white shadow text-center">
+                            <img src="{{ asset('assets/img/vision.png') }}" alt="Visión" class="mission-vision-icon mb-3">
+                            <h4 class="fw-bold">{{ $mvv_data[2]->name }}</h4>
+                        </div>
+                        <div class="card-flip-back shadow">
+                            <p class="lead">{{ $mvv_data[2]->description }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card-flip">
+                    <div class="card-flip-inner">
+                        <div class="card-flip-front bg-white shadow text-center">
+                            <img src="{{ asset('assets/img/valores.png') }}" alt="Valores" class="mission-vision-icon mb-3">
+                            <h4 class="fw-bold">{{ $mvv_data[3]->name }}</h4>
+                        </div>
+                        <div class="card-flip-back shadow">
+                            <p>{!! str_replace(' ', '<br>', e($mvv_data[3]->description)) !!}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold text-secondary mb-3">Lo que dicen nuestros alumnos</h2>
+            <div class="bg-primary mx-auto title-underline"></div>
+        </div>
+
+        <div class="position-relative testimonials-container">
+            <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                <div class="carousel-inner testimonials-carousel-inner">
+                    <div class="carousel-item active">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 testimonial-avatar">
+                                            <strong>M</strong>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0 fw-bold">María González</h6>
+                                            <small class="text-muted">Licenciatura en Derecho</small>
+                                        </div>
+                                    </div>
+                                    <div class="text-warning mb-3">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <p class="text-muted">"Excelente institución con profesores muy capacitados. Logré terminar mi licenciatura mientras trabajaba gracias a la flexibilidad de horarios."</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 testimonial-avatar">
+                                            <strong>J</strong>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0 fw-bold">Juan Pérez</h6>
+                                            <small class="text-muted">Bachillerato</small>
+                                        </div>
+                                    </div>
+                                    <div class="text-warning mb-3">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <p class="text-muted">"Terminé mi bachillerato en tiempo récord. El sistema en línea es muy completo y el apoyo de los maestros es excepcional."</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 testimonial-avatar">
+                                            <strong>A</strong>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0 fw-bold">Ana Martínez</h6>
+                                            <small class="text-muted">Licenciatura en Psicología</small>
+                                        </div>
+                                    </div>
+                                    <div class="text-warning mb-3">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <p class="text-muted">"La mejor decisión que pude tomar. El plan de estudios es muy completo y ahora tengo mi título profesional."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 testimonial-avatar">
+                                            <strong>C</strong>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0 fw-bold">Carlos Ramírez</h6>
+                                            <small class="text-muted">Licenciatura en Contabilidad</small>
+                                        </div>
+                                    </div>
+                                    <div class="text-warning mb-3">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <p class="text-muted">"El CEC me dio la oportunidad de crecer profesionalmente. Hoy trabajo en una firma importante gracias a mi formación."</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 testimonial-avatar">
+                                            <strong>L</strong>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0 fw-bold">Laura Sánchez</h6>
+                                            <small class="text-muted">Secundaria</small>
+                                        </div>
+                                    </div>
+                                    <div class="text-warning mb-3">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <p class="text-muted">"Me encanta estudiar aquí. Los maestros son muy pacientes y siempre están dispuestos a ayudar. Mis calificaciones han mejorado mucho."</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 testimonial-avatar">
+                                            <strong>R</strong>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0 fw-bold">Roberto Torres</h6>
+                                            <small class="text-muted">Licenciatura en Administración</small>
+                                        </div>
+                                    </div>
+                                    <div class="text-warning mb-3">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <p class="text-muted">"Estudiar en CEC fue la mejor inversión. Ahora tengo mi propio negocio y aplico todo lo aprendido cada día."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 testimonial-avatar">
+                                            <strong>P</strong>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0 fw-bold">Patricia Flores</h6>
+                                            <small class="text-muted">Licenciatura en Pedagogía</small>
+                                        </div>
+                                    </div>
+                                    <div class="text-warning mb-3">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <p class="text-muted">"La formación que recibí me permitió conseguir trabajo como maestra en una escuela prestigiosa. Eternamente agradecida con el CEC."</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 testimonial-avatar">
+                                            <strong>D</strong>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0 fw-bold">Diego Morales</h6>
+                                            <small class="text-muted">Carrera Técnica en Informática</small>
+                                        </div>
+                                    </div>
+                                    <div class="text-warning mb-3">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <p class="text-muted">"Los conocimientos prácticos que adquirí me abrieron las puertas en el mundo de la tecnología. Recomiendo ampliamente el CEC."</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card h-100 border-0 shadow">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 testimonial-avatar">
+                                            <strong>S</strong>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0 fw-bold">Sofía Hernández</h6>
+                                            <small class="text-muted">Bachillerato en línea</small>
+                                        </div>
+                                    </div>
+                                    <div class="text-warning mb-3">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <p class="text-muted">"Pude terminar mi bachillerato desde casa mientras cuidaba a mi familia. La modalidad en línea es perfecta para mamás como yo."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="carousel-indicators carousel-indicators-bottom mt-4">
+                    <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="0" class="active bg-primary" aria-current="true" aria-label="Grupo 1"></button>
+                    <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="1" class="bg-primary" aria-label="Grupo 2"></button>
+                    <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="2" class="bg-primary" aria-label="Grupo 3"></button>
+                </div>
+            </div>
+
+            <button class="position-absolute start-0 carousel-nav-btn carousel-nav-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
+                <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center shadow testimonial-avatar">
+                    <i class="bi bi-chevron-left text-white fs-4"></i>
+                </div>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="position-absolute end-0 carousel-nav-btn carousel-nav-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">
+                <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center shadow testimonial-avatar">
+                    <i class="bi bi-chevron-right text-white fs-4"></i>
+                </div>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<section class="py-4 cta-section">
+    <div class="container text-center">
+        <h2 class="display-5 fw-bold mb-3 cta-title">¿Listo para comenzar tu futuro?</h2>
+        <p class="lead mb-3 cta-text">Únete a cientos de estudiantes que ya están construyendo su camino al éxito profesional</p>
+        <a href="{{ route('contact') }}" class="btn btn-primary btn-lg rounded-pill px-5">
+            Solicita información ahora <i class="bi bi-arrow-right ms-2"></i>
+        </a>
+    </div>
+</section>
+
+@endsection

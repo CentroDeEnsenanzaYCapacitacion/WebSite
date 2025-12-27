@@ -8,29 +8,25 @@ use Symfony\Component\HttpFoundation\Response;
 
 class SecurityHeaders
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
-     */
+    
     public function handle(Request $request, Closure $next): Response
     {
         $response = $next($request);
 
-        // Prevent clickjacking
+        
         $response->headers->set('X-Frame-Options', 'SAMEORIGIN');
 
-        // Prevent MIME type sniffing
+        
         $response->headers->set('X-Content-Type-Options', 'nosniff');
 
-        // Enable XSS protection
+        
         $response->headers->set('X-XSS-Protection', '1; mode=block');
 
-        // Referrer policy
+        
         $response->headers->set('Referrer-Policy', 'strict-origin-when-cross-origin');
 
-        // Content Security Policy
-        $response->headers->set('Content-Security-Policy', "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:;");
+        
+        $response->headers->set('Content-Security-Policy', "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://maps.googleapis.com https://maps.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; img-src 'self' data: https: *.googleapis.com *.gstatic.com; font-src 'self' data: https://fonts.gstatic.com https://cdn.jsdelivr.net; frame-src https://www.google.com;");
 
         return $response;
     }

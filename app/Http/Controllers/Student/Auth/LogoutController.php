@@ -8,9 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class LogoutController extends Controller
 {
-    /**
-     * Handle student logout.
-     */
+    
     public function logout(Request $request)
     {
         Auth::guard('student')->logout();

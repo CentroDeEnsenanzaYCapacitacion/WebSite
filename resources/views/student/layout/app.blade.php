@@ -20,7 +20,7 @@
             flex-direction: column;
         }
 
-        /* Header / Navbar */
+        
         .navbar {
             background: linear-gradient(135deg, #ffffff 0%, #fff7ed 100%);
             box-shadow: 0 4px 6px rgba(249, 115, 22, 0.1);
@@ -91,7 +91,7 @@
             box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
         }
 
-        /* Main Content Area */
+        
         .main-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -108,7 +108,7 @@
             border: 1px solid rgba(255, 255, 255, 0.5);
         }
 
-        /* Footer */
+        
         .footer {
             background: linear-gradient(135deg, #ffffff 0%, #fff7ed 100%);
             border-top: 2px solid rgba(249, 115, 22, 0.2);
@@ -142,7 +142,7 @@
     @stack('styles')
 </head>
 <body>
-    <!-- Navigation Bar -->
+    
     <nav class="navbar">
         <div class="navbar-container">
             <div class="navbar-brand">
@@ -162,12 +162,12 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
+    
     <main class="main-container">
         @yield('content')
     </main>
 
-    <!-- Footer -->
+    
     <footer class="footer">
         <p>&copy; {{ date('Y') }} Centro de Enseñanza y Capacitación. Todos los derechos reservados.</p>
     </footer>
