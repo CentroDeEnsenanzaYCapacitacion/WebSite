@@ -314,7 +314,11 @@ jobs:
               --exclude-glob .env.example \
               --exclude-glob composer.lock \
               --exclude-glob storage/logs/** \
-              --exclude-glob config/local.php; \
+              --exclude-glob config/local.php \
+              --exclude-glob intranet/** \
+              --exclude-glob intranet_dev/** \
+              --exclude-glob website_dev/** \
+              --exclude-glob public_html/**; \
               quit"
 
       - run:
