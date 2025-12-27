@@ -1,14 +1,14 @@
 <footer class="bg-secondary text-white mt-5">
     <div class="container py-5">
         <div class="row g-4">
-            <div class="col-lg-4">
-                <img src="{{ asset('assets/img/dr.png') }}" alt="CEC Logo" height="60" class="mb-3">
+            <div class="col-lg-4 col-md-6">
+                <img src="{{ asset('assets/img/nubarel.png') }}" alt="CEC Logo" height="75" class="mb-3">
                 <p class="text-white-50">
                     Centro de Enseñanza y Capacitación comprometido con la excelencia educativa y el desarrollo integral de nuestros estudiantes.
                 </p>
             </div>
 
-            <div class="col-lg-2 col-md-4">
+            <div class="col-lg-3 col-md-6">
                 <h5 class="mb-3">Oferta Educativa</h5>
                 <ul class="list-unstyled">
                     <li class="mb-2"><a href="{{ route('secondary') }}" class="text-white-50 text-decoration-none">Secundaria</a></li>
@@ -18,7 +18,7 @@
                 </ul>
             </div>
 
-            <div class="col-lg-2 col-md-4">
+            <div class="col-lg-3 col-md-6">
                 <h5 class="mb-3">Enlaces</h5>
                 <ul class="list-unstyled">
                     <li class="mb-2"><a href="{{ route('home') }}" class="text-white-50 text-decoration-none">Inicio</a></li>
@@ -28,7 +28,7 @@
                 </ul>
             </div>
 
-            <div class="col-lg-4 col-md-4">
+            <div class="col-lg-2 col-md-6">
                 <h5 class="mb-3">Síguenos</h5>
                 <div class="d-flex gap-3 mb-3">
                     <a href="https://www.facebook.com/dragonescec/" target="_blank" class="text-white">
@@ -47,9 +47,6 @@
                         <i class="bi bi-youtube fs-4"></i>
                     </a>
                 </div>
-                <p class="text-white-50 small">
-                    <strong>Email:</strong> info@cec.edu.mx
-                </p>
             </div>
         </div>
 

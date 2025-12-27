@@ -1,9 +1,6 @@
 <div class="bg-primary text-white py-2">
     <div class="container">
-        <div class="d-flex justify-content-end gap-4 small">
-            <span>Bachillerato</span>
-            <span>Licenciatura</span>
-            <a href="{{ route('student.login') }}" class="text-white text-decoration-none">Área de alumno</a>
+        <div class="d-flex justify-content-end gap-4 small" style="min-height: 12px;">
         </div>
     </div>
 </div>
@@ -60,6 +57,12 @@
 
                 <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('contact') ? 'active fw-bold' : '' }}" href="{{ route('contact') }}">Contacto</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('student.login') }}">
+                        <i class="bi bi-person-circle me-1"></i> Área de alumno
+                    </a>
                 </li>
             </ul>
 

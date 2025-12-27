@@ -5,7 +5,7 @@
 <div class="py-5 bg-light">
     <div class="container">
         <div class="text-center mb-5">
-            <h1 class="display-4 fw-bold text-secondary">Contáctanos</h1>
+            <h1 class="display-4 fw-bold text-primary">Contáctanos</h1>
             <div class="bg-primary mx-auto mb-3" style="width: 80px; height: 4px;"></div>
             <p class="lead text-muted">¿Tienes dudas? Estamos aquí para ayudarte</p>
         </div>
@@ -91,15 +91,8 @@
                             <i class="bi bi-telephone-fill fs-4 me-3"></i>
                             <div>
                                 <strong>Teléfono</strong>
-                                <p class="mb-0">+52 55 1234 5678</p>
-                            </div>
-                        </div>
-
-                        <div class="d-flex align-items-start mb-3">
-                            <i class="bi bi-envelope-fill fs-4 me-3"></i>
-                            <div>
-                                <strong>Email</strong>
-                                <p class="mb-0">info@cec.edu.mx</p>
+                                <p class="mb-0">55 5972 3763 (Ixtapaluca)</p>
+                                <p class="mb-0">595 955 5607 (Texcoco)</p>
                             </div>
                         </div>
 
@@ -107,29 +100,9 @@
                             <i class="bi bi-clock-fill fs-4 me-3"></i>
                             <div>
                                 <strong>Horario</strong>
-                                <p class="mb-0">Lun-Vie: 9:00 - 18:00</p>
-                                <p class="mb-0">Sábados: 9:00 - 14:00</p>
+                                <p class="mb-0">Lun-Vie: 8:00 - 20:00</p>
+                                <p class="mb-0">Sábados: 8:00 - 18:00</p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body p-4">
-                        <h5 class="mb-3">Síguenos</h5>
-                        <div class="d-flex gap-3 flex-wrap">
-                            <a href="https://www.facebook.com/dragonescec/" target="_blank" class="btn" style="width: 48px; height: 48px; padding: 0; display: flex; align-items: center; justify-content: center; background-color: #1877F2; color: white;">
-                                <i class="bi bi-facebook fs-5"></i>
-                            </a>
-                            <a href="https://www.instagram.com/dragonescec" target="_blank" class="btn" style="width: 48px; height: 48px; padding: 0; display: flex; align-items: center; justify-content: center; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white;">
-                                <i class="bi bi-instagram fs-5"></i>
-                            </a>
-                            <a href="https://www.tiktok.com/@dragonescec" target="_blank" class="btn" style="width: 48px; height: 48px; padding: 0; display: flex; align-items: center; justify-content: center; background-color: #000000; color: white;">
-                                <i class="bi bi-tiktok fs-5"></i>
-                            </a>
-                            <a href="https://www.youtube.com/@DragonesOnAir" target="_blank" class="btn" style="width: 48px; height: 48px; padding: 0; display: flex; align-items: center; justify-content: center; background-color: #FF0000; color: white;">
-                                <i class="bi bi-youtube fs-5"></i>
-                            </a>
                         </div>
                     </div>
                 </div>

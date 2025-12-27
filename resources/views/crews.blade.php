@@ -46,7 +46,7 @@
                         </div>
 
                         <div class="mt-4">
-                            <a href="https://wa.me/5215559723763" target="_blank" class="btn btn-success w-100 rounded-pill">
+                            <a href="https://wa.me/525549867488" target="_blank" class="btn btn-success w-100 rounded-pill">
                                 <i class="bi bi-whatsapp me-2"></i>Contactar por WhatsApp
                             </a>
                         </div>
@@ -89,7 +89,7 @@
                         </div>
 
                         <div class="mt-4">
-                            <a href="https://wa.me/5215959555607" target="_blank" class="btn btn-success w-100 rounded-pill">
+                            <a href="https://wa.me/525573743951" target="_blank" class="btn btn-success w-100 rounded-pill">
                                 <i class="bi bi-whatsapp me-2"></i>Contactar por WhatsApp
                             </a>
                         </div>
