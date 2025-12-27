@@ -106,7 +106,7 @@
                 <div class="card-flip">
                     <div class="card-flip-inner">
                         <div class="card-flip-front bg-white shadow text-center">
-                            <img src="{{ asset('assets/img/mision.png') }}" alt="Misión" class="img-fluid mb-3" class="mission-vision-icon">
+                            <img src="{{ asset('assets/img/mision.png') }}" alt="Misión" class="mission-vision-icon mb-3">
                             <h4 class="fw-bold">{{ $mvv_data[1]->name }}</h4>
                         </div>
                         <div class="card-flip-back shadow">
@@ -120,7 +120,7 @@
                 <div class="card-flip">
                     <div class="card-flip-inner">
                         <div class="card-flip-front bg-white shadow text-center">
-                            <img src="{{ asset('assets/img/vision.png') }}" alt="Visión" class="img-fluid mb-3" class="mission-vision-icon">
+                            <img src="{{ asset('assets/img/vision.png') }}" alt="Visión" class="mission-vision-icon mb-3">
                             <h4 class="fw-bold">{{ $mvv_data[2]->name }}</h4>
                         </div>
                         <div class="card-flip-back shadow">
@@ -134,7 +134,7 @@
                 <div class="card-flip">
                     <div class="card-flip-inner">
                         <div class="card-flip-front bg-white shadow text-center">
-                            <img src="{{ asset('assets/img/valores.png') }}" alt="Valores" class="img-fluid mb-3" class="mission-vision-icon">
+                            <img src="{{ asset('assets/img/valores.png') }}" alt="Valores" class="mission-vision-icon mb-3">
                             <h4 class="fw-bold">{{ $mvv_data[3]->name }}</h4>
                         </div>
                         <div class="card-flip-back shadow">

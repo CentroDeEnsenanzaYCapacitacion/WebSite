@@ -2,7 +2,7 @@
     <div class="container py-5">
         <div class="row g-4">
             <div class="col-lg-4 col-md-6">
-                <img src="{{ asset('assets/img/nubarel.png') }}" alt="CEC Logo" height="75" class="mb-3">
+                <img src="{{ asset('assets/img/dc.png') }}" alt="CEC Logo" height="90" class="mb-3">
                 <p class="text-white-50">
                     Centro de Enseñanza y Capacitación comprometido con la excelencia educativa y el desarrollo integral de nuestros estudiantes.
                 </p>

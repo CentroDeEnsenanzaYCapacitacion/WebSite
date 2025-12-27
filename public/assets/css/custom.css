@@ -106,6 +106,12 @@ h1, h2, h3, h4, h5, h6 {
     transform: rotateY(180deg);
     background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
     color: white;
+    overflow-y: auto;
+}
+
+.card-flip-back p {
+    font-size: 0.95rem;
+    line-height: 1.5;
 }
 
 .navbar {
@@ -216,7 +222,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mission-vision-icon {
-    max-width: 150px;
+    max-width: 100px;
+    height: auto;
 }
 
 .testimonials-container {
