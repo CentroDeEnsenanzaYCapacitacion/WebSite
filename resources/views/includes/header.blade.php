@@ -1,6 +1,6 @@
 <div class="bg-primary text-white py-2">
     <div class="container">
-        <div class="d-flex justify-content-end gap-4 small" style="min-height: 12px;">
+        <div class="d-flex justify-content-end gap-4 small header-top-bar">
         </div>
     </div>
 </div>

@@ -204,3 +204,107 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0.5rem 0;
     opacity: 0.1;
 }
+
+.carousel-img {
+    height: 400px;
+    object-fit: cover;
+}
+
+.title-underline {
+    width: 80px;
+    height: 4px;
+}
+
+.mission-vision-icon {
+    max-width: 150px;
+}
+
+.testimonials-container {
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+.testimonials-carousel-inner {
+    padding: 20px 10px;
+}
+
+.testimonial-avatar {
+    width: 50px;
+    height: 50px;
+}
+
+.carousel-indicators-bottom {
+    position: relative;
+    bottom: auto;
+}
+
+.carousel-nav-btn {
+    z-index: 10;
+    border: none;
+    background: none;
+    top: 35%;
+}
+
+.carousel-nav-btn.carousel-nav-prev {
+    left: 0;
+}
+
+.carousel-nav-btn.carousel-nav-next {
+    right: 0;
+}
+
+.cta-section {
+    background: linear-gradient(135deg, #FFF8E1 0%, #E3F2FD 100%);
+}
+
+.cta-title {
+    color: var(--secondary) !important;
+}
+
+.cta-text {
+    color: var(--dark) !important;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../img/bg01.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+}
+
+.header-top-bar {
+    min-height: 12px;
+}
+
+.contact-info-card {
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+}
+
+.crew-card-header {
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+}
+
+.map-iframe {
+    border: 0;
+}
+
+.whatsapp-button {
+    width: 60px;
+    height: 60px;
+    z-index: 1050;
+}

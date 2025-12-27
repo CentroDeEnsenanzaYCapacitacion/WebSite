@@ -24,6 +24,7 @@
     @include('includes.footer')
 
     <script src="{{ asset('assets/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/js/tooltips.js') }}"></script>
 
     @stack('scripts')
 </body>

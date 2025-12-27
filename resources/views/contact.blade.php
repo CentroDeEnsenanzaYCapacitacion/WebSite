@@ -6,7 +6,7 @@
     <div class="container">
         <div class="text-center mb-5">
             <h1 class="display-4 fw-bold text-primary">Contáctanos</h1>
-            <div class="bg-primary mx-auto mb-3" style="width: 80px; height: 4px;"></div>
+            <div class="bg-primary mx-auto mb-3 title-underline"></div>
             <p class="lead text-muted">¿Tienes dudas? Estamos aquí para ayudarte</p>
         </div>
 
@@ -83,7 +83,7 @@
             </div>
 
             <div class="col-lg-4">
-                <div class="card border-0 shadow-sm mb-4" style="background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);">
+                <div class="card border-0 shadow-sm mb-4 contact-info-card">
                     <div class="card-body p-4 text-white">
                         <h4 class="mb-4">Información de contacto</h4>
 

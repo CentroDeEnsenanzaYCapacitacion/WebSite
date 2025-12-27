@@ -6,7 +6,7 @@
     <div class="container">
         <div class="text-center mb-5">
             <h1 class="display-4 fw-bold text-primary">Secundaria</h1>
-            <div class="bg-primary mx-auto mb-3" style="width: 80px; height: 4px;"></div>
+            <div class="bg-primary mx-auto mb-3 title-underline"></div>
             <p class="lead text-muted">Educación de calidad para el futuro de tus hijos</p>
         </div>
 
