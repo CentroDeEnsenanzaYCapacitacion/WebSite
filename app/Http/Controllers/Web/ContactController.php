@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Web;
 use App\Http\Controllers\Controller;
 use App\Mail\WebContact;
 use App\Models\Course;
-use App\Models\Crew;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -77,7 +76,7 @@ class ContactController extends Controller
         ];
 
         try {
-            Mail::to('pcastillo@capacitacioncec.edu.mx')->send(new WebContact($details));
+            Mail::to(config('mail.contact_to'))->send(new WebContact($details));
             return back()->with('success', '­Correo enviado correctamente!, nos pondremos en contacto con usted en la mayor brevedad posible.');
         } catch (Exception $e) {
             report($e);
