@@ -67,12 +67,6 @@ class ContactController extends Controller
             'msg' => 'required|string|max:1000'
         ]);
 
-        $crew_mail = Crew::where('name', $validated['crew'])->first();
-
-        if (!$crew_mail || !$crew_mail->mail) {
-            return back()->with('error', 'No se encontr¢ el plantel seleccionado.');
-        }
-
         $details = [
             'name' => $validated['name'],
             'cel' => $validated['cel'],
@@ -83,7 +77,7 @@ class ContactController extends Controller
         ];
 
         try {
-            Mail::to($crew_mail->mail)->send(new WebContact($details));
+            Mail::to('pcastillo@capacitacioncec.edu.mx')->send(new WebContact($details));
             return back()->with('success', '­Correo enviado correctamente!, nos pondremos en contacto con usted en la mayor brevedad posible.');
         } catch (Exception $e) {
             report($e);
