@@ -95,4 +95,6 @@ return [
         ],
     ],
 
+    'contact_to' => env('CONTACT_MAIL_TO', 'system@capacitacioncec.edu.mx'),
+
 ];
