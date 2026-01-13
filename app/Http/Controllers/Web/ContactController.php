@@ -86,6 +86,7 @@ class ContactController extends Controller
             Mail::to($crew_mail->mail)->send(new WebContact($details));
             return back()->with('success', '­Correo enviado correctamente!, nos pondremos en contacto con usted en la mayor brevedad posible.');
         } catch (Exception $e) {
+            report($e);
             return back()->with('error', 'Hubo un problema al enviar el correo. Por favor, intente nuevamente.');
         }
     }
