@@ -344,7 +344,8 @@ jobs:
               --exclude-glob index*.php \
               --exclude-glob img/carousel/** \
               --exclude intranet/ \
-              --exclude intranet_dev/; \
+              --exclude intranet_dev/ \
+              --exclude website_dev/; \
               quit"
 
       - run:
