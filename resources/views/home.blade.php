@@ -197,6 +197,9 @@
                                             ?? $opinion->imagen
                                             ?? $opinion->img
                                             ?? '';
+                                        if ($avatarPath === '') {
+                                            $avatarPath = (($groupIndex * 3) + $loop->iteration) . '.jpg';
+                                        }
                                         $avatarPath = trim((string) $avatarPath);
                                         $avatarUrl = '';
                                         if ($avatarPath !== '') {
