@@ -232,9 +232,9 @@
                                         <div class="card border-0 shadow testimonial-card">
                                             <div class="card-body">
                                                 <div class="d-flex align-items-center mb-3">
-                                                    <div class="rounded-circle d-flex align-items-center justify-content-center me-3 testimonial-avatar testimonial-avatar--profile overflow-hidden {{ $avatarUrl ? 'testimonial-avatar--image' : '' }}" @if ($avatarUrl) style="background-image: url('{{ $avatarUrl }}');" @endif>
+                                                    <div class="rounded-circle d-flex align-items-center justify-content-center me-3 testimonial-avatar testimonial-avatar--profile overflow-hidden {{ $avatarUrl ? 'testimonial-avatar--image' : '' }}">
                                                         @if ($avatarUrl)
-                                                            <img src="{{ $avatarUrl }}" alt="{{ $opinionName }}" class="testimonial-avatar-img" @if ($avatarBase) data-avatar-base="{{ $avatarBase }}" data-avatar-exts="{{ $avatarExts }}" onerror="if(!this.dataset.avatarExts){this.onerror=null;return;}var exts=this.dataset.avatarExts.split(',');if(!exts.length){this.onerror=null;return;}var ext=exts.shift();this.dataset.avatarExts=exts.join(',');var nextSrc=this.dataset.avatarBase+'.'+ext;this.src=nextSrc;if(this.parentElement){this.parentElement.style.backgroundImage='url(' + nextSrc + ')';}" @endif>
+                                                            <img src="{{ $avatarUrl }}" alt="{{ $opinionName }}" class="testimonial-avatar-img" @if ($avatarBase) data-avatar-base="{{ $avatarBase }}" data-avatar-exts="{{ $avatarExts }}" onerror="if(!this.dataset.avatarExts){this.onerror=null;return;}var exts=this.dataset.avatarExts.split(',');if(!exts.length){this.onerror=null;return;}var ext=exts.shift();this.dataset.avatarExts=exts.join(',');this.src=this.dataset.avatarBase+'.'+ext;" @endif>
                                                         @else
                                                             <strong>{{ $initial }}</strong>
                                                         @endif
