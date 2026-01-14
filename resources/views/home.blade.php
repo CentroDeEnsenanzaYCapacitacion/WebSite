@@ -203,7 +203,13 @@
                                             if (preg_match('#^https?://#i', $avatarPath) || substr($avatarPath, 0, 2) === '//') {
                                                 $avatarUrl = $avatarPath;
                                             } else {
-                                                $avatarUrl = rtrim($opinions_url, '/') . '/' . ltrim($avatarPath, '/');
+                                                $avatarPath = ltrim($avatarPath, '/');
+                                                $avatarPath = preg_replace('#^assets/img/(carousel|opinions)/#i', '', $avatarPath);
+                                                $avatarPath = preg_replace('#^(carousel|opinions)/#i', '', $avatarPath);
+                                                if (!preg_match('/\.[a-zA-Z0-9]+$/', $avatarPath)) {
+                                                    $avatarPath .= '.jpg';
+                                                }
+                                                $avatarUrl = rtrim($opinions_url, '/') . '/' . $avatarPath;
                                             }
                                         }
                                     @endphp
