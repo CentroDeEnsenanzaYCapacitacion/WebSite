@@ -54,8 +54,9 @@
                                     <label for="plantel" class="form-label fw-semibold">Plantel de interés <span class="text-danger">*</span></label>
                                     <select name="crew" class="form-select form-select-lg" id="plantel" required>
                                         <option value="">Selecciona un plantel</option>
-                                        <option value="Ixtapaluca">Ixtapaluca</option>
-                                        <option value="Texcoco">Texcoco</option>
+                                        @foreach ($crews as $crew)
+                                            <option value="{{ $crew->name }}">{{ $crew->name }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="col-md-6">

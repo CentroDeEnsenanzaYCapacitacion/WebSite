@@ -235,9 +235,33 @@ h1, h2, h3, h4, h5, h6 {
     padding: 20px 10px;
 }
 
+.testimonial-card {
+    height: 220px;
+}
+
+.testimonial-card .card-body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.testimonial-text {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    text-align: justify;
+}
+
 .testimonial-avatar {
     width: 50px;
     height: 50px;
+}
+
+.testimonial-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .carousel-indicators-bottom {
