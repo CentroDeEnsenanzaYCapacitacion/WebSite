@@ -184,8 +184,11 @@
                                             ?? $opinion->description
                                             ?? $opinion->texto
                                             ?? '';
-                                        $ratingValue = (int) ($opinion->rating ?? $opinion->stars ?? 5);
+                                        $ratingRaw = $opinion->rating ?? $opinion->stars ?? 5;
+                                        $ratingValue = (float) str_replace(',', '.', (string) $ratingRaw);
                                         $ratingValue = max(0, min(5, $ratingValue));
+                                        $fullStars = (int) floor($ratingValue);
+                                        $hasHalfStar = ($ratingValue - $fullStars) >= 0.5;
                                         $initial = $opinionName !== '' ? strtoupper(mb_substr($opinionName, 0, 1, 'UTF-8')) : '?';
                                         $avatarPath = $opinion->image
                                             ?? $opinion->photo
@@ -224,7 +227,13 @@
                                                 </div>
                                                 <div class="text-warning mb-3">
                                                     @for ($i = 1; $i <= 5; $i++)
-                                                        <i class="bi {{ $i <= $ratingValue ? 'bi-star-fill' : 'bi-star' }}"></i>
+                                                        @if ($i <= $fullStars)
+                                                            <i class="bi bi-star-fill"></i>
+                                                        @elseif ($hasHalfStar && $i === ($fullStars + 1))
+                                                            <i class="bi bi-star-half"></i>
+                                                        @else
+                                                            <i class="bi bi-star"></i>
+                                                        @endif
                                                     @endfor
                                                 </div>
                                                 <p class="text-muted testimonial-text">"{{ $opinionText }}"</p>
