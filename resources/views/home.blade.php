@@ -156,240 +156,91 @@
 
         <div class="position-relative testimonials-container">
             <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                @php
+                    $opinionGroups = $opinions->chunk(3);
+                @endphp
                 <div class="carousel-inner testimonials-carousel-inner">
-                    <div class="carousel-item active">
-                    <div class="row g-4">
-                        <div class="col-md-4">
-                            <div class="card h-100 border-0 shadow">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center mb-3">
-                                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 testimonial-avatar">
-                                            <strong>M</strong>
-                                        </div>
-                                        <div>
-                                            <h6 class="mb-0 fw-bold">María González</h6>
-                                            <small class="text-muted">Licenciatura en Derecho</small>
+                    @foreach ($opinionGroups as $groupIndex => $group)
+                        <div class="carousel-item {{ $groupIndex === 0 ? 'active' : '' }}">
+                            <div class="row g-4">
+                                @foreach ($group as $opinion)
+                                    @php
+                                        $opinionName = $opinion->name
+                                            ?? $opinion->student_name
+                                            ?? $opinion->nombre
+                                            ?? $opinion->title
+                                            ?? '';
+                                        $opinionProgram = $opinion->course
+                                            ?? $opinion->program
+                                            ?? $opinion->career
+                                            ?? $opinion->degree
+                                            ?? $opinion->curso
+                                            ?? $opinion->carrera
+                                            ?? $opinion->programa
+                                            ?? $opinion->nivel
+                                            ?? '';
+                                        $opinionText = $opinion->opinion
+                                            ?? $opinion->comment
+                                            ?? $opinion->description
+                                            ?? $opinion->texto
+                                            ?? '';
+                                        $ratingValue = (int) ($opinion->rating ?? $opinion->stars ?? 5);
+                                        $ratingValue = max(0, min(5, $ratingValue));
+                                        $initial = $opinionName !== '' ? strtoupper(mb_substr($opinionName, 0, 1, 'UTF-8')) : '?';
+                                        $avatarPath = $opinion->image
+                                            ?? $opinion->photo
+                                            ?? $opinion->avatar
+                                            ?? $opinion->foto
+                                            ?? $opinion->imagen
+                                            ?? $opinion->img
+                                            ?? '';
+                                        $avatarPath = trim((string) $avatarPath);
+                                        $avatarUrl = '';
+                                        if ($avatarPath !== '') {
+                                            if (preg_match('#^https?://#i', $avatarPath) || substr($avatarPath, 0, 2) === '//') {
+                                                $avatarUrl = $avatarPath;
+                                            } else {
+                                                $avatarUrl = rtrim($opinions_url, '/') . '/' . ltrim($avatarPath, '/');
+                                            }
+                                        }
+                                    @endphp
+                                    <div class="col-md-4">
+                                        <div class="card h-100 border-0 shadow">
+                                            <div class="card-body">
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 testimonial-avatar overflow-hidden">
+                                                        @if ($avatarUrl)
+                                                            <img src="{{ $avatarUrl }}" alt="{{ $opinionName }}" class="testimonial-avatar-img">
+                                                        @else
+                                                            <strong>{{ $initial }}</strong>
+                                                        @endif
+                                                    </div>
+                                                    <div>
+                                                        <h6 class="mb-0 fw-bold">{{ $opinionName }}</h6>
+                                                        @if ($opinionProgram !== '')
+                                                            <small class="text-muted">{{ $opinionProgram }}</small>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                                <div class="text-warning mb-3">
+                                                    @for ($i = 1; $i <= 5; $i++)
+                                                        <i class="bi {{ $i <= $ratingValue ? 'bi-star-fill' : 'bi-star' }}"></i>
+                                                    @endfor
+                                                </div>
+                                                <p class="text-muted">"{{ $opinionText }}"</p>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="text-warning mb-3">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                    </div>
-                                    <p class="text-muted">"Excelente institución con profesores muy capacitados. Logré terminar mi licenciatura mientras trabajaba gracias a la flexibilidad de horarios."</p>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
-
-                        <div class="col-md-4">
-                            <div class="card h-100 border-0 shadow">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center mb-3">
-                                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 testimonial-avatar">
-                                            <strong>J</strong>
-                                        </div>
-                                        <div>
-                                            <h6 class="mb-0 fw-bold">Juan Pérez</h6>
-                                            <small class="text-muted">Bachillerato</small>
-                                        </div>
-                                    </div>
-                                    <div class="text-warning mb-3">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                    </div>
-                                    <p class="text-muted">"Terminé mi bachillerato en tiempo récord. El sistema en línea es muy completo y el apoyo de los maestros es excepcional."</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="card h-100 border-0 shadow">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center mb-3">
-                                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 testimonial-avatar">
-                                            <strong>A</strong>
-                                        </div>
-                                        <div>
-                                            <h6 class="mb-0 fw-bold">Ana Martínez</h6>
-                                            <small class="text-muted">Licenciatura en Psicología</small>
-                                        </div>
-                                    </div>
-                                    <div class="text-warning mb-3">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                    </div>
-                                    <p class="text-muted">"La mejor decisión que pude tomar. El plan de estudios es muy completo y ahora tengo mi título profesional."</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <div class="row g-4">
-                        <div class="col-md-4">
-                            <div class="card h-100 border-0 shadow">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center mb-3">
-                                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 testimonial-avatar">
-                                            <strong>C</strong>
-                                        </div>
-                                        <div>
-                                            <h6 class="mb-0 fw-bold">Carlos Ramírez</h6>
-                                            <small class="text-muted">Licenciatura en Contabilidad</small>
-                                        </div>
-                                    </div>
-                                    <div class="text-warning mb-3">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                    </div>
-                                    <p class="text-muted">"El CEC me dio la oportunidad de crecer profesionalmente. Hoy trabajo en una firma importante gracias a mi formación."</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="card h-100 border-0 shadow">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center mb-3">
-                                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 testimonial-avatar">
-                                            <strong>L</strong>
-                                        </div>
-                                        <div>
-                                            <h6 class="mb-0 fw-bold">Laura Sánchez</h6>
-                                            <small class="text-muted">Secundaria</small>
-                                        </div>
-                                    </div>
-                                    <div class="text-warning mb-3">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                    </div>
-                                    <p class="text-muted">"Me encanta estudiar aquí. Los maestros son muy pacientes y siempre están dispuestos a ayudar. Mis calificaciones han mejorado mucho."</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="card h-100 border-0 shadow">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center mb-3">
-                                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 testimonial-avatar">
-                                            <strong>R</strong>
-                                        </div>
-                                        <div>
-                                            <h6 class="mb-0 fw-bold">Roberto Torres</h6>
-                                            <small class="text-muted">Licenciatura en Administración</small>
-                                        </div>
-                                    </div>
-                                    <div class="text-warning mb-3">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                    </div>
-                                    <p class="text-muted">"Estudiar en CEC fue la mejor inversión. Ahora tengo mi propio negocio y aplico todo lo aprendido cada día."</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <div class="row g-4">
-                        <div class="col-md-4">
-                            <div class="card h-100 border-0 shadow">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center mb-3">
-                                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 testimonial-avatar">
-                                            <strong>P</strong>
-                                        </div>
-                                        <div>
-                                            <h6 class="mb-0 fw-bold">Patricia Flores</h6>
-                                            <small class="text-muted">Licenciatura en Pedagogía</small>
-                                        </div>
-                                    </div>
-                                    <div class="text-warning mb-3">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                    </div>
-                                    <p class="text-muted">"La formación que recibí me permitió conseguir trabajo como maestra en una escuela prestigiosa. Eternamente agradecida con el CEC."</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="card h-100 border-0 shadow">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center mb-3">
-                                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 testimonial-avatar">
-                                            <strong>D</strong>
-                                        </div>
-                                        <div>
-                                            <h6 class="mb-0 fw-bold">Diego Morales</h6>
-                                            <small class="text-muted">Carrera Técnica en Informática</small>
-                                        </div>
-                                    </div>
-                                    <div class="text-warning mb-3">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                    </div>
-                                    <p class="text-muted">"Los conocimientos prácticos que adquirí me abrieron las puertas en el mundo de la tecnología. Recomiendo ampliamente el CEC."</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="card h-100 border-0 shadow">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center mb-3">
-                                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 testimonial-avatar">
-                                            <strong>S</strong>
-                                        </div>
-                                        <div>
-                                            <h6 class="mb-0 fw-bold">Sofía Hernández</h6>
-                                            <small class="text-muted">Bachillerato en línea</small>
-                                        </div>
-                                    </div>
-                                    <div class="text-warning mb-3">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                    </div>
-                                    <p class="text-muted">"Pude terminar mi bachillerato desde casa mientras cuidaba a mi familia. La modalidad en línea es perfecta para mamás como yo."</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
+                    @endforeach
                 </div>
 
                 <div class="carousel-indicators carousel-indicators-bottom mt-4">
-                    <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="0" class="active bg-primary" aria-current="true" aria-label="Grupo 1"></button>
-                    <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="1" class="bg-primary" aria-label="Grupo 2"></button>
-                    <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="2" class="bg-primary" aria-label="Grupo 3"></button>
+                    @foreach ($opinionGroups as $groupIndex => $group)
+                        <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="{{ $groupIndex }}" class="{{ $groupIndex === 0 ? 'active' : '' }} bg-primary" aria-current="{{ $groupIndex === 0 ? 'true' : 'false' }}" aria-label="Grupo {{ $groupIndex + 1 }}"></button>
+                    @endforeach
                 </div>
             </div>
 
