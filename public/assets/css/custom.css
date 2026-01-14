@@ -261,6 +261,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    object-position: center;
     display: block;
 }
 
@@ -272,6 +273,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .testimonial-avatar--image {
     background-color: #fff;
+}
+
+.testimonial-avatar--cover {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.testimonial-avatar-img--hidden {
+    opacity: 0;
 }
 
 .carousel-indicators-bottom {
