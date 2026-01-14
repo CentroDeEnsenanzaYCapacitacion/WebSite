@@ -236,7 +236,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .testimonial-card {
-    height: 340px;
+    height: 220px;
+}
+
+.testimonial-card .card-body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.testimonial-text {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
 }
 
 .testimonial-avatar {

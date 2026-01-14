@@ -205,7 +205,7 @@
                                         }
                                     @endphp
                                     <div class="col-md-4">
-                                        <div class="card h-100 border-0 shadow testimonial-card">
+                                        <div class="card border-0 shadow testimonial-card">
                                             <div class="card-body">
                                                 <div class="d-flex align-items-center mb-3">
                                                     <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 testimonial-avatar overflow-hidden">
@@ -227,7 +227,7 @@
                                                         <i class="bi {{ $i <= $ratingValue ? 'bi-star-fill' : 'bi-star' }}"></i>
                                                     @endfor
                                                 </div>
-                                                <p class="text-muted">"{{ $opinionText }}"</p>
+                                                <p class="text-muted testimonial-text">"{{ $opinionText }}"</p>
                                             </div>
                                         </div>
                                     </div>
