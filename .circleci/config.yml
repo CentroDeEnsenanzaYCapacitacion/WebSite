@@ -190,7 +190,8 @@ jobs:
               --verbose \
               --delete \
               --exclude-glob index*.php \
-              --exclude-glob img/carousel/**; \
+              --exclude-glob img/carousel/** \
+              --exclude-glob img/opinions/**; \
               quit"
 
       - run:
@@ -353,6 +354,7 @@ jobs:
               --delete \
               --exclude-glob index*.php \
               --exclude-glob img/carousel/** \
+              --exclude-glob img/opinions/** \
               --exclude intranet/ \
               --exclude intranet_dev/ \
               --exclude website_dev/; \
