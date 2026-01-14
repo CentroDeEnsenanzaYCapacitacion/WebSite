@@ -41,7 +41,10 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - .
+            - .composer_changed
+            - vendor
+            - composer.json
+            - composer.lock
 
   build-staging:
     docker:
@@ -83,14 +86,18 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - .
-
+            - .composer_changed
+            - vendor
+            - composer.json
+            - composer.lock
 
   deploy-development:
     docker:
       - image: cimg/php:8.2
 
     steps:
+      - checkout
+
       - attach_workspace:
           at: .
 
@@ -196,7 +203,6 @@ jobs:
               echo "CLEAR_CACHE_DEV_URL or CLEAR_CACHE_TOKEN_DEV not set, skipping cache clear (DEV)"
             fi
 
-
   build-production:
     docker:
       - image: cimg/php:8.2
@@ -238,14 +244,18 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - .
-
+            - .composer_changed
+            - vendor
+            - composer.json
+            - composer.lock
 
   deploy-production:
     docker:
       - image: cimg/php:8.2
 
     steps:
+      - checkout
+
       - attach_workspace:
           at: .
 
@@ -357,8 +367,6 @@ jobs:
             else
               echo "CLEAR_CACHE_PROD_URL or CLEAR_CACHE_TOKEN_PROD not set, skipping cache clear (PROD)"
             fi
-
-
 
 workflows:
   deploy-on-branches:

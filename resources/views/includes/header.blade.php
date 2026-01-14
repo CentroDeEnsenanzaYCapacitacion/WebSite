@@ -33,7 +33,7 @@
                         <li><hr class="dropdown-divider"></li>
                         <li><h6 class="dropdown-header">Bachillerato</h6></li>
                         <li><a class="dropdown-item small" href="#">En un exámen (en línea)</a></li>
-                        <li><a class="dropdown-item small" href="#">6, 9, o 12 meses (en línea)</a></li>
+                        <li><a class="dropdown-item small" href="#">9 o 12 meses (en línea)</a></li>
                         <li><a class="dropdown-item small" href="#">18 meses (presencial / en línea / mixta)</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><h6 class="dropdown-header">Licenciaturas</h6></li>
