@@ -202,6 +202,7 @@
                                         }
                                         $avatarPath = trim((string) $avatarPath);
                                         $avatarUrl = '';
+                                        $avatarBase = '';
                                         if ($avatarPath !== '') {
                                             if (preg_match('#^https?://#i', $avatarPath) || substr($avatarPath, 0, 2) === '//') {
                                                 $avatarUrl = $avatarPath;
@@ -210,6 +211,7 @@
                                                 $avatarPath = preg_replace('#^assets/img/(carousel|opinions)/#i', '', $avatarPath);
                                                 $avatarPath = preg_replace('#^(carousel|opinions)/#i', '', $avatarPath);
                                                 if (!preg_match('/\.[a-zA-Z0-9]+$/', $avatarPath)) {
+                                                    $avatarBase = rtrim($opinions_url, '/') . '/' . $avatarPath;
                                                     $avatarPath .= '.jpg';
                                                 }
                                                 $avatarUrl = rtrim($opinions_url, '/') . '/' . $avatarPath;
@@ -220,9 +222,9 @@
                                         <div class="card border-0 shadow testimonial-card">
                                             <div class="card-body">
                                                 <div class="d-flex align-items-center mb-3">
-                                                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 testimonial-avatar overflow-hidden">
+                                                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 testimonial-avatar overflow-hidden {{ $avatarUrl ? 'testimonial-avatar--image' : '' }}">
                                                         @if ($avatarUrl)
-                                                            <img src="{{ $avatarUrl }}" alt="{{ $opinionName }}" class="testimonial-avatar-img">
+                                                            <img src="{{ $avatarUrl }}" alt="{{ $opinionName }}" class="testimonial-avatar-img" @if ($avatarBase) data-avatar-base="{{ $avatarBase }}" data-avatar-try="0" onerror="if(this.dataset.avatarTry==='0'){this.dataset.avatarTry='1';this.src=this.dataset.avatarBase+'.jpeg';}else if(this.dataset.avatarTry==='1'){this.dataset.avatarTry='2';this.src=this.dataset.avatarBase+'.png';}" @endif>
                                                         @else
                                                             <strong>{{ $initial }}</strong>
                                                         @endif
