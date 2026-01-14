@@ -197,13 +197,34 @@
                                             ?? $opinion->imagen
                                             ?? $opinion->img
                                             ?? '';
+                                        if ($avatarPath === '') {
+                                            $avatarPath = (string) (($groupIndex * 3) + $loop->iteration);
+                                        }
                                         $avatarPath = trim((string) $avatarPath);
                                         $avatarUrl = '';
+                                        $avatarBase = '';
+                                        $avatarExts = '';
                                         if ($avatarPath !== '') {
                                             if (preg_match('#^https?://#i', $avatarPath) || substr($avatarPath, 0, 2) === '//') {
                                                 $avatarUrl = $avatarPath;
                                             } else {
-                                                $avatarUrl = rtrim($opinions_url, '/') . '/' . ltrim($avatarPath, '/');
+                                                $avatarPath = ltrim($avatarPath, '/');
+                                                $avatarPath = preg_replace('#^assets/img/(carousel|opinions)/#i', '', $avatarPath);
+                                                $avatarPath = preg_replace('#^(carousel|opinions)/#i', '', $avatarPath);
+                                                $avatarExt = '';
+                                                if (preg_match('/\.(jpg|jpeg|png)$/i', $avatarPath, $matches)) {
+                                                    $avatarExt = strtolower($matches[1]);
+                                                    $avatarPath = preg_replace('/\.(jpg|jpeg|png)$/i', '', $avatarPath);
+                                                } else {
+                                                    $avatarExt = 'jpg';
+                                                }
+                                                $avatarBase = rtrim($opinions_url, '/') . '/' . $avatarPath;
+                                                $avatarUrl = $avatarBase . '.' . $avatarExt;
+                                                $fallbackExts = ['jpg', 'jpeg', 'png', 'JPG', 'JPEG', 'PNG'];
+                                                $fallbackExts = array_values(array_filter($fallbackExts, function ($ext) use ($avatarExt) {
+                                                    return strtolower($ext) !== $avatarExt;
+                                                }));
+                                                $avatarExts = implode(',', $fallbackExts);
                                             }
                                         }
                                     @endphp
@@ -211,9 +232,9 @@
                                         <div class="card border-0 shadow testimonial-card">
                                             <div class="card-body">
                                                 <div class="d-flex align-items-center mb-3">
-                                                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 testimonial-avatar overflow-hidden">
+                                                    <div class="rounded-circle d-flex align-items-center justify-content-center me-3 testimonial-avatar testimonial-avatar--profile overflow-hidden {{ $avatarUrl ? 'testimonial-avatar--image' : '' }}">
                                                         @if ($avatarUrl)
-                                                            <img src="{{ $avatarUrl }}" alt="{{ $opinionName }}" class="testimonial-avatar-img">
+                                                            <img src="{{ $avatarUrl }}" alt="{{ $opinionName }}" class="testimonial-avatar-img" @if ($avatarBase) data-avatar-base="{{ $avatarBase }}" data-avatar-exts="{{ $avatarExts }}" onerror="if(!this.dataset.avatarExts){this.onerror=null;return;}var exts=this.dataset.avatarExts.split(',');if(!exts.length){this.onerror=null;return;}var ext=exts.shift();this.dataset.avatarExts=exts.join(',');this.src=this.dataset.avatarBase+'.'+ext;" @endif>
                                                         @else
                                                             <strong>{{ $initial }}</strong>
                                                         @endif
