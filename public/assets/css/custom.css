@@ -275,16 +275,6 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #fff;
 }
 
-.testimonial-avatar--cover {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.testimonial-avatar-img--hidden {
-    opacity: 0;
-}
-
 .carousel-indicators-bottom {
     position: relative;
     bottom: auto;
