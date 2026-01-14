@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web;
 use App\Http\Controllers\Controller;
 use App\Mail\WebContact;
 use App\Models\Course;
+use App\Models\Crew;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -24,7 +25,7 @@ class ContactController extends Controller
             'gastronimia',
         ];
 
-        $courses = Course::all()
+        $courses = Course::where('is_active', 1)->get()
             ->map(function ($course) {
                 $normalized = Str::of($course->name)
                     ->lower()
@@ -52,7 +53,10 @@ class ContactController extends Controller
             })
             ->unique('normalized')
             ->values();
-        return view('contact', compact('courses'));
+
+        $crews = Crew::where('id', '!=', 1)->get();
+
+        return view('contact', compact('courses', 'crews'));
     }
 
     public function contactPost(Request $request)
