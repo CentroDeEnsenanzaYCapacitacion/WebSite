@@ -37,6 +37,39 @@ class HomeController extends Controller
         $mvv_data = WebMvv::all();
         $opinions = WebOpinion::all();
 
-        return view('home', compact('carousel_url', 'opinions_url', 'carousel_texts', 'mvv_data', 'opinions'));
+        $opinionImages = [];
+        if ($opinions_url) {
+            foreach ($opinions as $opinion) {
+                $imageUrl = $this->findOpinionImage($opinions_url, $opinion->id);
+                $opinionImages[$opinion->id] = $imageUrl;
+            }
+        }
+
+        return view('home', compact('carousel_url', 'opinions_url', 'carousel_texts', 'mvv_data', 'opinions', 'opinionImages'));
+    }
+
+    private function findOpinionImage(string $baseUrl, int $id): ?string
+    {
+        $extensions = ['jpg', 'jpeg', 'png'];
+        $baseUrl = rtrim($baseUrl, '/');
+
+        foreach ($extensions as $ext) {
+            $url = "{$baseUrl}/{$id}.{$ext}";
+            if ($this->imageExists($url)) {
+                return $url;
+            }
+        }
+
+        return null;
+    }
+
+    private function imageExists(string $url): bool
+    {
+        $headers = @get_headers($url, true);
+        if ($headers === false) {
+            return false;
+        }
+        $statusLine = is_array($headers[0]) ? $headers[0][0] : $headers[0];
+        return str_contains($statusLine, '200');
     }
 }
