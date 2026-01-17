@@ -2,7 +2,9 @@
 
 return [
 
-    
+    'intranet' => [
+        'carousel_url' => env('INTRANET_CAROUSEL_IMAGES_URL'),
+    ],
 
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),

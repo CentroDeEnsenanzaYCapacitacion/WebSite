@@ -23,7 +23,7 @@ return [
 
     'asset_url' => env('ASSET_URL'),
 
-    
+    'allowed_external_hosts' => env('ALLOWED_EXTERNAL_HOSTS', 'localhost,capacitacioncec.edu.mx'),
 
     'timezone' => 'UTC',
 
