@@ -233,8 +233,15 @@
                                             <div class="card-body">
                                                 <div class="d-flex align-items-center mb-3">
                                                     <div class="rounded-circle d-flex align-items-center justify-content-center me-3 testimonial-avatar testimonial-avatar--profile overflow-hidden {{ $avatarUrl ? 'testimonial-avatar--image' : '' }}">
-                                                        @if ($avatarUrl)
-                                                            <img src="{{ $avatarUrl }}" alt="{{ $opinionName }}" class="testimonial-avatar-img" @if ($avatarBase) data-avatar-base="{{ $avatarBase }}" data-avatar-exts="{{ $avatarExts }}" @endif>
+                                                        @if ($avatarBase)
+                                                            <picture>
+                                                                <source srcset="{{ $avatarBase }}.png" type="image/png">
+                                                                <source srcset="{{ $avatarBase }}.jpeg" type="image/jpeg">
+                                                                <source srcset="{{ $avatarBase }}.jpg" type="image/jpeg">
+                                                                <img src="{{ $avatarBase }}.jpeg" alt="{{ $opinionName }}" class="testimonial-avatar-img">
+                                                            </picture>
+                                                        @elseif ($avatarUrl)
+                                                            <img src="{{ $avatarUrl }}" alt="{{ $opinionName }}" class="testimonial-avatar-img">
                                                         @else
                                                             <strong>{{ $initial }}</strong>
                                                         @endif
