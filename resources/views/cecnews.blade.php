@@ -11,7 +11,7 @@
     <script type="text/javascript" src="{{ asset('assets/js/superfish.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/jquery.ui.totop.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/jquery.easing.1.3.js') }}"></script>
-	<script>
+	<script nonce="{{ $cspNonce ?? '' }}">
 		$(window).load(function(){
 			$().UItoTop({ easingType: 'easeOutQuart' });
 		})

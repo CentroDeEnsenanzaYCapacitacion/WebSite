@@ -31,4 +31,16 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.counter-item').forEach(item => {
         observer.observe(item);
     });
+
+    document.querySelectorAll('.testimonial-avatar-img[data-avatar-base]').forEach(function(img) {
+        img.addEventListener('error', function() {
+            var exts = this.dataset.avatarExts;
+            if (!exts) return;
+            var extArray = exts.split(',');
+            if (!extArray.length) return;
+            var ext = extArray.shift();
+            this.dataset.avatarExts = extArray.join(',');
+            this.src = this.dataset.avatarBase + '.' + ext;
+        });
+    });
 });
