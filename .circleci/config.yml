@@ -188,10 +188,10 @@ jobs:
           command: |
             lftp -u "$ftp_username","$ftp_password" "$ftp_url" -e "set ssl:verify-certificate no; mirror -R $local_dir $intra_ftp_dev_assets_path \
               --verbose \
-              --delete \
               --exclude-glob index*.php \
               --exclude-glob img/carousel/** \
-              --exclude-glob img/opinions/**; \
+              --exclude-glob img/opinions/** \
+              --delete; \
               quit"
 
       - run:
@@ -351,13 +351,13 @@ jobs:
           command: |
             lftp -u "$ftp_username","$ftp_password" "$ftp_url" -e "set ssl:verify-certificate no; mirror -R $local_dir $intra_ftp_prod_assets_path \
               --verbose \
-              --delete \
               --exclude-glob index*.php \
               --exclude-glob img/carousel/** \
               --exclude-glob img/opinions/** \
               --exclude intranet/ \
               --exclude intranet_dev/ \
-              --exclude website_dev/; \
+              --exclude website_dev/ \
+              --delete; \
               quit"
 
       - run:
