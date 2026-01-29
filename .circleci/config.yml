@@ -91,6 +91,48 @@ jobs:
             - composer.json
             - composer.lock
 
+  test-development:
+    docker:
+      - image: cimg/php:8.2
+
+    steps:
+      - checkout
+
+      - run:
+          name: Install PHP dependencies TEST DEV
+          command: |
+            echo "Running composer install (TEST DEV)"
+            composer install \
+              --no-interaction \
+              --prefer-dist \
+              --optimize-autoloader
+
+      - run:
+          name: Run tests DEV
+          command: |
+            php artisan test
+
+  test-production:
+    docker:
+      - image: cimg/php:8.2
+
+    steps:
+      - checkout
+
+      - run:
+          name: Install PHP dependencies TEST PROD
+          command: |
+            echo "Running composer install (TEST PROD)"
+            composer install \
+              --no-interaction \
+              --prefer-dist \
+              --optimize-autoloader
+
+      - run:
+          name: Run tests PROD
+          command: |
+            php artisan test
+
   deploy-development:
     docker:
       - image: cimg/php:8.2
@@ -378,9 +420,17 @@ workflows:
             branches:
               only: development
 
+      - test-development:
+          requires:
+            - build-development
+          filters:
+            branches:
+              only: development
+
       - deploy-development:
           requires:
             - build-development
+            - test-development
           filters:
             branches:
               only: development
@@ -395,9 +445,17 @@ workflows:
             branches:
               only: main
 
+      - test-production:
+          requires:
+            - build-production
+          filters:
+            branches:
+              only: main
+
       - deploy-production:
           requires:
             - build-production
+            - test-production
           filters:
             branches:
               only: main

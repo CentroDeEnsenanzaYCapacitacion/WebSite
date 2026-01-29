@@ -34,7 +34,7 @@ class ValidateSessionIntegrity
                 $request->session()->invalidate();
                 $request->session()->regenerateToken();
 
-                return redirect()->route('login')->with('error', 'Sesión invalidada por razones de seguridad.');
+                return redirect()->route('student.login')->with('error', 'Sesión invalidada por razones de seguridad.');
             }
 
             if ($sessionUserAgent && $sessionUserAgent !== $request->userAgent()) {
