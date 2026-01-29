@@ -32,22 +32,21 @@
                         <li><a class="dropdown-item" href="{{ route('secondary') }}">Secundaria</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><h6 class="dropdown-header">Bachillerato</h6></li>
-                        <li><a class="dropdown-item small" href="#">En un exámen (en línea)</a></li>
-                        <li><a class="dropdown-item small" href="#">9 o 12 meses (en línea)</a></li>
-                        <li><a class="dropdown-item small" href="#">18 meses (presencial / en línea / mixta)</a></li>
+                        <li><a class="dropdown-item small" href="{{ route('bachillerato.examen') }}">En un examen (en línea)</a></li>
+                        <li><a class="dropdown-item small" href="{{ route('bachillerato') }}">7, 8, 9, 10 y 12 meses (presencial / en línea / mixta)</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><h6 class="dropdown-header">Licenciaturas</h6></li>
-                        <li><a class="dropdown-item small" href="#">Derecho</a></li>
-                        <li><a class="dropdown-item small" href="#">Contabilidad</a></li>
-                        <li><a class="dropdown-item small" href="#">Psicología</a></li>
-                        <li><a class="dropdown-item small" href="#">Pedagogía</a></li>
-                        <li><a class="dropdown-item small" href="#">Administración</a></li>
+                        <li><a class="dropdown-item small" href="{{ route('licenciatura.derecho') }}">Derecho</a></li>
+                        <li><a class="dropdown-item small" href="{{ route('licenciatura.contabilidad') }}">Contabilidad</a></li>
+                        <li><a class="dropdown-item small" href="{{ route('licenciatura.psicologia') }}">Psicología</a></li>
+                        <li><a class="dropdown-item small" href="{{ route('licenciatura.pedagogia') }}">Pedagogía</a></li>
+                        <li><a class="dropdown-item small" href="{{ route('licenciatura.administracion') }}">Administración</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><h6 class="dropdown-header">Carreras técnicas</h6></li>
-                        <li><a class="dropdown-item small" href="#">Inglés</a></li>
-                        <li><a class="dropdown-item small" href="#">Informática</a></li>
+                        <li><a class="dropdown-item small" href="{{ route('tecnico.ingles') }}">Inglés</a></li>
+                        <li><a class="dropdown-item small" href="{{ route('tecnico.informatica') }}">Informática</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Cursos especiales (Kids)</a></li>
+                        <li><a class="dropdown-item" href="{{ route('cursos.kids') }}">Cursos especiales (Kids)</a></li>
                     </ul>
                 </li>
 
@@ -87,7 +86,49 @@
                 <a class="nav-link" href="{{ route('home') }}">Inicio</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link fw-bold text-primary">Oferta Educativa</a>
+            </li>
+            <li class="nav-item ps-3">
                 <a class="nav-link" href="{{ route('secondary') }}">Secundaria</a>
+            </li>
+            <li class="nav-item ps-3">
+                <span class="nav-link text-muted small">Bachillerato</span>
+            </li>
+            <li class="nav-item ps-4">
+                <a class="nav-link small" href="{{ route('bachillerato.examen') }}">En un examen (en línea)</a>
+            </li>
+            <li class="nav-item ps-4">
+                <a class="nav-link small" href="{{ route('bachillerato') }}">7, 8, 9, 10 y 12 meses (presencial / en línea / mixta)</a>
+            </li>
+            <li class="nav-item ps-3">
+                <span class="nav-link text-muted small">Licenciaturas</span>
+            </li>
+            <li class="nav-item ps-4">
+                <a class="nav-link small" href="{{ route('licenciatura.derecho') }}">Derecho</a>
+            </li>
+            <li class="nav-item ps-4">
+                <a class="nav-link small" href="{{ route('licenciatura.contabilidad') }}">Contabilidad</a>
+            </li>
+            <li class="nav-item ps-4">
+                <a class="nav-link small" href="{{ route('licenciatura.psicologia') }}">Psicología</a>
+            </li>
+            <li class="nav-item ps-4">
+                <a class="nav-link small" href="{{ route('licenciatura.pedagogia') }}">Pedagogía</a>
+            </li>
+            <li class="nav-item ps-4">
+                <a class="nav-link small" href="{{ route('licenciatura.administracion') }}">Administración</a>
+            </li>
+            <li class="nav-item ps-3">
+                <span class="nav-link text-muted small">Carreras técnicas</span>
+            </li>
+            <li class="nav-item ps-4">
+                <a class="nav-link small" href="{{ route('tecnico.ingles') }}">Inglés</a>
+            </li>
+            <li class="nav-item ps-4">
+                <a class="nav-link small" href="{{ route('tecnico.informatica') }}">Informática</a>
+            </li>
+            <li class="nav-item ps-3">
+                <a class="nav-link" href="{{ route('cursos.kids') }}">Cursos especiales (Kids)</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('crews') }}">Planteles</a>

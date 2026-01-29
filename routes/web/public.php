@@ -20,7 +20,17 @@ Route::get('/course', [CourseController::class, 'showCourse'])->name('course');
 
 Route::get('/crews', [CrewsController::class, 'show'])->name('crews');
 
-Route::get('/secondary', [OfferController::class, 'showOffer'])->name('secondary');
+Route::get('/secundaria', [OfferController::class, 'secondary'])->name('secondary');
+Route::get('/bachillerato-examen', [OfferController::class, 'bachilleratoExamen'])->name('bachillerato.examen');
+Route::get('/bachillerato', [OfferController::class, 'bachillerato'])->name('bachillerato');
+Route::get('/licenciatura-derecho', [OfferController::class, 'licenciaturaDerecho'])->name('licenciatura.derecho');
+Route::get('/licenciatura-contabilidad', [OfferController::class, 'licenciaturaContabilidad'])->name('licenciatura.contabilidad');
+Route::get('/licenciatura-psicologia', [OfferController::class, 'licenciaturaPsicologia'])->name('licenciatura.psicologia');
+Route::get('/licenciatura-pedagogia', [OfferController::class, 'licenciaturaPedagogia'])->name('licenciatura.pedagogia');
+Route::get('/licenciatura-administracion', [OfferController::class, 'licenciaturaAdministracion'])->name('licenciatura.administracion');
+Route::get('/tecnico-ingles', [OfferController::class, 'tecnicoIngles'])->name('tecnico.ingles');
+Route::get('/tecnico-informatica', [OfferController::class, 'tecnicoInformatica'])->name('tecnico.informatica');
+Route::get('/cursos-kids', [OfferController::class, 'cursosKids'])->name('cursos.kids');
 
 
 
