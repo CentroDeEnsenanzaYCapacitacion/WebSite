@@ -208,7 +208,9 @@ jobs:
               --exclude-glob .env.example \
               --exclude-glob composer.lock \
               --exclude-glob storage/logs/** \
-              --exclude-glob config/local.php; \
+              --exclude-glob config/local.php \
+              --exclude-glob tests/** \
+              --exclude-glob phpunit.xml; \
               quit"
 
       - run:
@@ -368,6 +370,8 @@ jobs:
               --exclude-glob composer.lock \
               --exclude-glob storage/logs/** \
               --exclude-glob config/local.php \
+              --exclude-glob tests/** \
+              --exclude-glob phpunit.xml \
               --exclude intranet/ \
               --exclude intranet_dev/ \
               --exclude website_dev/ \
