@@ -14,6 +14,25 @@
             <div class="col-12">
                 <div class="card border-0 shadow-sm">
                     <div class="card-body p-4">
+                        <h3 class="mb-4">Perfil de Ingreso</h3>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i><strong>Expresión Escrita:</strong> Redacta textos breves (ensayos, resúmenes) con cohesión, coherencia y ortografía adecuada</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i><strong>Geometría:</strong> Comprende conceptos de espacio, forma y medida (áreas, volúmenes, ángulos)</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i><strong>Ciencias Naturales:</strong> Comprende los conceptos básicos de biología, física y química (materia, energía, biodiversidad) y reconoce la importancia del método científico</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i><strong>Alfabetización Digital:</strong> Maneja paquetería básica de oficina (procesador de textos, hojas de cálculo simples, presentaciones)</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i><strong>Búsqueda de Información:</strong> Sabe navegar en internet para buscar información, discriminando entre fuentes confiables y no confiables</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Capaz de <strong>estudiar por cuenta propia</strong>, organizar su tiempo y entregar tareas sin supervisión constante</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i><strong>Participa activamente</strong> en equipos, respeta las opiniones divergentes y cumple con su rol asignado</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Tolera la frustración ante problemas académicos y busca soluciones en lugar de abandonar la tarea</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i><strong>Conocer sus derechos y obligaciones</strong> como adolescente y miembro de una comunidad escolar</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
                         <h3 class="mb-4">Plan de Estudios</h3>
                         <div class="row">
                             <div class="col-md-4 mb-4">
@@ -87,6 +106,24 @@
                                 </ul>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h3 class="mb-4">Perfil de Egreso</h3>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i><strong>Comprensión lectora, escrita y oral:</strong> Se expresa con claridad de forma oral y escrita. Es capaz de redactar ensayos académicos, informes técnicos y participar en debates fundamentados</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i><strong>Pensamiento Científico:</strong> Utiliza el método científico para plantear hipótesis, observar fenómenos y validar información, distinguiendo entre evidencia científica y pseudociencia</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i><strong>Toma de Decisiones Responsable:</strong> Evalúa las consecuencias de sus actos (en salud, relaciones y ética) antes de actuar</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i><strong>Aritmética y Álgebra:</strong> Construye e interpreta modelos para resolver situaciones hipotéticas o reales, fomentando el pensamiento crítico</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i><strong>Identidad y Diversidad:</strong> Se reconoce como ciudadano de su país pero con una visión global; valora y respeta la diversidad cultural, de género y de pensamiento</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i><strong>Genera materiales multimedia</strong> (vídeos, blogs, presentaciones interactivas) respetando derechos de autor</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i><strong>Responsabilidad Social:</strong> Participa en su comunidad con una conciencia cívica y ética</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i><strong>Comunicación Asertiva:</strong> Adapta su mensaje al contexto y a la audiencia, escuchando e interpretando ideas opuestas con respeto</li>
+                        </ul>
                     </div>
                 </div>
             </div>
