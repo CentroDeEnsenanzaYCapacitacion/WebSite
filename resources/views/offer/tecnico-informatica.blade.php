@@ -28,8 +28,42 @@
                         <h3 class="mb-4">Plan de Estudios</h3>
                         <div class="row">
                             <div class="col-md-6 mb-3">
+                                <h6 class="fw-bold text-primary">Introducción</h6>
                                 <ul>
-                                    <li>Contenido pendiente</li>
+                                    <li>Windows</li>
+                                    <li>Internet básico</li>
+                                </ul>
+                                <h6 class="fw-bold text-primary mt-3">Paquetería Office</h6>
+                                <ul>
+                                    <li>Word</li>
+                                    <li>Excel</li>
+                                    <li>Power Point</li>
+                                    <li>Access</li>
+                                </ul>
+                                <h6 class="fw-bold text-primary mt-3">Informática contable</h6>
+                                <ul>
+                                    <li>ASPEL COI</li>
+                                    <li>ASPEL NOI</li>
+                                    <li>ASPEL SAE</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <h6 class="fw-bold text-primary">Programación</h6>
+                                <ul>
+                                    <li>Visual Basic</li>
+                                    <li>Dreamweaver</li>
+                                </ul>
+                                <h6 class="fw-bold text-primary mt-3">Diseño gráfico</h6>
+                                <ul>
+                                    <li>CorelDraw</li>
+                                    <li>Photoshop</li>
+                                    <li>Animate</li>
+                                </ul>
+                                <h6 class="fw-bold text-primary mt-3">Ensamble y mantenimiento</h6>
+                                <ul>
+                                    <li>Ensamble</li>
+                                    <li>Redes</li>
+                                    <li>Internet avanzado</li>
                                 </ul>
                             </div>
                         </div>
