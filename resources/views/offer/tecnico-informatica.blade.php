@@ -14,83 +14,84 @@
             <div class="col-12">
                 <div class="card border-0 shadow-sm">
                     <div class="card-body p-4">
-                        <h3 class="mb-4">Perfil de Ingreso</h3>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Contenido pendiente</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+                        <h3 class="mb-4 text-primary">Plan de Estudios</h3>
 
-            <div class="col-12">
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body p-4">
-                        <h3 class="mb-4">Plan de Estudios</h3>
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <h6 class="fw-bold text-primary">Introducción</h6>
-                                <ul>
-                                    <li>Windows</li>
-                                    <li>Internet básico</li>
-                                </ul>
-                                <h6 class="fw-bold text-primary mt-3">Paquetería Office</h6>
-                                <ul>
-                                    <li>Word</li>
-                                    <li>Excel</li>
-                                    <li>Power Point</li>
-                                    <li>Access</li>
-                                </ul>
-                                <h6 class="fw-bold text-primary mt-3">Informática contable</h6>
-                                <ul>
-                                    <li>ASPEL COI</li>
-                                    <li>ASPEL NOI</li>
-                                    <li>ASPEL SAE</li>
-                                </ul>
+                        <div class="row g-4">
+                            <div class="col-lg-6">
+                                <div class="card bg-light border-0 h-100">
+                                    <div class="card-body">
+                                        <h5 class="text-primary mb-3"><span class="badge bg-primary me-2">Módulo 1</span> Introducción</h5>
+                                        <ul class="list-unstyled mb-0">
+                                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Windows</li>
+                                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Internet básico</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-6 mb-3">
-                                <h6 class="fw-bold text-primary">Programación</h6>
-                                <ul>
-                                    <li>Visual Basic</li>
-                                    <li>Dreamweaver</li>
-                                </ul>
-                                <h6 class="fw-bold text-primary mt-3">Diseño gráfico</h6>
-                                <ul>
-                                    <li>CorelDraw</li>
-                                    <li>Photoshop</li>
-                                    <li>Animate</li>
-                                </ul>
-                                <h6 class="fw-bold text-primary mt-3">Ensamble y mantenimiento</h6>
-                                <ul>
-                                    <li>Ensamble</li>
-                                    <li>Redes</li>
-                                    <li>Internet avanzado</li>
-                                </ul>
+
+                            <div class="col-lg-6">
+                                <div class="card bg-light border-0 h-100">
+                                    <div class="card-body">
+                                        <h5 class="text-primary mb-3"><span class="badge bg-primary me-2">Módulo 2</span> Paquetería Office</h5>
+                                        <ul class="list-unstyled mb-0">
+                                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Word</li>
+                                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Excel</li>
+                                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Power Point</li>
+                                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Access</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-12">
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body p-4">
-                        <h3 class="mb-4">Perfil de Egreso</h3>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Contenido pendiente</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+                            <div class="col-lg-6">
+                                <div class="card bg-light border-0 h-100">
+                                    <div class="card-body">
+                                        <h5 class="text-primary mb-3"><span class="badge bg-primary me-2">Módulo 3</span> Informática contable</h5>
+                                        <ul class="list-unstyled mb-0">
+                                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>ASPEL COI</li>
+                                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>ASPEL NOI</li>
+                                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>ASPEL SAE</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
 
-            <div class="col-12">
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body p-4">
-                        <h3 class="mb-4">Oportunidades Laborales</h3>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <ul>
-                                    <li>Contenido pendiente</li>
-                                </ul>
+                            <div class="col-lg-6">
+                                <div class="card bg-light border-0 h-100">
+                                    <div class="card-body">
+                                        <h5 class="text-primary mb-3"><span class="badge bg-primary me-2">Módulo 4</span> Programación</h5>
+                                        <ul class="list-unstyled mb-0">
+                                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Visual Basic</li>
+                                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Dreamweaver</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="card bg-light border-0 h-100">
+                                    <div class="card-body">
+                                        <h5 class="text-primary mb-3"><span class="badge bg-primary me-2">Módulo 5</span> Diseño gráfico</h5>
+                                        <ul class="list-unstyled mb-0">
+                                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>CorelDraw</li>
+                                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Photoshop</li>
+                                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Animate</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="card bg-light border-0 h-100">
+                                    <div class="card-body">
+                                        <h5 class="text-primary mb-3"><span class="badge bg-primary me-2">Módulo 6</span> Ensamble y mantenimiento</h5>
+                                        <ul class="list-unstyled mb-0">
+                                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Ensamble</li>
+                                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Redes</li>
+                                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>Internet avanzado</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
