@@ -32,7 +32,7 @@
                         <li><a class="dropdown-item" href="{{ route('secondary') }}">Secundaria</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><h6 class="dropdown-header">Bachillerato</h6></li>
-                        <li><a class="dropdown-item small" href="{{ route('bachillerato.examen') }}">En un examen (en línea)</a></li>
+                        <li><span class="dropdown-item small">En un examen (en línea)</span></li>
                         <li><a class="dropdown-item small" href="{{ route('bachillerato') }}">7, 8, 9, 10 y 12 meses (presencial / en línea / mixta)</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><h6 class="dropdown-header">Licenciaturas</h6></li>
@@ -95,7 +95,7 @@
                 <span class="nav-link text-muted small">Bachillerato</span>
             </li>
             <li class="nav-item ps-4">
-                <a class="nav-link small" href="{{ route('bachillerato.examen') }}">En un examen (en línea)</a>
+                <span class="nav-link small">En un examen (en línea)</span>
             </li>
             <li class="nav-item ps-4">
                 <a class="nav-link small" href="{{ route('bachillerato') }}">7, 8, 9, 10 y 12 meses (presencial / en línea / mixta)</a>
