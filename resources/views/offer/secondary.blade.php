@@ -27,7 +27,7 @@
                             <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i>2 diversificados</li>
                         </ul>
                         <div class="mt-3">
-                            <img src="{{ asset('assets/images/logos/inea.png') }}" alt="INEA" class="img-fluid" style="max-height: 60px;">
+                            <img src="{{ asset('assets/img/inea.jpg') }}" alt="INEA" class="img-fluid" style="max-height: 60px;">
                         </div>
                     </div>
                 </div>
