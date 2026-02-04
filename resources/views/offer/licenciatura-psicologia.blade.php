@@ -81,7 +81,7 @@
                                     <li>Psicopatología</li>
                                     <li>Teorías de la personalidad</li>
                                     <li>Psicología de la motivación</li>
-                                    <li>Métodos estadísticos aplicados a la psicología</li>
+                                    <li>Métodos estadísticos aplicados a la Psicología</li>
                                     <li>Psicología fisiológica</li>
                                     <li>Psicología del desarrollo I</li>
                                 </ul>

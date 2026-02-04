@@ -17,10 +17,11 @@
         </p>
         <p class="info-text">
             <strong class="info-label">Plantel:</strong> {{ $student->crew->name ?? 'No asignado' }}
-ok        </p>
+        </p>
     </div>
 
-
+    {{-- SECCIÓN OCULTA: Resumen Académico - Descomentar cuando esté lista --}}
+    {{--
     <div class="section-container">
         <h3 class="section-title">
             <span class="section-accent"></span>
@@ -47,8 +48,10 @@ ok        </p>
             </div>
         </div>
     </div>
+    --}}
 
-
+    {{-- SECCIÓN OCULTA: Recursos y Materiales - Descomentar cuando esté lista --}}
+    {{--
     <div class="section-container">
         <h3 class="section-title">
             <span class="section-accent"></span>
@@ -84,12 +87,12 @@ ok        </p>
             </div>
         </div>
     </div>
-
+    --}}
 
     <div class="section-container">
         <h3 class="section-title">
             <span class="section-accent"></span>
-            Administración
+            Estado de Pagos
         </h3>
         <div class="cards-grid">
 
@@ -106,7 +109,8 @@ ok        </p>
                 <div class="resource-subtitle">Consulta tu historial</div>
             </a>
 
-
+            {{-- CARDS OCULTAS: Otras opciones de Administración - Descomentar cuando estén listas --}}
+            {{--
             <div class="resource-card">
                 <div class="resource-card-header">
                     <div class="resource-icon resource-icon-yellow">
@@ -175,6 +179,7 @@ ok        </p>
                 <div class="resource-value resource-value-cyan">Ver</div>
                 <div class="resource-subtitle">Próximamente disponible</div>
             </div>
+            --}}
         </div>
     </div>
 
