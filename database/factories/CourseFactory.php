@@ -18,6 +18,7 @@ class CourseFactory extends Factory
                 'Licenciatura en Derecho',
             ]),
             'description' => fake()->sentence(),
+            'is_active' => true,
         ];
     }
 }

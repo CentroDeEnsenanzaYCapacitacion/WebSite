@@ -12,17 +12,18 @@ return new class extends Migration
             return;
         }
 
-        Schema::create('courses', function (Blueprint $table) {
+        Schema::create('web_mvvs', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->nullable();
+            $table->string('title')->nullable();
             $table->text('description')->nullable();
-            $table->boolean('is_active')->default(true);
+            $table->string('type')->nullable();
             $table->timestamps();
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('courses');
+        Schema::dropIfExists('web_mvvs');
     }
 };
