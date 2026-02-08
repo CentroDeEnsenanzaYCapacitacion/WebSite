@@ -55,7 +55,7 @@
         <div class="d-flex justify-content-center align-items-center gap-3 text-white-50 small">
             <p class="mb-0">&copy; {{ date('Y') }} Centro de Enseñanza y Capacitación. Todos los derechos reservados.</p>
             <a href="https://github.com/AjRoBSeYeR" target="_blank">
-                <img src="{{ asset('assets/img/as.png') }}" alt="AjRoBSeYeR" height="30">
+                <img src="{{ asset('assets/img/as.png') }}" alt="AjRoBSeYeR" height="60">
             </a>
         </div>
     </div>
