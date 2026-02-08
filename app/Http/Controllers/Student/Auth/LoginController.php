@@ -72,6 +72,10 @@ class LoginController extends Controller
     {
         $storedHash = $student->getAttributes()['password'];
 
+        if ($storedHash === null || $storedHash === '') {
+            return false;
+        }
+
         if ($this->isBcrypt($storedHash)) {
             if (!Hash::check($password, $storedHash)) {
                 return false;
