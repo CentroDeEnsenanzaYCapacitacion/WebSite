@@ -17,7 +17,7 @@ class CrewsController extends Controller
 
     public function show()
     {
-        $carousel_url = config('services.intranet.carousel_url', '');
+        $carousel_url = config('services.intranet.carousel_url') ?? '';
         $carousel_url = $this->urlValidator->sanitizeUrl($carousel_url) ?? '';
         $carousel_texts = WebCarousel::all();
 

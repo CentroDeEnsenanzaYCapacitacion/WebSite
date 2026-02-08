@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Student\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Student;
 use App\Services\SecurityLogService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
@@ -42,12 +44,9 @@ class LoginController extends Controller
         }
 
         $remember = $request->boolean('remember');
+        $student = Student::where('email', $email)->first();
 
-        if (Auth::guard('student')->attempt($credentials, $remember)) {
-            $request->session()->regenerate();
-            $request->session()->put('login_ip', $request->ip());
-            $request->session()->put('login_user_agent', $request->userAgent());
-
+        if ($student && $this->attemptLogin($student, $credentials['password'], $remember, $request)) {
             Cache::forget($attemptsKey);
             $this->securityLog->logLoginAttempt($email, $request->ip(), true);
 
@@ -65,7 +64,63 @@ class LoginController extends Controller
         }
 
         throw ValidationException::withMessages([
-            'email' => 'Las credenciales proporcionadas no coinciden con nuestros registros.',
+            'email' => 'Credenciales incorrectas.',
         ]);
+    }
+
+    protected function attemptLogin(Student $student, string $password, bool $remember, Request $request): bool
+    {
+        $storedHash = $student->getAttributes()['password'];
+
+        if ($storedHash === null || $storedHash === '') {
+            return false;
+        }
+
+        if ($this->isBcrypt($storedHash)) {
+            if (!Hash::check($password, $storedHash)) {
+                return false;
+            }
+        } elseif (!$this->checkLegacyPassword($password, $storedHash)) {
+            return false;
+        } else {
+            $student->password = $password;
+            $student->save();
+            $this->securityLog->logSuspiciousActivity('legacy_password_rehashed', [
+                'email' => $student->email,
+            ]);
+        }
+
+        Auth::guard('student')->login($student, $remember);
+        $request->session()->regenerate();
+        $request->session()->put('login_ip', $request->ip());
+        $request->session()->put('login_user_agent', $request->userAgent());
+
+        return true;
+    }
+
+    protected function isBcrypt(string $hash): bool
+    {
+        return str_starts_with($hash, '$2y$') || str_starts_with($hash, '$2a$') || str_starts_with($hash, '$2b$');
+    }
+
+    protected function checkLegacyPassword(string $password, string $storedHash): bool
+    {
+        if ($password === $storedHash) {
+            return true;
+        }
+
+        if (md5($password) === $storedHash) {
+            return true;
+        }
+
+        if (sha1($password) === $storedHash) {
+            return true;
+        }
+
+        if (hash('sha256', $password) === $storedHash) {
+            return true;
+        }
+
+        return false;
     }
 }

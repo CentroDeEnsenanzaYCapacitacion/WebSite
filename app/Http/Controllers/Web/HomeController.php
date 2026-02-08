@@ -19,7 +19,7 @@ class HomeController extends Controller
 
     public function home()
     {
-        $carousel_url = config('services.intranet.carousel_url', '');
+        $carousel_url = config('services.intranet.carousel_url') ?? '';
         $carousel_url = $this->urlValidator->sanitizeUrl($carousel_url) ?? '';
 
         $opinions_url = '';
