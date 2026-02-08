@@ -52,8 +52,11 @@
 
         <hr class="my-4 border-white opacity-25">
 
-        <div class="text-center text-white-50 small">
+        <div class="d-flex justify-content-center align-items-center gap-3 text-white-50 small">
             <p class="mb-0">&copy; {{ date('Y') }} Centro de Enseñanza y Capacitación. Todos los derechos reservados.</p>
+            <a href="https://github.com/AjRoBSeYeR" target="_blank">
+                <img src="{{ asset('assets/img/as.png') }}" alt="AjRoBSeYeR" height="30">
+            </a>
         </div>
     </div>
 </footer>
